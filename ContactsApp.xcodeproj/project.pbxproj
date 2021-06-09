@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B131DB82670B1550080F4D6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DB72670B1550080F4D6 /* HeaderView.swift */; };
+		3B131DBA2670B5440080F4D6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B131DB92670B5440080F4D6 /* HeaderView.xib */; };
 		3B4AD89C2670203500493D47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89B2670203500493D47 /* AppDelegate.swift */; };
 		3B4AD89E2670203500493D47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89D2670203500493D47 /* SceneDelegate.swift */; };
 		3B4AD8A02670203500493D47 /* ChooseContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89F2670203500493D47 /* ChooseContactViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B131DB72670B1550080F4D6 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		3B131DB92670B5440080F4D6 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		3B4AD8982670203500493D47 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4AD89B2670203500493D47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B4AD89D2670203500493D47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				3B4AD89B2670203500493D47 /* AppDelegate.swift */,
 				3B4AD89D2670203500493D47 /* SceneDelegate.swift */,
 				3B4AD89F2670203500493D47 /* ChooseContactViewController.swift */,
+				3B131DB72670B1550080F4D6 /* HeaderView.swift */,
+				3B131DB92670B5440080F4D6 /* HeaderView.xib */,
 				3B4AD8A12670203500493D47 /* Main.storyboard */,
 				3B4AD8A42670203700493D47 /* Assets.xcassets */,
 				3B4AD8A62670203700493D47 /* LaunchScreen.storyboard */,
@@ -234,6 +240,7 @@
 				3B4AD8A82670203700493D47 /* LaunchScreen.storyboard in Resources */,
 				3B4AD8A52670203700493D47 /* Assets.xcassets in Resources */,
 				3B4AD8A32670203500493D47 /* Main.storyboard in Resources */,
+				3B131DBA2670B5440080F4D6 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +268,7 @@
 				3B4AD8A02670203500493D47 /* ChooseContactViewController.swift in Sources */,
 				3B4AD89C2670203500493D47 /* AppDelegate.swift in Sources */,
 				3B4AD89E2670203500493D47 /* SceneDelegate.swift in Sources */,
+				3B131DB82670B1550080F4D6 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WpF-ew-NJv">
                         <rect key="frame" x="0.0" y="44" width="397" height="75"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lxo-ST-1pn">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lxo-ST-1pn" customClass="RoundedImageView" customModule="ContactsApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="10" width="55" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lxo-ST-1pn" secondAttribute="height" multiplier="1:1" id="hGC-A8-wmm"/>
@@ -71,7 +71,7 @@
             <size key="customSize" width="397" height="119"/>
             <connections>
                 <outlet property="firstNameLabel" destination="xdo-lh-7gr" id="T8J-y7-nfp"/>
-                <outlet property="imageView" destination="lxo-ST-1pn" id="4uY-ld-s97"/>
+                <outlet property="imageView" destination="lxo-ST-1pn" id="uVQ-92-oDp"/>
                 <outlet property="lastNameLabel" destination="dbl-lG-qZz" id="uAs-sx-NHI"/>
             </connections>
             <point key="canvasLocation" x="139.85507246376812" y="6.3616071428571423"/>

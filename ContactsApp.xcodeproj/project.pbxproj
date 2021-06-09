@@ -19,6 +19,7 @@
 		3B131DD22670E95A0080F4D6 /* ContactProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DD12670E95A0080F4D6 /* ContactProtocol.swift */; };
 		3B131DD5267106860080F4D6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DD4267106860080F4D6 /* UIColor+Extension.swift */; };
 		3B131DD7267107A20080F4D6 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DD6267107A20080F4D6 /* AppColor.swift */; };
+		3B131DD92671351D0080F4D6 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DD82671351D0080F4D6 /* RoundedImageView.swift */; };
 		3B4AD89C2670203500493D47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89B2670203500493D47 /* AppDelegate.swift */; };
 		3B4AD89E2670203500493D47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89D2670203500493D47 /* SceneDelegate.swift */; };
 		3B4AD8A02670203500493D47 /* ChooseContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89F2670203500493D47 /* ChooseContactViewController.swift */; };
@@ -59,6 +60,7 @@
 		3B131DD12670E95A0080F4D6 /* ContactProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactProtocol.swift; sourceTree = "<group>"; };
 		3B131DD4267106860080F4D6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		3B131DD6267107A20080F4D6 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		3B131DD82671351D0080F4D6 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		3B4AD8982670203500493D47 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4AD89B2670203500493D47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B4AD89D2670203500493D47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				3B131DB72670B1550080F4D6 /* HeaderView.swift */,
 				3B131DB92670B5440080F4D6 /* HeaderView.xib */,
+				3B131DD82671351D0080F4D6 /* RoundedImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				3B131DCC2670DB570080F4D6 /* NSObject+Extension.swift in Sources */,
 				3B4AD8A02670203500493D47 /* ChooseContactViewController.swift in Sources */,
 				3B4AD89C2670203500493D47 /* AppDelegate.swift in Sources */,
+				3B131DD92671351D0080F4D6 /* RoundedImageView.swift in Sources */,
 				3B4AD89E2670203500493D47 /* SceneDelegate.swift in Sources */,
 				3B131DB82670B1550080F4D6 /* HeaderView.swift in Sources */,
 			);

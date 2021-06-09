@@ -11,7 +11,7 @@ class ContactCell: UICollectionViewCell {
    
     @IBOutlet private weak var firstNameLabel: UILabel!
     @IBOutlet private weak var lastNameLabel: UILabel!
-    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var imageView: RoundedImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

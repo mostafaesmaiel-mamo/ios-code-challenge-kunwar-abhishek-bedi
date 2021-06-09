@@ -11,7 +11,7 @@ class FrequentContactCell: UICollectionViewCell {
 
     @IBOutlet private weak var firstNameLabel: UILabel!
     @IBOutlet private weak var lastNameLabel: UILabel!
-    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var imageView: RoundedImageView!
     @IBOutlet private weak var bgView: UIView!
 
     override func awakeFromNib() {
@@ -48,6 +48,6 @@ extension FrequentContactCell: ContactPresentable {
     func configure(withFirstName firstName: String, lastName: String, imageUrl: String? = nil) {
         firstNameLabel.text = firstName
         lastNameLabel.text = lastName
-        imageView.image = UIImage(named: "Vector")
+        imageView.image = UIImage(named: "bg")
     }
 }

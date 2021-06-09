@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYM-EN-5wn">
                         <rect key="frame" x="0.0" y="44" width="170" height="196"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cDJ-vd-wRm">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="cDJ-vd-wRm" customClass="RoundedImageView" customModule="ContactsApp" customModuleProvider="target">
                                 <rect key="frame" x="45" y="20" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="EC9-xG-DnL"/>
@@ -78,4 +78,12 @@
             <point key="canvasLocation" x="84" y="17"/>
         </collectionViewCell>
     </objects>
+    <designables>
+        <designable name="cDJ-vd-wRm">
+            <size key="intrinsicContentSize" width="800" height="1065"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="bg" width="800" height="1065"/>
+    </resources>
 </document>

@@ -33,11 +33,14 @@ extension ChooseContactViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FrequentContactCell.name, for: indexPath)
-        cell.backgroundColor = indexPath.section == 0 ? .systemRed : .systemBlue
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FrequentContactCell.name, for: indexPath) as? FrequentContactCell {
+            cell.configure(withFirstName: "#Takreem", lastName: "#Sami")
+            return cell
+        }
         
-        return cell
+        return UICollectionViewCell()
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -71,19 +74,17 @@ private extension ChooseContactViewController {
     
     func frequentContactsSection(contentInset: NSDirectionalEdgeInsets,
                                              headerId: String) -> NSCollectionLayoutSection? {
-        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.25), heightDimension: .absolute(107)))
-        item.contentInsets.trailing = 22
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(77 * 2), heightDimension: .absolute(107 * 2)))
+        item.contentInsets.trailing = 16
         item.contentInsets.bottom = 16
         
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(150)), subitems: [item])
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200)), subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = contentInset
         
         section.orthogonalScrollingBehavior = .continuous
         
-        section.boundarySupplementaryItems = [
-            self.headerSupplementaryView
-        ]
+        section.boundarySupplementaryItems = [ self.headerSupplementaryView ]
 
         return section
     }

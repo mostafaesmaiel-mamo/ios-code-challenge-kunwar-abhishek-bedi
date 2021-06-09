@@ -14,9 +14,9 @@ enum Section {
     
     var headerTitle: String {
         switch self {
-        case .frequentContacts: return "Frequents"
-        case .mamoContacts: return "Your Friends On Mamo"
-        case .phoneContacts: return "Your Contacts"
+        case .frequentContacts: return "#Frequents"
+        case .mamoContacts: return "#Your Friends On Mamo"
+        case .phoneContacts: return "#Your Contacts"
         }
     }
 }

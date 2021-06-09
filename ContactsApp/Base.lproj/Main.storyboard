@@ -18,38 +18,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgh-hD-0YH">
-                                <rect key="frame" x="0.0" y="88" width="414" height="674"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="694"/>
                                 <connections>
                                     <segue destination="wfG-dr-FBQ" kind="embed" id="5ln-uy-ih1"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ya-FO-Vcu">
-                                <rect key="frame" x="20" y="776" width="374" height="56"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xjd-a8-Zwp" userLabel="Footer View">
+                                <rect key="frame" x="0.0" y="776" width="414" height="106"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ya-FO-Vcu">
+                                        <rect key="frame" x="16" y="25" width="382" height="56"/>
+                                        <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="#Next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="28"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="SLW-Bw-BcP"/>
+                                    <constraint firstAttribute="height" constant="106" id="7qF-IG-RjK"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Ya-FO-Vcu" secondAttribute="bottom" constant="25" id="FQ9-nB-hol"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Ya-FO-Vcu" secondAttribute="trailing" constant="16" id="Fkq-Is-e2M"/>
+                                    <constraint firstItem="0Ya-FO-Vcu" firstAttribute="leading" secondItem="Xjd-a8-Zwp" secondAttribute="leading" constant="16" id="HSu-39-ZVh"/>
+                                    <constraint firstItem="0Ya-FO-Vcu" firstAttribute="top" secondItem="Xjd-a8-Zwp" secondAttribute="top" constant="25" id="Qpe-cv-R3d"/>
                                 </constraints>
-                                <state key="normal" title="#Next">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="28"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o6y-h6-VmP"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="0Ya-FO-Vcu" firstAttribute="leading" secondItem="o6y-h6-VmP" secondAttribute="leading" constant="20" id="4eX-px-Ef4"/>
+                            <constraint firstItem="Xjd-a8-Zwp" firstAttribute="leading" secondItem="o6y-h6-VmP" secondAttribute="leading" id="8q1-c3-qDF"/>
                             <constraint firstItem="o6y-h6-VmP" firstAttribute="trailing" secondItem="zgh-hD-0YH" secondAttribute="trailing" id="9Uu-8L-oc6"/>
-                            <constraint firstItem="o6y-h6-VmP" firstAttribute="bottom" secondItem="zgh-hD-0YH" secondAttribute="bottom" constant="100" id="ARn-pQ-wtg"/>
-                            <constraint firstItem="0Ya-FO-Vcu" firstAttribute="centerX" secondItem="o6y-h6-VmP" secondAttribute="centerX" id="BSB-IF-aIX"/>
-                            <constraint firstItem="o6y-h6-VmP" firstAttribute="trailing" secondItem="0Ya-FO-Vcu" secondAttribute="trailing" constant="20" id="Cpp-iF-bbf"/>
+                            <constraint firstItem="o6y-h6-VmP" firstAttribute="trailing" secondItem="Xjd-a8-Zwp" secondAttribute="trailing" id="B1w-0F-XuB"/>
+                            <constraint firstItem="Xjd-a8-Zwp" firstAttribute="top" secondItem="zgh-hD-0YH" secondAttribute="bottom" constant="-6" id="HFy-4H-98o"/>
                             <constraint firstItem="zgh-hD-0YH" firstAttribute="top" secondItem="o6y-h6-VmP" secondAttribute="top" id="L4P-Rq-sVz"/>
-                            <constraint firstItem="0Ya-FO-Vcu" firstAttribute="top" secondItem="zgh-hD-0YH" secondAttribute="bottom" constant="14" id="Y0A-6d-Qoq"/>
-                            <constraint firstItem="o6y-h6-VmP" firstAttribute="bottom" secondItem="0Ya-FO-Vcu" secondAttribute="bottom" constant="30" id="g1J-AL-YOR"/>
+                            <constraint firstItem="o6y-h6-VmP" firstAttribute="bottom" secondItem="Xjd-a8-Zwp" secondAttribute="bottom" constant="-20" id="Xkv-NU-DDw"/>
                             <constraint firstItem="zgh-hD-0YH" firstAttribute="leading" secondItem="o6y-h6-VmP" secondAttribute="leading" id="ouA-MX-4BV"/>
                         </constraints>
                     </view>
@@ -67,7 +75,7 @@
             <objects>
                 <collectionViewController storyboardIdentifier="ChooseContactViewController" title="Contact Picker" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wfG-dr-FBQ" customClass="ChooseContactCollectionViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="wuj-yK-IqM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="674"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="694"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="knB-G0-T84">

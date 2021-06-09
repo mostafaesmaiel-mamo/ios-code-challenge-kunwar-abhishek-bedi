@@ -7,21 +7,6 @@
 
 import UIKit
 
-enum Section {
-    case frequentContacts
-    case mamoContacts
-    case phoneContacts
-    
-    var headerTitle: String {
-        switch self {
-        case .frequentContacts: return "Frequents"
-        case .mamoContacts: return "Your Friends On Mamo"
-        case .phoneContacts: return "Your Contacts"
-        }
-    }
-}
-
-
 class ChooseContactViewController: UICollectionViewController {
     fileprivate let cellId = "cellId"
     fileprivate let headerId = "HeaderView"

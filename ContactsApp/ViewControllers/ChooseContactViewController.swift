@@ -109,7 +109,7 @@ private extension ChooseContactViewController {
     
     func frequentContactsSection(contentInset: NSDirectionalEdgeInsets,
                                              headerId: String) -> NSCollectionLayoutSection? {
-        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(77 * 2), heightDimension: .absolute(107 * 2)))
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(70 * 2), heightDimension: .absolute(107 * 2)))
         item.contentInsets.trailing = 16
         item.contentInsets.bottom = 16
         

@@ -141,6 +141,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		3B131DD32670F57D0080F4D6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3B131DD12670E95A0080F4D6 /* ContactProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		3B4AD88F2670203500493D47 = {
 			isa = PBXGroup;
 			children = (
@@ -166,7 +174,7 @@
 			children = (
 				3B4AD89B2670203500493D47 /* AppDelegate.swift */,
 				3B4AD89D2670203500493D47 /* SceneDelegate.swift */,
-				3B131DD12670E95A0080F4D6 /* ContactProtocol.swift */,
+				3B131DD32670F57D0080F4D6 /* Protocols */,
 				3B131DCA2670DA8D0080F4D6 /* Utils */,
 				3B131DC72670D1980080F4D6 /* Cells */,
 				3B131DC02670CF170080F4D6 /* Sections */,

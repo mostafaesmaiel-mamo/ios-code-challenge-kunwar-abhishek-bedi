@@ -63,7 +63,6 @@ extension ChooseContactViewController {
                 return cell
             }
 
-            
         case .mamoContacts, .phoneContacts:
 
             if let cell = otherContactCell(collectionView, forIndexPath: indexPath) {
@@ -71,7 +70,6 @@ extension ChooseContactViewController {
                 return cell
             }
         }
-        
         
         return UICollectionViewCell()
     }

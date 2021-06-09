@@ -20,9 +20,12 @@
 		3B131DD5267106860080F4D6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DD4267106860080F4D6 /* UIColor+Extension.swift */; };
 		3B131DD7267107A20080F4D6 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DD6267107A20080F4D6 /* AppColor.swift */; };
 		3B131DD92671351D0080F4D6 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DD82671351D0080F4D6 /* RoundedImageView.swift */; };
+		3B131DDC267138180080F4D6 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DDA267138180080F4D6 /* FooterView.swift */; };
+		3B131DDD267138180080F4D6 /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B131DDB267138180080F4D6 /* FooterView.xib */; };
+		3B131DDF26713E070080F4D6 /* ChooseRecipientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DDE26713E070080F4D6 /* ChooseRecipientViewController.swift */; };
 		3B4AD89C2670203500493D47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89B2670203500493D47 /* AppDelegate.swift */; };
 		3B4AD89E2670203500493D47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89D2670203500493D47 /* SceneDelegate.swift */; };
-		3B4AD8A02670203500493D47 /* ChooseContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89F2670203500493D47 /* ChooseContactViewController.swift */; };
+		3B4AD8A02670203500493D47 /* ChooseContactCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89F2670203500493D47 /* ChooseContactCollectionViewController.swift */; };
 		3B4AD8A32670203500493D47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B4AD8A12670203500493D47 /* Main.storyboard */; };
 		3B4AD8A52670203700493D47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B4AD8A42670203700493D47 /* Assets.xcassets */; };
 		3B4AD8A82670203700493D47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B4AD8A62670203700493D47 /* LaunchScreen.storyboard */; };
@@ -61,10 +64,13 @@
 		3B131DD4267106860080F4D6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		3B131DD6267107A20080F4D6 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		3B131DD82671351D0080F4D6 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
+		3B131DDA267138180080F4D6 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		3B131DDB267138180080F4D6 /* FooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
+		3B131DDE26713E070080F4D6 /* ChooseRecipientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRecipientViewController.swift; sourceTree = "<group>"; };
 		3B4AD8982670203500493D47 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4AD89B2670203500493D47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B4AD89D2670203500493D47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3B4AD89F2670203500493D47 /* ChooseContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseContactViewController.swift; sourceTree = "<group>"; };
+		3B4AD89F2670203500493D47 /* ChooseContactCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseContactCollectionViewController.swift; sourceTree = "<group>"; };
 		3B4AD8A22670203500493D47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B4AD8A42670203700493D47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B4AD8A72670203700493D47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -105,7 +111,8 @@
 		3B131DBC2670CECA0080F4D6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3B4AD89F2670203500493D47 /* ChooseContactViewController.swift */,
+				3B4AD89F2670203500493D47 /* ChooseContactCollectionViewController.swift */,
+				3B131DDE26713E070080F4D6 /* ChooseRecipientViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -116,6 +123,8 @@
 				3B131DB72670B1550080F4D6 /* HeaderView.swift */,
 				3B131DB92670B5440080F4D6 /* HeaderView.xib */,
 				3B131DD82671351D0080F4D6 /* RoundedImageView.swift */,
+				3B131DDA267138180080F4D6 /* FooterView.swift */,
+				3B131DDB267138180080F4D6 /* FooterView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -318,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B131DDD267138180080F4D6 /* FooterView.xib in Resources */,
 				3B131DD02670E8090080F4D6 /* ContactCell.xib in Resources */,
 				3B4AD8A82670203700493D47 /* LaunchScreen.storyboard in Resources */,
 				3B4AD8A52670203700493D47 /* Assets.xcassets in Resources */,
@@ -348,7 +358,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B131DDF26713E070080F4D6 /* ChooseRecipientViewController.swift in Sources */,
 				3B131DCF2670E8090080F4D6 /* ContactCell.swift in Sources */,
+				3B131DDC267138180080F4D6 /* FooterView.swift in Sources */,
 				3B131DC52670D1940080F4D6 /* FrequentContactCell.swift in Sources */,
 				3B131DC92670DA1E0080F4D6 /* UICollectionView+Extension.swift in Sources */,
 				3B131DD5267106860080F4D6 /* UIColor+Extension.swift in Sources */,
@@ -356,7 +368,7 @@
 				3B131DD7267107A20080F4D6 /* AppColor.swift in Sources */,
 				3B131DD22670E95A0080F4D6 /* ContactProtocol.swift in Sources */,
 				3B131DCC2670DB570080F4D6 /* NSObject+Extension.swift in Sources */,
-				3B4AD8A02670203500493D47 /* ChooseContactViewController.swift in Sources */,
+				3B4AD8A02670203500493D47 /* ChooseContactCollectionViewController.swift in Sources */,
 				3B4AD89C2670203500493D47 /* AppDelegate.swift in Sources */,
 				3B131DD92671351D0080F4D6 /* RoundedImageView.swift in Sources */,
 				3B4AD89E2670203500493D47 /* SceneDelegate.swift in Sources */,

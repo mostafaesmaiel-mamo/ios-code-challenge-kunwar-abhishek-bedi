@@ -9,11 +9,11 @@ import UIKit
 
 enum AppColor {
     
-    case cellSelectionBorderColor
+    case mamoBlue
     
     var value: UIColor? {
         switch self {
-        case .cellSelectionBorderColor: return UIColor(hex: "#3333FF")
+        case .mamoBlue: return UIColor(hex: "#3333FF")
         }
     }
     

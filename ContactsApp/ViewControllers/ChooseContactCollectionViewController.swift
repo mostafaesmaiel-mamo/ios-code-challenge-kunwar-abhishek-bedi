@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChooseContactViewController: UICollectionViewController {
+class ChooseContactCollectionViewController: UICollectionViewController {
 
     fileprivate let sectionContentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
     
@@ -23,7 +23,7 @@ class ChooseContactViewController: UICollectionViewController {
 }
 
 //MARK:- UICollectionViewCallbacks
-extension ChooseContactViewController {
+extension ChooseContactCollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         sections.count
     }
@@ -86,7 +86,7 @@ extension ChooseContactViewController {
 }
 
 
-private extension ChooseContactViewController {
+private extension ChooseContactCollectionViewController {
     
     func setupSections() {
         sections.append(.frequentContacts)

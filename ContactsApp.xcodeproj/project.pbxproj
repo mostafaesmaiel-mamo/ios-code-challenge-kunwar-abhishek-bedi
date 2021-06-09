@@ -18,7 +18,7 @@
 		3B131DD02670E8090080F4D6 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B131DCE2670E8090080F4D6 /* ContactCell.xib */; };
 		3B131DD22670E95A0080F4D6 /* ContactProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DD12670E95A0080F4D6 /* ContactProtocol.swift */; };
 		3B131DD5267106860080F4D6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DD4267106860080F4D6 /* UIColor+Extension.swift */; };
-		3B131DD7267107A20080F4D6 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DD6267107A20080F4D6 /* AppColor.swift */; };
+		3B131DD7267107A20080F4D6 /* MamoColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DD6267107A20080F4D6 /* MamoColor.swift */; };
 		3B131DD92671351D0080F4D6 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DD82671351D0080F4D6 /* RoundedImageView.swift */; };
 		3B131DDC267138180080F4D6 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DDA267138180080F4D6 /* FooterView.swift */; };
 		3B131DDD267138180080F4D6 /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B131DDB267138180080F4D6 /* FooterView.xib */; };
@@ -62,7 +62,7 @@
 		3B131DCE2670E8090080F4D6 /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
 		3B131DD12670E95A0080F4D6 /* ContactProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactProtocol.swift; sourceTree = "<group>"; };
 		3B131DD4267106860080F4D6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		3B131DD6267107A20080F4D6 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		3B131DD6267107A20080F4D6 /* MamoColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MamoColor.swift; sourceTree = "<group>"; };
 		3B131DD82671351D0080F4D6 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		3B131DDA267138180080F4D6 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		3B131DDB267138180080F4D6 /* FooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 				3B131DC82670DA1E0080F4D6 /* UICollectionView+Extension.swift */,
 				3B131DD4267106860080F4D6 /* UIColor+Extension.swift */,
 				3B131DCB2670DB570080F4D6 /* NSObject+Extension.swift */,
-				3B131DD6267107A20080F4D6 /* AppColor.swift */,
+				3B131DD6267107A20080F4D6 /* MamoColor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -365,7 +365,7 @@
 				3B131DC92670DA1E0080F4D6 /* UICollectionView+Extension.swift in Sources */,
 				3B131DD5267106860080F4D6 /* UIColor+Extension.swift in Sources */,
 				3B131DBF2670CEFD0080F4D6 /* Section.swift in Sources */,
-				3B131DD7267107A20080F4D6 /* AppColor.swift in Sources */,
+				3B131DD7267107A20080F4D6 /* MamoColor.swift in Sources */,
 				3B131DD22670E95A0080F4D6 /* ContactProtocol.swift in Sources */,
 				3B131DCC2670DB570080F4D6 /* NSObject+Extension.swift in Sources */,
 				3B4AD8A02670203500493D47 /* ChooseContactCollectionViewController.swift in Sources */,

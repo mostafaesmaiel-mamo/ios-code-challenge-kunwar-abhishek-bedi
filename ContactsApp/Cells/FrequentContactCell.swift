@@ -32,7 +32,7 @@ class FrequentContactCell: UICollectionViewCell {
     
     func showBorder() {
         bgView.layer.borderWidth = 4.0
-        bgView.layer.borderColor = AppColor.mamoBlue.value?.cgColor
+        bgView.layer.borderColor = MamoColor.blue.value?.cgColor
         layoutIfNeeded()
     }
 

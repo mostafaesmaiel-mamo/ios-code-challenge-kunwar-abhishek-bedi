@@ -7,11 +7,12 @@
 
 import UIKit
 
-final class FrequentContactCell: UICollectionViewCell {
+class FrequentContactCell: UICollectionViewCell {
 
     @IBOutlet private weak var firstNameLabel: UILabel!
     @IBOutlet private weak var lastNameLabel: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var bgView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +29,19 @@ final class FrequentContactCell: UICollectionViewCell {
         lastNameLabel.text = nil
         imageView.image = nil
     }
+    
+    func showBorder() {
+        bgView.layer.borderWidth = 4.0
+        bgView.layer.borderColor = AppColor.cellSelectionBorderColor.value?.cgColor
+        layoutIfNeeded()
+    }
 
+    func hideBorder() {
+        bgView.layer.borderWidth = 0.0
+        bgView.layer.borderColor = UIColor.clear.cgColor
+        layoutIfNeeded()
+    }
+    
 }
 
 extension FrequentContactCell: ContactPresentable {

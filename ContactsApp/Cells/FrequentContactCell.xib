@@ -55,7 +55,7 @@
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="10"/>
+                                <integer key="value" value="20"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
@@ -70,6 +70,7 @@
             </constraints>
             <size key="customSize" width="378" height="552"/>
             <connections>
+                <outlet property="bgView" destination="TYM-EN-5wn" id="HWY-h2-zaD"/>
                 <outlet property="firstNameLabel" destination="Gbi-kF-8di" id="aaa-kx-zxi"/>
                 <outlet property="imageView" destination="cDJ-vd-wRm" id="Fsr-U5-fnP"/>
                 <outlet property="lastNameLabel" destination="L9w-vP-5uq" id="yPw-4V-EKE"/>

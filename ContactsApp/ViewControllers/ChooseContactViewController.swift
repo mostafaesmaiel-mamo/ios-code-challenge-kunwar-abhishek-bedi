@@ -8,8 +8,7 @@
 import UIKit
 
 class ChooseContactViewController: UICollectionViewController {
-    fileprivate let cellId = "cellId"
-    fileprivate let headerId = "HeaderView"
+
     fileprivate let sectionContentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
     
     var sections: [Section] = []
@@ -35,14 +34,14 @@ extension ChooseContactViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FrequentContactCell.name, for: indexPath)
         cell.backgroundColor = indexPath.section == 0 ? .systemRed : .systemBlue
         
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as? HeaderView {
+        if let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.name, for: indexPath) as? HeaderView {
             let title = sections[indexPath.section].headerTitle
             header.configure(withTitle: title)
             return header
@@ -62,10 +61,10 @@ private extension ChooseContactViewController {
     }
     
     func setupCollectionView() {
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         
-        //TODO: Remove Hardcoding
-        collectionView.register(UINib.init(nibName: "HeaderView", bundle: .main), forSupplementaryViewOfKind: headerId, withReuseIdentifier: headerId)
+        collectionView.registerNib(FrequentContactCell.self)
+        
+        collectionView.register(HeaderView.nib, forSupplementaryViewOfKind: HeaderView.name, withReuseIdentifier: HeaderView.name)
 
         collectionView.collectionViewLayout = createLayout()
     }
@@ -104,7 +103,7 @@ private extension ChooseContactViewController {
     }
     
     var headerSupplementaryView: NSCollectionLayoutBoundarySupplementaryItem {
-        NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: headerId, alignment: .topLeading)
+        NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: HeaderView.name, alignment: .topLeading)
     }
     
     func createLayout() -> UICollectionViewCompositionalLayout {
@@ -116,10 +115,10 @@ private extension ChooseContactViewController {
             
             switch contactSection {
             case .frequentContacts:
-                return self.frequentContactsSection(contentInset: self.sectionContentInsets, headerId: self.headerId)
+                return self.frequentContactsSection(contentInset: self.sectionContentInsets, headerId: HeaderView.name)
                 
             case .mamoContacts, .phoneContacts:
-                return self.otherContactsSection(contentInset: self.sectionContentInsets, headerId: self.headerId)
+                return self.otherContactsSection(contentInset: self.sectionContentInsets, headerId: HeaderView.name)
             }
         }
     }

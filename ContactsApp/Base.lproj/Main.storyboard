@@ -24,23 +24,29 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ya-FO-Vcu">
-                                <rect key="frame" x="44" y="776" width="326" height="56"/>
+                                <rect key="frame" x="20" y="776" width="374" height="56"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="326" id="ETV-JT-fpJ"/>
                                     <constraint firstAttribute="height" constant="56" id="SLW-Bw-BcP"/>
                                 </constraints>
                                 <state key="normal" title="#Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="28"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o6y-h6-VmP"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="0Ya-FO-Vcu" firstAttribute="leading" secondItem="o6y-h6-VmP" secondAttribute="leading" constant="20" id="4eX-px-Ef4"/>
                             <constraint firstItem="o6y-h6-VmP" firstAttribute="trailing" secondItem="zgh-hD-0YH" secondAttribute="trailing" id="9Uu-8L-oc6"/>
                             <constraint firstItem="o6y-h6-VmP" firstAttribute="bottom" secondItem="zgh-hD-0YH" secondAttribute="bottom" constant="100" id="ARn-pQ-wtg"/>
                             <constraint firstItem="0Ya-FO-Vcu" firstAttribute="centerX" secondItem="o6y-h6-VmP" secondAttribute="centerX" id="BSB-IF-aIX"/>
+                            <constraint firstItem="o6y-h6-VmP" firstAttribute="trailing" secondItem="0Ya-FO-Vcu" secondAttribute="trailing" constant="20" id="Cpp-iF-bbf"/>
                             <constraint firstItem="zgh-hD-0YH" firstAttribute="top" secondItem="o6y-h6-VmP" secondAttribute="top" id="L4P-Rq-sVz"/>
                             <constraint firstItem="0Ya-FO-Vcu" firstAttribute="top" secondItem="zgh-hD-0YH" secondAttribute="bottom" constant="14" id="Y0A-6d-Qoq"/>
                             <constraint firstItem="o6y-h6-VmP" firstAttribute="bottom" secondItem="0Ya-FO-Vcu" secondAttribute="bottom" constant="30" id="g1J-AL-YOR"/>

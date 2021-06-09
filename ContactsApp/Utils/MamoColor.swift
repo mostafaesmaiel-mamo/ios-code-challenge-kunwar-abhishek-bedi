@@ -7,13 +7,13 @@
 
 import UIKit
 
-enum AppColor {
+enum MamoColor {
     
-    case mamoBlue
+    case blue
     
     var value: UIColor? {
         switch self {
-        case .mamoBlue: return UIColor(hex: "#3333FF")
+        case .blue: return UIColor(hex: "#3333FF")
         }
     }
     

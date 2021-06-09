@@ -25,7 +25,7 @@ enum Section {
 class ChooseContactViewController: UICollectionViewController {
     fileprivate let cellId = "cellId"
     fileprivate let headerId = "HeaderView"
-    fileprivate let contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+    fileprivate let sectionContentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
     
     var sections: [Section] = []
 
@@ -33,10 +33,7 @@ class ChooseContactViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sections.append(.frequentContacts)
-        sections.append(.mamoContacts)
-        sections.append(.phoneContacts)
-
+        setupSections()
         setupCollectionView()
     }
 }
@@ -65,12 +62,16 @@ extension ChooseContactViewController {
         header.configure(withTitle: title)
         return header
     }
-
 }
 
 
-
 private extension ChooseContactViewController {
+    
+    func setupSections() {
+        sections.append(.frequentContacts)
+        sections.append(.mamoContacts)
+        sections.append(.phoneContacts)
+    }
     
     func setupCollectionView() {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
@@ -81,36 +82,56 @@ private extension ChooseContactViewController {
         collectionView.collectionViewLayout = createLayout()
     }
     
+    func frequentContactsSection(contentInset: NSDirectionalEdgeInsets,
+                                             headerId: String) -> NSCollectionLayoutSection? {
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.25), heightDimension: .absolute(107)))
+        item.contentInsets.trailing = 22
+        item.contentInsets.bottom = 16
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(150)), subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = contentInset
+        
+        section.orthogonalScrollingBehavior = .continuous
+        
+        section.boundarySupplementaryItems = [
+            self.headerSupplementaryView
+        ]
+
+        return section
+    }
+    
+    func otherContactsSection(contentInset: NSDirectionalEdgeInsets,
+                                          headerId: String) -> NSCollectionLayoutSection? {
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(80)))
+        item.contentInsets.bottom = 16
+        
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(1000)), subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = sectionContentInsets
+        section.boundarySupplementaryItems = [
+            self.headerSupplementaryView
+        ]
+        return section
+    }
+    
+    var headerSupplementaryView: NSCollectionLayoutBoundarySupplementaryItem {
+        NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: headerId, alignment: .topLeading)
+    }
+    
     func createLayout() -> UICollectionViewCompositionalLayout {
-        return UICollectionViewCompositionalLayout { (section, env) -> NSCollectionLayoutSection? in
+        return UICollectionViewCompositionalLayout { [weak self] (section, env) -> NSCollectionLayoutSection? in
             
-            if section == 0 {
-                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.25), heightDimension: .absolute(107)))
-                item.contentInsets.trailing = 22
-                item.contentInsets.bottom = 16
+            guard let self = self else { return nil }
+            
+            let contactSection = self.sections[section]
+            
+            switch contactSection {
+            case .frequentContacts:
+                return self.frequentContactsSection(contentInset: self.sectionContentInsets, headerId: self.headerId)
                 
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(150)), subitems: [item])
-                let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets = self.contentInsets
-
-                section.orthogonalScrollingBehavior = .continuous
-                
-                section.boundarySupplementaryItems = [
-                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: self.headerId, alignment: .topLeading)
-                ]
-                
-                return section
-            } else {
-                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(80)))
-                item.contentInsets.bottom = 16
-
-                let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(1000)), subitems: [item])
-                let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets = self.contentInsets
-                section.boundarySupplementaryItems = [
-                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: self.headerId, alignment: .topLeading)
-                ]
-                return section
+            case .mamoContacts, .phoneContacts:
+                return self.otherContactsSection(contentInset: self.sectionContentInsets, headerId: self.headerId)
             }
         }
     }

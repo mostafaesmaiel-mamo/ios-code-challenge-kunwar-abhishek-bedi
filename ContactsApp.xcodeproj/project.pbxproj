@@ -14,6 +14,9 @@
 		3B131DC62670D1940080F4D6 /* FrequentContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B131DC42670D1940080F4D6 /* FrequentContactCell.xib */; };
 		3B131DC92670DA1E0080F4D6 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DC82670DA1E0080F4D6 /* UICollectionView+Extension.swift */; };
 		3B131DCC2670DB570080F4D6 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DCB2670DB570080F4D6 /* NSObject+Extension.swift */; };
+		3B131DCF2670E8090080F4D6 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DCD2670E8090080F4D6 /* ContactCell.swift */; };
+		3B131DD02670E8090080F4D6 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B131DCE2670E8090080F4D6 /* ContactCell.xib */; };
+		3B131DD22670E95A0080F4D6 /* ContactProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DD12670E95A0080F4D6 /* ContactProtocol.swift */; };
 		3B4AD89C2670203500493D47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89B2670203500493D47 /* AppDelegate.swift */; };
 		3B4AD89E2670203500493D47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89D2670203500493D47 /* SceneDelegate.swift */; };
 		3B4AD8A02670203500493D47 /* ChooseContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89F2670203500493D47 /* ChooseContactViewController.swift */; };
@@ -49,6 +52,9 @@
 		3B131DC42670D1940080F4D6 /* FrequentContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FrequentContactCell.xib; sourceTree = "<group>"; };
 		3B131DC82670DA1E0080F4D6 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		3B131DCB2670DB570080F4D6 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		3B131DCD2670E8090080F4D6 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		3B131DCE2670E8090080F4D6 /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
+		3B131DD12670E95A0080F4D6 /* ContactProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactProtocol.swift; sourceTree = "<group>"; };
 		3B4AD8982670203500493D47 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4AD89B2670203500493D47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B4AD89D2670203500493D47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +126,8 @@
 			children = (
 				3B131DC32670D1940080F4D6 /* FrequentContactCell.swift */,
 				3B131DC42670D1940080F4D6 /* FrequentContactCell.xib */,
+				3B131DCD2670E8090080F4D6 /* ContactCell.swift */,
+				3B131DCE2670E8090080F4D6 /* ContactCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -158,6 +166,7 @@
 			children = (
 				3B4AD89B2670203500493D47 /* AppDelegate.swift */,
 				3B4AD89D2670203500493D47 /* SceneDelegate.swift */,
+				3B131DD12670E95A0080F4D6 /* ContactProtocol.swift */,
 				3B131DCA2670DA8D0080F4D6 /* Utils */,
 				3B131DC72670D1980080F4D6 /* Cells */,
 				3B131DC02670CF170080F4D6 /* Sections */,
@@ -292,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B131DD02670E8090080F4D6 /* ContactCell.xib in Resources */,
 				3B4AD8A82670203700493D47 /* LaunchScreen.storyboard in Resources */,
 				3B4AD8A52670203700493D47 /* Assets.xcassets in Resources */,
 				3B131DC62670D1940080F4D6 /* FrequentContactCell.xib in Resources */,
@@ -321,9 +331,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B131DCF2670E8090080F4D6 /* ContactCell.swift in Sources */,
 				3B131DC52670D1940080F4D6 /* FrequentContactCell.swift in Sources */,
 				3B131DC92670DA1E0080F4D6 /* UICollectionView+Extension.swift in Sources */,
 				3B131DBF2670CEFD0080F4D6 /* Section.swift in Sources */,
+				3B131DD22670E95A0080F4D6 /* ContactProtocol.swift in Sources */,
 				3B131DCC2670DB570080F4D6 /* NSObject+Extension.swift in Sources */,
 				3B4AD8A02670203500493D47 /* ChooseContactViewController.swift in Sources */,
 				3B4AD89C2670203500493D47 /* AppDelegate.swift in Sources */,

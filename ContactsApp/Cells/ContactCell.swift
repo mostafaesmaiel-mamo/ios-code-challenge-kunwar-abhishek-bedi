@@ -1,5 +1,5 @@
 //
-//  FrequentContactCell.swift
+//  ContactCell.swift
 //  ContactsApp
 //
 //  Created by kbedi on 09/06/2021.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class FrequentContactCell: UICollectionViewCell {
-
+class ContactCell: UICollectionViewCell {
+   
     @IBOutlet private weak var firstNameLabel: UILabel!
     @IBOutlet private weak var lastNameLabel: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
@@ -31,7 +31,7 @@ final class FrequentContactCell: UICollectionViewCell {
 
 }
 
-extension FrequentContactCell: ContactPresentable {
+extension ContactCell: ContactPresentable {
     func configure(withFirstName firstName: String, lastName: String, imageUrl: String? = nil) {
         firstNameLabel.text = firstName
         lastNameLabel.text = lastName

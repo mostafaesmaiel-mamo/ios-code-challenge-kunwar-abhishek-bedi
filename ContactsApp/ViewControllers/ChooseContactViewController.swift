@@ -32,13 +32,46 @@ extension ChooseContactViewController {
         10
     }
     
+    func frequentContactCell(_ collectionView: UICollectionView, forIndexPath indexPath: IndexPath) -> FrequentContactCell? {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FrequentContactCell.name, for: indexPath) as? FrequentContactCell else {
+            fatalError("FrequentContactCell cannot be nil")
+        }
+        
+        return cell
+    }
+
+    func otherContactCell(_ collectionView: UICollectionView, forIndexPath indexPath: IndexPath) -> ContactCell? {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContactCell.name, for: indexPath) as? ContactCell else {
+            fatalError("ContactCell cannot be nil")
+        }
+        
+        return cell
+    }
+
+
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
+        let contactSection = sections[indexPath.section]
         
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FrequentContactCell.name, for: indexPath) as? FrequentContactCell {
-            cell.configure(withFirstName: "#Takreem", lastName: "#Sami")
-            return cell
+        switch contactSection {
+        case .frequentContacts:
+            
+            if let cell = frequentContactCell(collectionView, forIndexPath: indexPath) {
+                cell.configure(withFirstName: "#Takreem", lastName: "#Sami")
+                return cell
+            }
+
+            
+        case .mamoContacts, .phoneContacts:
+
+            if let cell = otherContactCell(collectionView, forIndexPath: indexPath) {
+                cell.configure(withFirstName: "#Takreem", lastName: "#Sami")
+                return cell
+            }
         }
+        
         
         return UICollectionViewCell()
     }
@@ -65,10 +98,14 @@ private extension ChooseContactViewController {
     
     func setupCollectionView() {
         
+        // Setup Cells
         collectionView.registerNib(FrequentContactCell.self)
-        
+        collectionView.registerNib(ContactCell.self)
+
+        // Setup Headers
         collectionView.register(HeaderView.nib, forSupplementaryViewOfKind: HeaderView.name, withReuseIdentifier: HeaderView.name)
 
+        // Setup Layout
         collectionView.collectionViewLayout = createLayout()
     }
     
@@ -97,9 +134,7 @@ private extension ChooseContactViewController {
         let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(1000)), subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = sectionContentInsets
-        section.boundarySupplementaryItems = [
-            self.headerSupplementaryView
-        ]
+        section.boundarySupplementaryItems = [self.headerSupplementaryView]
         return section
     }
     

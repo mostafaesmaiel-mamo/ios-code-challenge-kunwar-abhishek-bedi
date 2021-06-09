@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ContactCell" customModule="ContactsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="397" height="119"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="397" height="119"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WpF-ew-NJv">
+                        <rect key="frame" x="0.0" y="44" width="397" height="75"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lxo-ST-1pn">
+                                <rect key="frame" x="20" y="10" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lxo-ST-1pn" secondAttribute="height" multiplier="1:1" id="hGC-A8-wmm"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Hi5-vI-Et9" userLabel="Stack View(FirstName and Lastname)">
+                                <rect key="frame" x="95" y="27.5" width="89" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdo-lh-7gr">
+                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.50980392159999999" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbl-lG-qZz">
+                                        <rect key="frame" x="47.5" y="0.0" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.50980392159999999" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="lxo-ST-1pn" secondAttribute="bottom" constant="10" id="63S-Qe-MOz"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Hi5-vI-Et9" secondAttribute="trailing" constant="20" id="GMZ-78-jN5"/>
+                            <constraint firstItem="Hi5-vI-Et9" firstAttribute="leading" secondItem="lxo-ST-1pn" secondAttribute="trailing" constant="20" id="NBd-Jo-A8T"/>
+                            <constraint firstItem="lxo-ST-1pn" firstAttribute="leading" secondItem="WpF-ew-NJv" secondAttribute="leading" constant="20" id="Ow5-wA-Vgt"/>
+                            <constraint firstItem="Hi5-vI-Et9" firstAttribute="centerY" secondItem="WpF-ew-NJv" secondAttribute="centerY" id="UeU-3X-xr6"/>
+                            <constraint firstItem="lxo-ST-1pn" firstAttribute="top" secondItem="WpF-ew-NJv" secondAttribute="top" constant="10" id="bZI-sn-BS3"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="WpF-ew-NJv" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="BXw-Tj-Q4f"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="WpF-ew-NJv" secondAttribute="trailing" id="KbZ-Wt-uPG"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="WpF-ew-NJv" secondAttribute="top" id="ett-cE-nvY"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="WpF-ew-NJv" secondAttribute="bottom" id="jgA-pZ-Qzo"/>
+            </constraints>
+            <size key="customSize" width="397" height="119"/>
+            <connections>
+                <outlet property="firstNameLabel" destination="xdo-lh-7gr" id="T8J-y7-nfp"/>
+                <outlet property="imageView" destination="lxo-ST-1pn" id="4uY-ld-s97"/>
+                <outlet property="lastNameLabel" destination="dbl-lG-qZz" id="uAs-sx-NHI"/>
+            </connections>
+            <point key="canvasLocation" x="139.85507246376812" y="6.3616071428571423"/>
+        </collectionViewCell>
+    </objects>
+</document>

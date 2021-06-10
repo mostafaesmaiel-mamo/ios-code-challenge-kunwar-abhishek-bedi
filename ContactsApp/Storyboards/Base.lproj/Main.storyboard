@@ -138,6 +138,9 @@
                                                 <integer key="value" value="28"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onEnglishButtonPressed:" destination="gtD-q0-yZM" eventType="touchUpInside" id="YL8-cF-fbL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnd-fh-s98">
                                         <rect key="frame" x="192" y="0.0" width="162" height="60"/>
@@ -150,6 +153,9 @@
                                                 <integer key="value" value="28"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onArabicButtonPressed:" destination="gtD-q0-yZM" eventType="touchUpInside" id="Noe-v0-9kx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

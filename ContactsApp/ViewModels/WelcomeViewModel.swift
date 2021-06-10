@@ -9,9 +9,17 @@ import Foundation
 import SwiftyUserDefaults
 
 struct WelcomeViewModel {
-    let canShowPermissionPrimingAlert: Bool
+    var canShowPermissionPrimingAlert: Bool {
+        didSet {
+            Defaults[\.didUserGaveContactsPermission] = canShowPermissionPrimingAlert
+        }
+    }
     
     init(canShowPermissionPrimingAlert: Bool = Defaults[\.didUserGaveContactsPermission]) {
         self.canShowPermissionPrimingAlert = canShowPermissionPrimingAlert
+    }
+    
+    mutating func updateShowPermissionPrimingAlert(shouldShowAgain: Bool) {
+        self.canShowPermissionPrimingAlert = shouldShowAgain
     }
 }

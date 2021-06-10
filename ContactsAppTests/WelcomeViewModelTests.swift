@@ -29,4 +29,12 @@ class WelcomeViewModelTests: XCTestCase {
         XCTAssertTrue(viewModel.canShowPermissionPrimingAlert)
     }
 
+    func testPermissionPrimingUpdate() throws {
+        XCTAssertFalse(viewModel.canShowPermissionPrimingAlert)
+        
+        viewModel.updateShowPermissionPrimingAlert(shouldShowAgain:true)
+
+        XCTAssertTrue(viewModel.canShowPermissionPrimingAlert)
+    }
+
 }

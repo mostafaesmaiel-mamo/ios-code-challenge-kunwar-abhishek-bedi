@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WelcomeViewController: UIViewController {
 
     //:MARK - View Controller Lifecycle Methods
     override func viewDidLoad() {
@@ -16,20 +16,13 @@ class ViewController: UIViewController {
         //  Do any additional setup after loading the view.
     }
     
-    //:MARK - IBActions
+    
+    //MARK: - IBActions
     @IBAction func onEnglishButtonPressed(_ sender: Any) {
     }
     
     @IBAction func onArabicButtonPressed(_ sender: Any) {
+    
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

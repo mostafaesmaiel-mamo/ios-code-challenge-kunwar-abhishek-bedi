@@ -7,7 +7,6 @@
  
 import UIKit
 
-@IBDesignable
 class RoundedImageView: UIImageView {
     override init(image: UIImage?) {
         super.init(image: image)
@@ -23,7 +22,7 @@ class RoundedImageView: UIImageView {
 
     override func layoutSubviews() {
         super.layoutSubviews()        
-        self.layer.cornerRadius = self.frame.size.height / 2
+        self.roundCorners()
         self.clipsToBounds = true
     }
 }

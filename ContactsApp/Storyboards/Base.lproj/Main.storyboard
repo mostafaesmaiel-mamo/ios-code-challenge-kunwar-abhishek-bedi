@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J8o-WM-No6">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,20 +12,20 @@
             <objects>
                 <viewController id="72F-VR-ejM" customClass="ChooseRecipientViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dnu-qX-ELM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgh-hD-0YH">
-                                <rect key="frame" x="0.0" y="44" width="414" height="738"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="520"/>
                                 <connections>
                                     <segue destination="wfG-dr-FBQ" kind="embed" id="5ln-uy-ih1"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xjd-a8-Zwp" userLabel="Footer View">
-                                <rect key="frame" x="0.0" y="776" width="414" height="106"/>
+                                <rect key="frame" x="0.0" y="514" width="600" height="106"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ya-FO-Vcu">
-                                        <rect key="frame" x="16" y="25" width="382" height="56"/>
+                                        <rect key="frame" x="16" y="25" width="568" height="56"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="#Next">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,22 +111,22 @@
             </objects>
             <point key="canvasLocation" x="-3054" y="-471"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="IgI-qH-IS3">
             <objects>
-                <viewController id="gtD-q0-yZM" customClass="ViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gtD-q0-yZM" customClass="WelcomeViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V9S-p3-ZYz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mamopay" translatesAutoresizingMaskIntoConstraints="NO" id="zDN-aI-h95">
-                                <rect key="frame" x="111.5" y="208" width="191.5" height="100"/>
+                                <rect key="frame" x="204.5" y="164" width="191.5" height="100"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="n5c-bp-1wY">
-                                <rect key="frame" x="30" y="559" width="354" height="60"/>
+                                <rect key="frame" x="30" y="388" width="540" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yxl-2z-9hu">
-                                        <rect key="frame" x="0.0" y="0.0" width="162" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="255" height="60"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="#English">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -143,7 +141,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnd-fh-s98">
-                                        <rect key="frame" x="192" y="0.0" width="162" height="60"/>
+                                        <rect key="frame" x="285" y="0.0" width="255" height="60"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="#Arabic">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -163,7 +161,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6r-u6-8SN">
-                                <rect key="frame" x="30" y="421.5" width="354" height="107.5"/>
+                                <rect key="frame" x="30" y="286" width="540" height="72"/>
                                 <string key="text">#Secure instant everyday payments
 </string>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>

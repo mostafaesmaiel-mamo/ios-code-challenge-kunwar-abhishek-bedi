@@ -198,9 +198,8 @@
 				3B131DC02670CF170080F4D6 /* Sections */,
 				3B131DBC2670CECA0080F4D6 /* ViewControllers */,
 				3B131DBD2670CEDD0080F4D6 /* Views */,
-				3B4AD8A12670203500493D47 /* Main.storyboard */,
+				3B89FB372671FCDE0002BDA6 /* Storyboards */,
 				3B4AD8A42670203700493D47 /* Assets.xcassets */,
-				3B4AD8A62670203700493D47 /* LaunchScreen.storyboard */,
 				3B4AD8A92670203700493D47 /* Info.plist */,
 			);
 			path = ContactsApp;
@@ -222,6 +221,15 @@
 				3B4AD8BF2670203800493D47 /* Info.plist */,
 			);
 			path = ContactsAppUITests;
+			sourceTree = "<group>";
+		};
+		3B89FB372671FCDE0002BDA6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3B4AD8A12670203500493D47 /* Main.storyboard */,
+				3B4AD8A62670203700493D47 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

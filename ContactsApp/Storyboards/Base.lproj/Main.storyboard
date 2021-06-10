@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgh-hD-0YH">
-                                <rect key="frame" x="0.0" y="88" width="414" height="694"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="738"/>
                                 <connections>
                                     <segue destination="wfG-dr-FBQ" kind="embed" id="5ln-uy-ih1"/>
                                 </connections>
@@ -75,7 +75,7 @@
             <objects>
                 <collectionViewController storyboardIdentifier="ChooseContactViewController" title="Contact Picker" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wfG-dr-FBQ" customClass="ChooseContactCollectionViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="wuj-yK-IqM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="694"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="738"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="knB-G0-T84">
@@ -93,7 +93,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0xI-Ot-OOx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-644.92753623188412" y="-447.32142857142856"/>
+            <point key="canvasLocation" x="-670" y="-463"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qIJ-D4-tug">
@@ -106,15 +106,87 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="72F-VR-ejM" kind="relationship" relationship="rootViewController" id="ryE-Uo-UXJ"/>
+                        <segue destination="gtD-q0-yZM" kind="relationship" relationship="rootViewController" id="OsA-Se-AAN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OpK-wA-MO6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2504.3478260869565" y="-463.39285714285711"/>
+            <point key="canvasLocation" x="-3054" y="-471"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IgI-qH-IS3">
+            <objects>
+                <viewController id="gtD-q0-yZM" customClass="ViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V9S-p3-ZYz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mamopay" translatesAutoresizingMaskIntoConstraints="NO" id="zDN-aI-h95">
+                                <rect key="frame" x="111.5" y="208" width="191.5" height="100"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="n5c-bp-1wY">
+                                <rect key="frame" x="30" y="559" width="354" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yxl-2z-9hu">
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="60"/>
+                                        <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="#English">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="28"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnd-fh-s98">
+                                        <rect key="frame" x="192" y="0.0" width="162" height="60"/>
+                                        <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="#Arabic">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="28"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="OXS-Tm-zqB"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6r-u6-8SN">
+                                <rect key="frame" x="30" y="421.5" width="354" height="107.5"/>
+                                <string key="text">#Secure instant everyday payments
+</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="q9C-4p-6nw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="q9C-4p-6nw" firstAttribute="trailing" secondItem="j6r-u6-8SN" secondAttribute="trailing" constant="30" id="094-LD-5Nh"/>
+                            <constraint firstItem="j6r-u6-8SN" firstAttribute="leading" secondItem="q9C-4p-6nw" secondAttribute="leading" constant="30" id="4dD-aE-WHA"/>
+                            <constraint firstItem="zDN-aI-h95" firstAttribute="centerX" secondItem="q9C-4p-6nw" secondAttribute="centerX" id="LoG-ey-ss9"/>
+                            <constraint firstItem="n5c-bp-1wY" firstAttribute="leading" secondItem="q9C-4p-6nw" secondAttribute="leading" constant="30" id="ZUg-BH-Tzb"/>
+                            <constraint firstItem="n5c-bp-1wY" firstAttribute="top" secondItem="j6r-u6-8SN" secondAttribute="bottom" constant="30" id="eYH-Jk-u74"/>
+                            <constraint firstItem="q9C-4p-6nw" firstAttribute="trailing" secondItem="n5c-bp-1wY" secondAttribute="trailing" constant="30" id="svL-yh-tKu"/>
+                            <constraint firstItem="zDN-aI-h95" firstAttribute="top" secondItem="q9C-4p-6nw" secondAttribute="top" constant="120" id="urc-av-zG0"/>
+                            <constraint firstItem="j6r-u6-8SN" firstAttribute="centerY" secondItem="q9C-4p-6nw" secondAttribute="centerY" id="uwR-cE-pFl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QEG-wG-YM0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Me-bK-QwT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2301.449275362319" y="-471.42857142857139"/>
         </scene>
     </scenes>
     <resources>
+        <image name="mamopay" width="191.5" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

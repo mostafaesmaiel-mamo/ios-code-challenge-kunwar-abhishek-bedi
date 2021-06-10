@@ -9,6 +9,9 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    let viewModel = WelcomeViewModel()
+    
+    
     //:MARK - View Controller Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()

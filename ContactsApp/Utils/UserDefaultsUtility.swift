@@ -13,5 +13,5 @@ enum UserDefaultKey: StringLiteralType {
 }
 
 extension DefaultsKeys {
-    var didUserGaveContactsPermission: DefaultsKey<Bool?> { .init(UserDefaultKey.didUserGaveContactsPermission.rawValue, defaultValue: false) }
+    var didUserGaveContactsPermission: DefaultsKey<Bool> { .init(UserDefaultKey.didUserGaveContactsPermission.rawValue, defaultValue: false) }
 }

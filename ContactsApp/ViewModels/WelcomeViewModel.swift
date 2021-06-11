@@ -21,8 +21,8 @@ struct WelcomeViewModel {
 		defaults.canAccessContacts = !shouldShowAgain
     }
 	
-	var isPermissionGivenToAccessContacts: Bool {
-		CNContactStore.authorizationStatus(for: .contacts) == .authorized
+	var contactPermissionStatus: CNAuthorizationStatus {
+		CNContactStore.authorizationStatus(for: .contacts)
 	}
 
 }

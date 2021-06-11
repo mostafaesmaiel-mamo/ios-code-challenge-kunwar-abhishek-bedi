@@ -19,6 +19,7 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgh-hD-0YH">
                                 <rect key="frame" x="0.0" y="44" width="414" height="738"/>
+                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="wfG-dr-FBQ" kind="embed" id="5ln-uy-ih1"/>
                                 </connections>
@@ -64,6 +65,7 @@
                     <navigationItem key="navigationItem" id="GpF-EG-YVo"/>
                     <connections>
                         <outlet property="containerView" destination="zgh-hD-0YH" id="Hhn-c6-O93"/>
+                        <outlet property="footerView" destination="Xjd-a8-Zwp" id="mtt-3c-NxX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wpK-aJ-s4b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

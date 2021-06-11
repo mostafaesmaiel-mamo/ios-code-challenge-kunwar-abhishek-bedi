@@ -9,7 +9,10 @@ import UIKit
 
 class ChooseRecipientViewController: UIViewController {
     
+	//MARK: - IBOutlets
     @IBOutlet weak var containerView: UIView!
+	
+	//MARK: - ViewController Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "#Choose Recipient"

@@ -1,16 +1,26 @@
 PODS:
+  - iOS-Utils (1.6.2):
+    - iOS-Utils/AlertController (= 1.6.2)
+    - iOS-Utils/Designable (= 1.6.2)
+    - iOS-Utils/Keyboard (= 1.6.2)
+  - iOS-Utils/AlertController (1.6.2)
+  - iOS-Utils/Designable (1.6.2)
+  - iOS-Utils/Keyboard (1.6.2)
   - SwiftyUserDefaults (5.3.0)
 
 DEPENDENCIES:
+  - iOS-Utils (~> 1.6)
   - SwiftyUserDefaults (~> 5.3)
 
 SPEC REPOS:
   trunk:
+    - iOS-Utils
     - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
+  iOS-Utils: 967a5bd519f2b4e9353837bef30bacad78cb4063
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
 
-PODFILE CHECKSUM: 7cfa7ce9ed52f78b2780a7a2e2785022bc549d44
+PODFILE CHECKSUM: 26c6b6e3d810310875cdce22ec9442737e12e26f
 
 COCOAPODS: 1.10.1

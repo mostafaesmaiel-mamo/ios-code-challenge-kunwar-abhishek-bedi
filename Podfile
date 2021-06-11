@@ -5,6 +5,7 @@ target 'ContactsApp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'SwiftyUserDefaults', '~> 5.3'
+  pod 'iOS-Utils', '~> 1.6'
 
   # Pods for ContactsApp
 

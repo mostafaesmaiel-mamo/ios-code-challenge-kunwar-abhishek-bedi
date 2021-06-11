@@ -36,6 +36,7 @@
 		3B89FB3F26721F3A0002BDA6 /* UserDefaultsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FB3E26721F3A0002BDA6 /* UserDefaultsUtility.swift */; };
 		3B89FB41267226930002BDA6 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FB40267226930002BDA6 /* WelcomeViewModel.swift */; };
 		3B89FB44267226F20002BDA6 /* WelcomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FB43267226F20002BDA6 /* WelcomeViewModelTests.swift */; };
+		3B89FB4626735CC80002BDA6 /* MamoDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FB4526735CC80002BDA6 /* MamoDefaults.swift */; };
 		4628D9AB37F6DFDB68976DD2 /* Pods_ContactsApp_ContactsAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C078B7827CAC0F5218832A /* Pods_ContactsApp_ContactsAppUITests.framework */; };
 		95510183EE1FE55104A2B2FA /* Pods_ContactsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7504BC5DEC94BD9C9E069817 /* Pods_ContactsApp.framework */; };
 		CCA4014F9A94540DF602B9F7 /* Pods_ContactsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9862801D149D3C74F5B1AACA /* Pods_ContactsAppTests.framework */; };
@@ -95,6 +96,7 @@
 		3B89FB3E26721F3A0002BDA6 /* UserDefaultsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtility.swift; sourceTree = "<group>"; };
 		3B89FB40267226930002BDA6 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		3B89FB43267226F20002BDA6 /* WelcomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModelTests.swift; sourceTree = "<group>"; };
+		3B89FB4526735CC80002BDA6 /* MamoDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MamoDefaults.swift; sourceTree = "<group>"; };
 		55415A858BD8904245EBC8CA /* Pods-ContactsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ContactsAppTests/Pods-ContactsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7504BC5DEC94BD9C9E069817 /* Pods_ContactsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContactsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9862801D149D3C74F5B1AACA /* Pods_ContactsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContactsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +185,7 @@
 				3B131DCB2670DB570080F4D6 /* NSObject+Extension.swift */,
 				3B131DD6267107A20080F4D6 /* MamoColor.swift */,
 				3B89FB3E26721F3A0002BDA6 /* UserDefaultsUtility.swift */,
+				3B89FB4526735CC80002BDA6 /* MamoDefaults.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				3B89FB39267206A30002BDA6 /* WelcomeViewController.swift in Sources */,
 				3B89FB41267226930002BDA6 /* WelcomeViewModel.swift in Sources */,
 				3B131DB82670B1550080F4D6 /* HeaderView.swift in Sources */,
+				3B89FB4626735CC80002BDA6 /* MamoDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

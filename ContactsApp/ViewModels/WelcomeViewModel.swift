@@ -4,22 +4,25 @@
 //
 //  Created by kbedi on 10/06/2021.
 //
-
-import Foundation
-import SwiftyUserDefaults
+import Contacts
 
 struct WelcomeViewModel {
-    var canShowPermissionPrimingAlert: Bool {
-        didSet {
-            Defaults[\.didUserGaveContactsPermission] = canShowPermissionPrimingAlert
-        }
-    }
+	private let defaults: MamoDefaults
+	
+	init(defaults: MamoDefaults = MamoDefaults.shared) {
+		self.defaults = defaults
+	}
+	
+	var shouldShowPermissionPrimingAlert: Bool {
+		!defaults.canAccessContacts
+	}
     
-    init(canShowPermissionPrimingAlert: Bool = Defaults[\.didUserGaveContactsPermission]) {
-        self.canShowPermissionPrimingAlert = canShowPermissionPrimingAlert
+    func updateShowPermissionPrimingAlert(shouldShowAgain: Bool) {
+		defaults.canAccessContacts = !shouldShowAgain
     }
-    
-    mutating func updateShowPermissionPrimingAlert(shouldShowAgain: Bool) {
-        self.canShowPermissionPrimingAlert = shouldShowAgain
-    }
+	
+	var isPermissionGivenToAccessContacts: Bool {
+		CNContactStore.authorizationStatus(for: .contacts) == .authorized
+	}
+
 }

@@ -5,13 +5,13 @@
 //  Created by kbedi on 10/06/2021.
 //
 
-import Foundation
 import SwiftyUserDefaults
 
 enum UserDefaultKey: StringLiteralType {
-    case didUserGaveContactsPermission
+    case canAccessContacts
 }
 
 extension DefaultsKeys {
-    var didUserGaveContactsPermission: DefaultsKey<Bool> { .init(UserDefaultKey.didUserGaveContactsPermission.rawValue, defaultValue: false) }
+    var canAccessContacts: DefaultsKey<Bool> { .init(UserDefaultKey.canAccessContacts.rawValue, defaultValue: false) }
 }
+

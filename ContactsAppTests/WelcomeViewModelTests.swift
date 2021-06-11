@@ -31,13 +31,4 @@ class WelcomeViewModelTests: XCTestCase {
         XCTAssertTrue(viewModel.shouldShowPermissionPrimingAlert)
     }
 
-    func testPermissionPrimingUpdate() throws {
-		
-		/// User should not see alert once he has given access
-		userDefaults.canAccessContacts = false
-
-        viewModel.updateShowPermissionPrimingAlert(shouldShowAgain:false)
-        XCTAssertFalse(viewModel.shouldShowPermissionPrimingAlert)
-    }
-
 }

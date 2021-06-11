@@ -16,10 +16,6 @@ struct WelcomeViewModel {
 	var shouldShowPermissionPrimingAlert: Bool {
 		!defaults.canAccessContacts
 	}
-    
-    func updateShowPermissionPrimingAlert(shouldShowAgain: Bool) {
-		defaults.canAccessContacts = !shouldShowAgain
-    }
 	
 	var contactPermissionStatus: CNAuthorizationStatus {
 		CNContactStore.authorizationStatus(for: .contacts)

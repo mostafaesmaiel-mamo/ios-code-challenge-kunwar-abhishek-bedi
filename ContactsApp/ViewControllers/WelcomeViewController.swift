@@ -6,13 +6,16 @@
 //
 
 import UIKit
-import iOS_Utils
 import Contacts
 
 class WelcomeViewController: UIViewController {
 
-    let viewModel = WelcomeViewModel()
+    private let viewModel = WelcomeViewModel()
     
+	private let contactAccessMessage = "#Hi! We would like you to grant us access to your contacts so that we can give you an amazing payment experience"
+	private let contactAccessDeniedMessage = "#Hi! It seems that you have not given us access to your contacts. Please provide access via Settings apps. We dont store any personal information."
+	private let contactAccessRestrictedMessage = "#Hi! It seems that you have active restrictions such as parental controls, etc in place."
+
     
     //:MARK - View Controller Lifecycle Methods
     override func viewDidLoad() {
@@ -23,54 +26,47 @@ class WelcomeViewController: UIViewController {
     
     
     //MARK: - IBActions
-	fileprivate func showPermissionPrimingAlert(onOkayAction: @escaping () -> ()) {
-
-		let alert = UIAlertController(title: "#Permission Priming Alert", message: "#Hi! We would like you to grant us access to your contacts so that we can give you an amazing payment experience", preferredStyle: .actionSheet, alertActions: [
-			.okay({ _ in
-				// Okay Pressed
-				onOkayAction()
-			})
-		])
-		present(alert, animated: true)
-    }
-    
     @IBAction func onEnglishButtonPressed(_ sender: Any) {
-        
-        if viewModel.shouldShowPermissionPrimingAlert {
-			showPermissionPrimingAlert {[weak self] in
-				// WIP
-			}
-        }
+		
+		switch viewModel.contactPermissionStatus {
+			
+			case .notDetermined:
+				showPermissionPrimingAlert(message: contactAccessMessage) {
+					self.requestContactsAccess {[weak self] access in
+						print("Access: \(access)")
+						if access {
+							self?.showContactViewController()
+						}
+						else {
+							print("User Denied Access")
+						}
+					}
+				}
+			
+			case .restricted:
+				showPermissionPrimingAlert(message: contactAccessRestrictedMessage)
+
+			case .denied:
+				showPermissionPrimingAlert(message: contactAccessDeniedMessage, onOkayAction: requestPermissionViaSettings)
+							
+			case .authorized:
+				showContactViewController()
+
+			@unknown default:
+				fatalError()
+		}
     }
     
     @IBAction func onArabicButtonPressed(_ sender: Any) {
-    
+		// WIP
     }
     
 }
 
-//MARK: - Contact Access
+//MARK: - Other Private Functions
 fileprivate extension WelcomeViewController {
-	func requestContactsAccessAgain() {
-		CNContactStore().requestAccess(for: .contacts) { (access, error) in
-			print("Access: \(access)")
-		}
+	func showContactViewController() {
+		let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: ChooseRecipientViewController.name)
+		navigationController?.pushViewController(vc, animated: true)
 	}
-	
-	func askUserToGivePermissionAgain() {
-		UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-	}
-		
-    func requestContactsAccess() {
-        // WIP
-		let status:CNAuthorizationStatus = CNContactStore.authorizationStatus(for: .contacts)
-		
-		switch status {
-			case .denied, .notDetermined: break
-			//            askUserToGivePermissionAgain()
-			//            requestContactsAccessAgain()
-			default:
-				break
-		}
-    }
 }

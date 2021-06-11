@@ -32,6 +32,11 @@
 		3B4AD8B32670203800493D47 /* ContactsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD8B22670203800493D47 /* ContactsAppTests.swift */; };
 		3B4AD8BE2670203800493D47 /* ContactsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD8BD2670203800493D47 /* ContactsAppUITests.swift */; };
 		3B60DD622673F8CF003E4D7A /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B60DD612673F8CF003E4D7A /* ContactsManager.swift */; };
+		3B60DD652673FDA7003E4D7A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B60DD642673FDA7003E4D7A /* Request.swift */; };
+		3B60DD672673FDEE003E4D7A /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B60DD662673FDEE003E4D7A /* Networking.swift */; };
+		3B60DD692673FE09003E4D7A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B60DD682673FE09003E4D7A /* NetworkError.swift */; };
+		3B60DD6B2673FE8B003E4D7A /* URLSession+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B60DD6A2673FE8B003E4D7A /* URLSession+Networking.swift */; };
+		3B60DD6D2674020C003E4D7A /* MamoAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B60DD6C2674020C003E4D7A /* MamoAccounts.swift */; };
 		3B89FB39267206A30002BDA6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FB38267206A30002BDA6 /* WelcomeViewController.swift */; };
 		3B89FB3D26720C810002BDA6 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FB3C26720C810002BDA6 /* UIView+Extension.swift */; };
 		3B89FB3F26721F3A0002BDA6 /* UserDefaultsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FB3E26721F3A0002BDA6 /* UserDefaultsUtility.swift */; };
@@ -95,6 +100,11 @@
 		3B4AD8BD2670203800493D47 /* ContactsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsAppUITests.swift; sourceTree = "<group>"; };
 		3B4AD8BF2670203800493D47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B60DD612673F8CF003E4D7A /* ContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
+		3B60DD642673FDA7003E4D7A /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		3B60DD662673FDEE003E4D7A /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		3B60DD682673FE09003E4D7A /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		3B60DD6A2673FE8B003E4D7A /* URLSession+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Networking.swift"; sourceTree = "<group>"; };
+		3B60DD6C2674020C003E4D7A /* MamoAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MamoAccounts.swift; sourceTree = "<group>"; };
 		3B89FB38267206A30002BDA6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		3B89FB3C26720C810002BDA6 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3B89FB3E26721F3A0002BDA6 /* UserDefaultsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtility.swift; sourceTree = "<group>"; };
@@ -233,6 +243,8 @@
 				3B4AD89B2670203500493D47 /* AppDelegate.swift */,
 				3B4AD89D2670203500493D47 /* SceneDelegate.swift */,
 				3B60DD612673F8CF003E4D7A /* ContactsManager.swift */,
+				3B60DD6C2674020C003E4D7A /* MamoAccounts.swift */,
+				3B60DD632673FD5E003E4D7A /* Networking */,
 				3B131DD32670F57D0080F4D6 /* Protocols */,
 				3B131DCA2670DA8D0080F4D6 /* Utils */,
 				3B131DC72670D1980080F4D6 /* Cells */,
@@ -265,6 +277,17 @@
 				3B4AD8BF2670203800493D47 /* Info.plist */,
 			);
 			path = ContactsAppUITests;
+			sourceTree = "<group>";
+		};
+		3B60DD632673FD5E003E4D7A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3B60DD642673FDA7003E4D7A /* Request.swift */,
+				3B60DD662673FDEE003E4D7A /* Networking.swift */,
+				3B60DD682673FE09003E4D7A /* NetworkError.swift */,
+				3B60DD6A2673FE8B003E4D7A /* URLSession+Networking.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		3B89FB372671FCDE0002BDA6 /* Storyboards */ = {
@@ -558,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B131DDF26713E070080F4D6 /* ChooseRecipientViewController.swift in Sources */,
+				3B60DD652673FDA7003E4D7A /* Request.swift in Sources */,
 				3B89FB4A2673B8FB0002BDA6 /* LoaderView.swift in Sources */,
 				3B131DCF2670E8090080F4D6 /* ContactCell.swift in Sources */,
 				3B131DDC267138180080F4D6 /* FooterView.swift in Sources */,
@@ -571,13 +595,17 @@
 				3B60DD622673F8CF003E4D7A /* ContactsManager.swift in Sources */,
 				3B131DD22670E95A0080F4D6 /* ContactProtocol.swift in Sources */,
 				3B131DCC2670DB570080F4D6 /* NSObject+Extension.swift in Sources */,
+				3B60DD6D2674020C003E4D7A /* MamoAccounts.swift in Sources */,
 				3B4AD8A02670203500493D47 /* ChooseContactCollectionViewController.swift in Sources */,
 				3B4AD89C2670203500493D47 /* AppDelegate.swift in Sources */,
 				3B131DD92671351D0080F4D6 /* RoundedImageView.swift in Sources */,
 				3B4AD89E2670203500493D47 /* SceneDelegate.swift in Sources */,
 				3B89FB3F26721F3A0002BDA6 /* UserDefaultsUtility.swift in Sources */,
 				3B89FB39267206A30002BDA6 /* WelcomeViewController.swift in Sources */,
+				3B60DD672673FDEE003E4D7A /* Networking.swift in Sources */,
+				3B60DD6B2673FE8B003E4D7A /* URLSession+Networking.swift in Sources */,
 				3B89FB41267226930002BDA6 /* WelcomeViewModel.swift in Sources */,
+				3B60DD692673FE09003E4D7A /* NetworkError.swift in Sources */,
 				3B131DB82670B1550080F4D6 /* HeaderView.swift in Sources */,
 				3B89FB4626735CC80002BDA6 /* MamoDefaults.swift in Sources */,
 			);

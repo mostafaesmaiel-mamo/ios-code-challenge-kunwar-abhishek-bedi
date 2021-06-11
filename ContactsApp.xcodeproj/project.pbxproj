@@ -153,7 +153,6 @@
 			children = (
 				3B131DB72670B1550080F4D6 /* HeaderView.swift */,
 				3B131DB92670B5440080F4D6 /* HeaderView.xib */,
-				3B131DD82671351D0080F4D6 /* RoundedImageView.swift */,
 				3B131DDA267138180080F4D6 /* FooterView.swift */,
 				3B131DDB267138180080F4D6 /* FooterView.xib */,
 			);
@@ -274,6 +273,7 @@
 		3B89FB3B26720A570002BDA6 /* ReusableComponents */ = {
 			isa = PBXGroup;
 			children = (
+				3B131DD82671351D0080F4D6 /* RoundedImageView.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";

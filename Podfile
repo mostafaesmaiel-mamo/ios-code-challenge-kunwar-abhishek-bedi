@@ -6,6 +6,7 @@ target 'ContactsApp' do
   use_frameworks!
   pod 'SwiftyUserDefaults', '~> 5.3'
   pod 'iOS-Utils', '~> 1.6'
+	pod 'Alamofire', '~> 5.4'
 
   # Pods for ContactsApp
 

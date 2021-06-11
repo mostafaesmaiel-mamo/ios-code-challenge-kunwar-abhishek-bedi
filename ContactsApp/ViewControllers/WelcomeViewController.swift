@@ -66,7 +66,10 @@ class WelcomeViewController: UIViewController {
 //MARK: - Other Private Functions
 fileprivate extension WelcomeViewController {
 	func showContactViewController() {
-		let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: ChooseRecipientViewController.name)
+		guard let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: ChooseRecipientViewController.name) as? ChooseRecipientViewController else {
+			return
+		}
+		vc.configure()
 		navigationController?.pushViewController(vc, animated: true)
 	}
 }

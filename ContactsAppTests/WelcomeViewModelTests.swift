@@ -11,30 +11,33 @@ import XCTest
 class WelcomeViewModelTests: XCTestCase {
 
     var viewModel:WelcomeViewModel!
-    private var userDefaults: UserDefaults!
+    private var userDefaults: MamoDefaults!
 
     override func setUpWithError() throws {
         super.setUp()
-        viewModel = WelcomeViewModel()
+		userDefaults = MamoDefaults(suiteName: #file)
+
+		viewModel = WelcomeViewModel(defaults: userDefaults)
     }
 
     override func tearDownWithError() throws {
         viewModel = nil
+		userDefaults.removePersistentDomain(forName: #file)
+		userDefaults.removeSuite(named: #file)
     }
 
     func testPermissionPriming() throws {
-        XCTAssertFalse(viewModel.canShowPermissionPrimingAlert)
-
-        viewModel = WelcomeViewModel(canShowPermissionPrimingAlert: true)
-        XCTAssertTrue(viewModel.canShowPermissionPrimingAlert)
+		userDefaults.canAccessContacts = false
+        XCTAssertTrue(viewModel.shouldShowPermissionPrimingAlert)
     }
 
     func testPermissionPrimingUpdate() throws {
-        XCTAssertFalse(viewModel.canShowPermissionPrimingAlert)
-        
-        viewModel.updateShowPermissionPrimingAlert(shouldShowAgain:true)
+		
+		/// User should not see alert once he has given access
+		userDefaults.canAccessContacts = false
 
-        XCTAssertTrue(viewModel.canShowPermissionPrimingAlert)
+        viewModel.updateShowPermissionPrimingAlert(shouldShowAgain:false)
+        XCTAssertFalse(viewModel.shouldShowPermissionPrimingAlert)
     }
 
 }

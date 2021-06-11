@@ -6,11 +6,10 @@
 //
 import ContactsUI
 
-
 /// To fetch contacts from Phone
 protocol PhoneContactsFetchable {
-	var store: CNContactStore {get set}
-	var keys: [String] {get set}
+	var store: CNContactStore { get set }
+	var keys: [String] { get set }
 	func fetchContacts(onCompletion: @escaping (Bool) -> ())
 }
 

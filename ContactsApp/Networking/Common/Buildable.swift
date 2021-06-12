@@ -58,6 +58,10 @@ extension Buildable {
 		return nil
 	}
 	
+	var headers: Headers {
+		return [:]
+	}
+	
 	func asURLRequest() throws -> URLRequest {
 		guard let formedURL = url else {
 			throw URLError.urlMalformatted

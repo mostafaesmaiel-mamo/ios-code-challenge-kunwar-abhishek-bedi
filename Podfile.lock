@@ -7,24 +7,28 @@ PODS:
   - iOS-Utils/AlertController (1.6.2)
   - iOS-Utils/Designable (1.6.2)
   - iOS-Utils/Keyboard (1.6.2)
+  - SwiftyJSON (5.0.1)
   - SwiftyUserDefaults (5.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
   - iOS-Utils (~> 1.6)
+  - SwiftyJSON (~> 5.0)
   - SwiftyUserDefaults (~> 5.3)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - iOS-Utils
+    - SwiftyJSON
     - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   iOS-Utils: 967a5bd519f2b4e9353837bef30bacad78cb4063
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
 
-PODFILE CHECKSUM: 396a95fb4ac5ad3480bfb6578b6ea6dbee8e3365
+PODFILE CHECKSUM: 9d10c7a4c57e1f495e7bec79b9163e3eb15a1881
 
 COCOAPODS: 1.10.1

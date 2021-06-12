@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - MamoAccounts
-struct MamoAccounts: Codable {
+struct MamoAccounts: Resultable {
 	let mamoAccounts: [MamoAccount]?
 }
 

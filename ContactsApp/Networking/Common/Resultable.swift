@@ -21,6 +21,24 @@ protocol Resultable: Codable {
 	static func result<T: Resultable>(responseData: Data, response: HTTPURLResponse?) -> ServiceResult<T>
 }
 
+extension Resultable {
+	func result() -> ServiceResult<Self> {
+		return .success(self)
+	}
+	
+	static func result<T: Resultable>(responseData: Data, response: HTTPURLResponse?) -> ServiceResult<T> {
+		do {
+			let object = try JSONDecoder().decode(T.self, from: responseData)
+			return object.result()
+		} catch let exception {
+			print(exception)
+			return .failure(ServiceError(error: exception.localizedDescription))
+		}
+	}
+}
+
+
+
 struct ServiceError: Error {
 	let error: String
 	

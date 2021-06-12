@@ -9,8 +9,8 @@ import Foundation
 
 enum ContactsService: Buildable {
 
-	case searchAccounts(params:[String:Any])
-	
+	case searchAccounts(emails: [String], orPhones: [String])
+
 	var url: URL? {
 		let baseUrl = AppConstants.baseUrl
 		var relativePath: String?
@@ -27,8 +27,9 @@ enum ContactsService: Buildable {
 	
 	var params: Params? {
 		switch self {
-			case .searchAccounts(let params):
-				return params
+			case .searchAccounts(let emails, let phones):
+				return ["emails": emails,
+						"phones": phones]
 		}
 	}
 	

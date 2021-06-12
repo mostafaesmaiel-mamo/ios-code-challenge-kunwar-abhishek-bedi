@@ -15,7 +15,7 @@ class ContactsServiceTests: XCTestCase {
 	
 	func testContactServiceWithEmptyParams() throws {
 		
-		service = ContactsService.searchAccounts(params: [:])
+		service = ContactsService.searchAccounts(emails: [], orPhones: [])
 		XCTAssertEqual(service.url?.absoluteString, "https://60adf30580a61f001733208d.mockapi.io/api/v2/accounts")
 	}
 	
@@ -39,7 +39,9 @@ class ContactsServiceTests: XCTestCase {
 }
 """
 		let params = try XCTUnwrap(JSON(parseJSON: jsonString).dictionaryObject)
-		service = ContactsService.searchAccounts(params: params)
+		let emails = try XCTUnwrap(params["emails"]) as! [String]
+		let phones = try XCTUnwrap(params["phones"]) as! [String]
+		service = ContactsService.searchAccounts(emails: emails, orPhones: phones)
 		let serviceParams = try XCTUnwrap(service.params)
 		
 		XCTAssertTrue(serviceParams.keys.contains("emails"))

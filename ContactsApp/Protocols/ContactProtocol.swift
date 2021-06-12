@@ -10,7 +10,7 @@ import ContactsUI
 protocol PhoneContactsFetchable {
 	var store: CNContactStore { get set }
 	var keys: [String] { get set }
-	func fetchContacts(onCompletion: @escaping (Bool) -> ())
+	func fetchContacts(onCompletion: @escaping ([CNContact]) -> ())
 }
 
 /// To present the contact on UI

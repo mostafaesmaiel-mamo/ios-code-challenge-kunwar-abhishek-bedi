@@ -7,22 +7,28 @@
 import ContactsUI
 
 struct ContactsManager: PhoneContactsFetchable {
-	
+
 	var store: CNContactStore = CNContactStore()
-	var keys: [String] = [CNContactPhoneNumbersKey]
+	var keys: [String] = [CNContactGivenNameKey,
+						  CNContactFamilyNameKey,
+						  CNContactImageDataKey,
+						  CNContactThumbnailImageDataKey,
+						  CNContactPhoneNumbersKey,
+						  CNContactEmailAddressesKey]
 	
-	func fetchContacts(onCompletion: @escaping (Bool) -> ()) {
-		
+	func fetchContacts(onCompletion: @escaping ([CNContact]) -> ()) {
+		var fetchedContacts: [CNContact] = []
 		let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
 		do {
-			try store.enumerateContacts(with: request, usingBlock: { (contact, stopPointer)
+			try store.enumerateContacts(with: request, usingBlock: {(contact, stopPointer)
 				in
+				fetchedContacts.append(contact)
 				print(contact.description)
-				onCompletion(true)
+				onCompletion(fetchedContacts)
 			})
 		} catch let error {
 			print("Failed to enumerate contact", error)
-			onCompletion(false)
+			onCompletion([])
 		}
 	}
 }

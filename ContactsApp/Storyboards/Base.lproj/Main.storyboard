@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="738"/>
                                 <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="wfG-dr-FBQ" kind="embed" id="5ln-uy-ih1"/>
+                                    <segue destination="wfG-dr-FBQ" kind="embed" identifier="segue_embed" id="5ln-uy-ih1"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xjd-a8-Zwp" userLabel="Footer View">

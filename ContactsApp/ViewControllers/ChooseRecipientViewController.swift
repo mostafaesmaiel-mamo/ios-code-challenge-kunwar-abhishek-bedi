@@ -15,6 +15,8 @@ class ChooseRecipientViewController: UIViewController {
 
 	//MARK: - Variables
 	private var contactManager: PhoneContactsFetchable!
+	private var viewModel: ChooseRecipientViewModel =  ChooseRecipientViewModel()
+	private var collectionViewController: ChooseContactCollectionViewController!
 	lazy var loader = LoaderView()
 	
 	//MARK: - ViewController Lifecycle Methods
@@ -35,6 +37,17 @@ class ChooseRecipientViewController: UIViewController {
 	}
 }
 
+extension ChooseRecipientViewController {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "segue_embed" {
+			if let vc = segue.destination as? ChooseContactCollectionViewController {
+				collectionViewController = vc
+			}
+		}
+	}
+}
+
+//MARK: - Contacts Related Functions
 fileprivate extension ChooseRecipientViewController {
 	
 	func fetchPhoneContacts() {

@@ -41,10 +41,11 @@ fileprivate extension ChooseRecipientViewController {
 		showHideViewsWhileLoading(canShow: false)
 		loader.showOn(self.view)
 		
-		contactManager.fetchContacts() { [weak self] isSuccess in
-			DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+		contactManager.fetchContacts { [weak self] phoneContacts in
+			DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // Deliberately put to show the spinner
 				self?.showHideViewsWhileLoading(canShow: true)
 				self?.loader.hide()
+				
 			}
 		}
 	}

@@ -7,8 +7,9 @@
 
 import Foundation
 
-enum Section {
-    case frequentContacts
+enum Section: IntegerLiteralType, RawRepresentable {
+	
+    case frequentContacts = 0
     case mamoContacts
     case phoneContacts
     

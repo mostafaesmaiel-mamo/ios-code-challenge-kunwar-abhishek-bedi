@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContactCell: UICollectionViewCell {
+final class ContactCell: UICollectionViewCell {
    
     @IBOutlet private weak var firstNameLabel: UILabel!
     @IBOutlet private weak var lastNameLabel: UILabel!
@@ -23,7 +23,7 @@ class ContactCell: UICollectionViewCell {
         reset()
     }
     
-    func reset() {
+    private func reset() {
         firstNameLabel.text = nil
         lastNameLabel.text = nil
         imageView.image = nil
@@ -32,6 +32,12 @@ class ContactCell: UICollectionViewCell {
 }
 
 extension ContactCell: ContactPresentable {
+	func configure(withContact contact: ContactProtocol) {
+		firstNameLabel.text = contact.firstName
+		lastNameLabel.text = contact.lastName
+		imageView.image = UIImage(named: "Vector")
+	}
+	
     func configure(withFirstName firstName: String, lastName: String, imageUrl: String? = nil) {
         firstNameLabel.text = firstName
         lastNameLabel.text = lastName

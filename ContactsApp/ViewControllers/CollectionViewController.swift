@@ -7,8 +7,10 @@
 
 import UIKit
 
-class ChooseContactCollectionViewController: UICollectionViewController {
+class CollectionViewController: UICollectionViewController {
 
+	private var viewModel: ContactViewModel = ContactViewModel()
+	
     fileprivate let sectionContentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
     
     var sections: [Section] = []
@@ -20,16 +22,20 @@ class ChooseContactCollectionViewController: UICollectionViewController {
         setupSections()
         setupCollectionView()
     }
+	
+	func configure(withContacts contacts:[ContactProtocol]) {
+		viewModel.configure(withContacts: contacts)
+	}
 }
 
 //MARK:- UICollectionViewCallbacks
-extension ChooseContactCollectionViewController {
+extension CollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         sections.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+		viewModel.numberOfRow(inSection: section)
     }
     
     func frequentContactCell(_ collectionView: UICollectionView, forIndexPath indexPath: IndexPath) -> FrequentContactCell? {
@@ -53,25 +59,35 @@ extension ChooseContactCollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let contactSection = sections[indexPath.section]
-        
-        switch contactSection {
-        case .frequentContacts:
-            
-            if let cell = frequentContactCell(collectionView, forIndexPath: indexPath) {
-                cell.configure(withFirstName: "#Takreem", lastName: "#Sami")
-                return cell
-            }
+		guard let contact = viewModel.contact(atIndex: indexPath.row) else {
+			return UICollectionViewCell()
+		}
+		
+        let section = sections[indexPath.section]
 
-        case .mamoContacts, .phoneContacts:
+		switch section {
+			case .frequentContacts:
+				
+				if let cell = frequentContactCell(collectionView, forIndexPath: indexPath) {
+					cell.configure(withContact: contact)
+					return cell
+				}
+				
+			case .mamoContacts:
+				
+				if let cell = otherContactCell(collectionView, forIndexPath: indexPath) {
+					cell.configure(withContact: contact)
+					return cell
+				}
+				
+			case .phoneContacts:
+				if let cell = otherContactCell(collectionView, forIndexPath: indexPath) {
+					cell.configure(withContact: contact)
+					return cell
+				}
+		}
 
-            if let cell = otherContactCell(collectionView, forIndexPath: indexPath) {
-                cell.configure(withFirstName: "#Takreem", lastName: "#Sami")
-                return cell
-            }
-        }
-        
-        return UICollectionViewCell()
+		return UICollectionViewCell()
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -86,7 +102,7 @@ extension ChooseContactCollectionViewController {
 }
 
 
-private extension ChooseContactCollectionViewController {
+private extension CollectionViewController {
     
     func setupSections() {
         sections.append(.frequentContacts)
@@ -109,6 +125,7 @@ private extension ChooseContactCollectionViewController {
     
     func frequentContactsSection(contentInset: NSDirectionalEdgeInsets,
                                              headerId: String) -> NSCollectionLayoutSection? {
+		//TODO: - Centralize dimensions
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(70 * 2), heightDimension: .absolute(107 * 2)))
         item.contentInsets.trailing = 16
         item.contentInsets.bottom = 16

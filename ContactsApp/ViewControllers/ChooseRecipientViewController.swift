@@ -57,23 +57,17 @@ fileprivate extension ChooseRecipientViewController {
 	
 	func updateCollectionViewController(contacts: [ContactProtocol]) {
 		collectionViewController.configure(withContacts: contacts)
-		
-//		configure(withPhoneContacts: phoneContacts)
-		//viewmodel.phoneContacts = phoneContacts
 	}
 	
 	func fetchPhoneContacts() {
 		showHideViewsWhileLoading(canShow: false)
 		loader.showOn(self.view)
 		
-		contactManager.fetchContacts { [weak self] phoneContacts in
+		contactManager.fetchPhoneContacts { [weak self] phoneContacts in
 			DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // Deliberately put to show the spinner
 				self?.showHideViewsWhileLoading(canShow: true)
 				self?.loader.hide()
-				
 				self?.updateCollectionViewController(contacts: phoneContacts)
-//				self?.collectionViewController.viewModel.configure(withContacts: phoneContacts: phoneContacts)
-//				self?.collectionViewController.configure(withPhoneContacts: phoneContacts)
 				self?.reload()
 			}
 		}

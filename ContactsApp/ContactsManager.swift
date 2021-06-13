@@ -13,10 +13,12 @@ struct ContactsManager: PhoneContactsFetchable {
 						  CNContactFamilyNameKey,
 						  CNContactImageDataKey,
 						  CNContactThumbnailImageDataKey,
+						  CNContactImageDataKey,
+						  CNContactImageDataAvailableKey,
 						  CNContactPhoneNumbersKey,
 						  CNContactEmailAddressesKey]
 	
-	func fetchContacts(onCompletion: @escaping ([ContactProtocol]) -> ()) {
+	func fetchPhoneContacts(onCompletion: @escaping ([ContactProtocol]) -> ()) {
 		var fetchedContacts: [ContactProtocol] = []
 		let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
 		do {

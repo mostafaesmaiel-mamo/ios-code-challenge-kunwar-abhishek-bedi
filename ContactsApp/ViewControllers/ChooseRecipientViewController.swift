@@ -104,15 +104,7 @@ fileprivate extension ChooseRecipientViewController {
 		
 		phoneContactManager.fetchPhoneContacts { phoneContacts in
 			onCompletion(phoneContacts)
-//			DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // Deliberately put to show the spinner
-//				self?.showHideViewsWhileLoading(canShow: true)
-//				self?.loader.hide()
-//				self?.updateCollectionViewController(contacts: phoneContacts)
-//				self?.reload()
-//				onCompletion(true)
-//			}
 		}
-//		onCompletion(false)
 	}
 	
 	func fetchMamoContacts(emails: [String], phones: [String], onCompletion: @escaping (([ContactProtocol])-> Void)) {

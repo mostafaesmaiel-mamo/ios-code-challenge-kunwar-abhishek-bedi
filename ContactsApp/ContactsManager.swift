@@ -6,10 +6,19 @@
 //
 import ContactsUI
 
-struct ContactsManager: PhoneContactsFetchable {
+enum ContactResult {
+	case success([ContactProtocol])
+	case failure(ServiceError)
+}
 
-	var store: CNContactStore = CNContactStore()
-	var keys: [String] = [CNContactGivenNameKey,
+struct ContactsManager {}
+
+extension ContactsManager: PhoneContactsFetchable {
+	
+	var store: CNContactStore { CNContactStore() }
+	
+	var keys: [String] {
+		[CNContactGivenNameKey,
 						  CNContactFamilyNameKey,
 						  CNContactImageDataKey,
 						  CNContactThumbnailImageDataKey,
@@ -17,6 +26,7 @@ struct ContactsManager: PhoneContactsFetchable {
 						  CNContactImageDataAvailableKey,
 						  CNContactPhoneNumbersKey,
 						  CNContactEmailAddressesKey]
+	}
 	
 	func fetchPhoneContacts(onCompletion: @escaping ([ContactProtocol]) -> ()) {
 		var fetchedContacts: [ContactProtocol] = []
@@ -40,14 +50,40 @@ struct ContactsManager: PhoneContactsFetchable {
 	}
 }
 
-extension CNContact {
+//MARK: - Mamo Contacts API
+extension ContactsManager: MamoContactsFetchable {
+	var networkAdaptor: NetworkAdaptor {
+		NetworkManager()
+	}
+	
+	func fetchSearchMamoContacts(emails: [String], orPhones: [String], onCompletion: @escaping (ContactResult) -> ()) {
+		let service = ContactsService.searchAccounts(emails: emails, orPhones: orPhones)
+		networkAdaptor.process(service, type: MamoAccounts.self) { result in
+			
+			switch result {
+				case .success(let response):
+					if let accounts = response.mamoAccounts, !accounts.isEmpty {
+						onCompletion(.success(accounts))
+					}
+					
+				case .failure(let error):
+					onCompletion(.failure(error))
+			}
+		}
+	}
+	
+}
+
+
+//MARK: - Other Useful Extenstions
+fileprivate extension CNContact {
 	
 	func transform() -> ContactProtocol {
 		ContactBridge.transform(type: self)
 	}
 }
 
-struct ContactBridge {
+fileprivate struct ContactBridge {
 	static func transform(type: CNContact) -> ContactProtocol {
 		return Contact(id: type.identifier,
 							  firstName: type.givenName,

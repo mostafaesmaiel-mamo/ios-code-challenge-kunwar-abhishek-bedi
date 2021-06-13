@@ -15,6 +15,7 @@ enum Section: IntegerLiteralType, RawRepresentable {
     
     var headerTitle: String {
         switch self {
+			//TODO: - remove #
         case .frequentContacts: return "#Frequents"
         case .mamoContacts: return "#Your Friends On Mamo"
         case .phoneContacts: return "#Your Contacts"

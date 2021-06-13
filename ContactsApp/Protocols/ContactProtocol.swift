@@ -6,14 +6,16 @@
 //
 import ContactsUI
 
+protocol ContactFetchable {}
+
 /// To fetch contacts from Phone
-protocol PhoneContactsFetchable {
+protocol PhoneContactsFetchable: ContactFetchable {
 	var store: CNContactStore { get }
 	var keys: [String] { get }
 	func fetchPhoneContacts(onCompletion: @escaping ([ContactProtocol]) -> ())
 }
 
-protocol MamoContactsFetchable {
+protocol MamoContactsFetchable: ContactFetchable {
 	var networkAdaptor: NetworkAdaptor { get }
 	func fetchSearchMamoContacts(emails: [String], orPhones: [String], onCompletion: @escaping (ContactResult) -> ())	
 }

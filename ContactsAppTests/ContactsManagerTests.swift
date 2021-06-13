@@ -1,0 +1,34 @@
+//
+//  ContactsManagerTests.swift
+//  ContactsAppTests
+//
+//  Created by kbedi on 13/06/2021.
+//
+
+import XCTest
+@testable import ContactsApp
+import SwiftyJSON
+
+class ContactsManagerTests: XCTestCase {
+	
+	private var mockAdaptor: MockResponseNetworkAdaptor {
+		MockResponseNetworkAdaptor(fileName: "mock_search_mamo_accounts")
+	}
+	
+	func testContactManagerForSearchMamoContacts() throws {
+		let service = ContactsService.searchAccounts(emails: [], orPhones: [])
+		
+		mockAdaptor.process(service, type: MamoAccounts.self) { result in
+			switch result {
+				case .success(let response):
+					let firstAccount = try? XCTUnwrap(response.mamoAccounts?.first)
+					XCTAssertEqual(firstAccount?.publicName, "Clara J.")
+					
+				case .failure:
+					XCTFail("Test should have passed")
+			}
+		}
+		
+	}
+}
+

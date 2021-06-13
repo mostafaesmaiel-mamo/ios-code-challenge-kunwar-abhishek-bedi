@@ -101,9 +101,8 @@ extension CollectionViewController {
     }
 }
 
-
 private extension CollectionViewController {
-    
+    	
     func setupSections() {
         sections.append(.frequentContacts)
         sections.append(.mamoContacts)

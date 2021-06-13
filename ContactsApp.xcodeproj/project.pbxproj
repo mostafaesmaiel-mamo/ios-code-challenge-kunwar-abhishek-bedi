@@ -259,7 +259,6 @@
 				3B4AD89B2670203500493D47 /* AppDelegate.swift */,
 				3B4AD89D2670203500493D47 /* SceneDelegate.swift */,
 				3B60DD612673F8CF003E4D7A /* ContactsManager.swift */,
-				3B60DD6C2674020C003E4D7A /* MamoAccounts.swift */,
 				3B60DD7D26741755003E4D7A /* AppConstants.swift */,
 				3BB4561B2675F4E00065DB6E /* Models */,
 				3B60DD632673FD5E003E4D7A /* Networking */,
@@ -302,6 +301,7 @@
 			children = (
 				3B60DD7A26741617003E4D7A /* Common */,
 				3B60DD7B2674164B003E4D7A /* ContactsService.swift */,
+				3BB45620267604560065DB6E /* NetworkModels */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -353,6 +353,14 @@
 				3BB4561C2675F51A0065DB6E /* Contact.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3BB45620267604560065DB6E /* NetworkModels */ = {
+			isa = PBXGroup;
+			children = (
+				3B60DD6C2674020C003E4D7A /* MamoAccounts.swift */,
+			);
+			path = NetworkModels;
 			sourceTree = "<group>";
 		};
 		61945FCBE5C14179ED2E192C /* Pods */ = {

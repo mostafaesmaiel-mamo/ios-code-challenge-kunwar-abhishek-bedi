@@ -14,14 +14,51 @@ class ChooseRecipientViewController: UIViewController {
 	@IBOutlet weak var containerView: UIView!
 	@IBOutlet weak var footerView: UIView!
 
-	//MARK: - Variables
+	//MARK: - Dependencies
 	private var phoneContactManager: PhoneContactsFetchable!
+	private var mamoContactManager: MamoContactsFetchable!
+	
+	//MARK: - Variable
 	private var viewModel =  ChooseRecipientViewModel()
 	private var collectionViewController: CollectionViewController!
 	lazy var loader = LoaderView()
 	
 	//MARK: - ViewController Lifecycle Methods
-    override func viewDidLoad() {
+	fileprivate func fetchContacts() {
+		// Fetch All Contacts
+		showHideViewsWhileLoading(canShow: false)
+		loader.showOn(self.view)
+		
+		fetchPhoneContacts { [weak self] contacts in
+			
+			guard !contacts.isEmpty else {
+				self?.loader.hide()
+				//TODO: - Put an empty screen here
+				return
+			}
+			
+			// Matching Mamo Contacts
+			let emails = contacts.compactMap( { $0.email} )
+			let phones = contacts.compactMap( { $0.phoneNumber} )
+			
+			self?.fetchMamoContacts(emails: emails, phones: phones) { mamoContacts in
+				
+//				mamoContacts.
+				
+				self?.showHideViewsWhileLoading(canShow: true)
+				self?.loader.hide()
+				self?.updateCollectionViewController(contacts: contacts)
+				self?.reload()
+
+			}
+			
+			
+			
+			
+		}
+	}
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "#Choose Recipient"
 		
@@ -29,12 +66,16 @@ class ChooseRecipientViewController: UIViewController {
 			fatalError("Contact Manager Cannot be Nil")
 		}
 		
-		fetchPhoneContacts()
+		fetchContacts()
 	}
 	
 	//MARK: - Configuration Methods
-	func configure(withContactManager manager: PhoneContactsFetchable = ContactsManager()) {
-		phoneContactManager = manager
+	func configure(withPhoneContactManager
+					phoneContactManager: PhoneContactsFetchable = ContactsManager(),
+				   mamoContactManager: MamoContactsFetchable = ContactsManager()
+					) {
+		self.phoneContactManager = phoneContactManager
+		self.mamoContactManager = mamoContactManager
 	}
 }
 
@@ -59,20 +100,38 @@ fileprivate extension ChooseRecipientViewController {
 		collectionViewController.configure(withContacts: contacts)
 	}
 	
-	func fetchPhoneContacts() {
-		showHideViewsWhileLoading(canShow: false)
-		loader.showOn(self.view)
+	func fetchPhoneContacts(onCompletion: @escaping (([ContactProtocol])-> Void)) {
 		
-		phoneContactManager.fetchPhoneContacts { [weak self] phoneContacts in
-			DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // Deliberately put to show the spinner
-				self?.showHideViewsWhileLoading(canShow: true)
-				self?.loader.hide()
-				self?.updateCollectionViewController(contacts: phoneContacts)
-				self?.reload()
+		phoneContactManager.fetchPhoneContacts { phoneContacts in
+			onCompletion(phoneContacts)
+//			DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // Deliberately put to show the spinner
+//				self?.showHideViewsWhileLoading(canShow: true)
+//				self?.loader.hide()
+//				self?.updateCollectionViewController(contacts: phoneContacts)
+//				self?.reload()
+//				onCompletion(true)
+//			}
+		}
+//		onCompletion(false)
+	}
+	
+	func fetchMamoContacts(emails: [String], phones: [String], onCompletion: @escaping (([ContactProtocol])-> Void)) {
+		
+		mamoContactManager.fetchSearchMamoContacts(emails: emails, orPhones: phones) { result in
+			
+			switch result {
+				case .success(let accounts):
+					print(accounts)
+					
+					onCompletion(accounts)
+				case .failure(let error):
+					print(error.error.description)
+					onCompletion([])
 			}
 		}
-	}
 		
+	}
+	
 	func showHideViewsWhileLoading(canShow: Bool) {
 		if canShow {
 			containerView.isHidden = false

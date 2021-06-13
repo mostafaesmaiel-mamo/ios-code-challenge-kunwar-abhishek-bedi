@@ -15,8 +15,8 @@ class ChooseRecipientViewController: UIViewController {
 	@IBOutlet weak var footerView: UIView!
 
 	//MARK: - Variables
-	private var contactManager: PhoneContactsFetchable!
-	private var viewModel: ChooseRecipientViewModel =  ChooseRecipientViewModel()
+	private var phoneContactManager: PhoneContactsFetchable!
+	private var viewModel =  ChooseRecipientViewModel()
 	private var collectionViewController: CollectionViewController!
 	lazy var loader = LoaderView()
 	
@@ -25,7 +25,7 @@ class ChooseRecipientViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "#Choose Recipient"
 		
-		guard contactManager != nil else {
+		guard phoneContactManager != nil else {
 			fatalError("Contact Manager Cannot be Nil")
 		}
 		
@@ -34,7 +34,7 @@ class ChooseRecipientViewController: UIViewController {
 	
 	//MARK: - Configuration Methods
 	func configure(withContactManager manager: PhoneContactsFetchable = ContactsManager()) {
-		contactManager = manager
+		phoneContactManager = manager
 	}
 }
 
@@ -63,7 +63,7 @@ fileprivate extension ChooseRecipientViewController {
 		showHideViewsWhileLoading(canShow: false)
 		loader.showOn(self.view)
 		
-		contactManager.fetchPhoneContacts { [weak self] phoneContacts in
+		phoneContactManager.fetchPhoneContacts { [weak self] phoneContacts in
 			DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // Deliberately put to show the spinner
 				self?.showHideViewsWhileLoading(canShow: true)
 				self?.loader.hide()

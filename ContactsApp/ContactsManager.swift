@@ -11,7 +11,7 @@ enum ContactResult {
 	case failure(ServiceError)
 }
 
-struct ContactsManager {}
+class ContactsManager {}
 
 extension ContactsManager: PhoneContactsFetchable {
 	
@@ -36,17 +36,18 @@ extension ContactsManager: PhoneContactsFetchable {
 				in
 
 				if contact.imageDataAvailable {
-					print(contact.givenName)
+//					print(contact.givenName)
 				}
 				
 				fetchedContacts.append(contact.transform())
-//				print(contact.description)
-				onCompletion(fetchedContacts)
+				print(contact.description)
 			})
 		} catch let error {
 			print("Failed to enumerate contact", error)
 			onCompletion([])
 		}
+		onCompletion(fetchedContacts)
+
 	}
 }
 

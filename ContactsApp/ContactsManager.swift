@@ -16,19 +16,42 @@ struct ContactsManager: PhoneContactsFetchable {
 						  CNContactPhoneNumbersKey,
 						  CNContactEmailAddressesKey]
 	
-	func fetchContacts(onCompletion: @escaping ([CNContact]) -> ()) {
-		var fetchedContacts: [CNContact] = []
+	func fetchContacts(onCompletion: @escaping ([ContactProtocol]) -> ()) {
+		var fetchedContacts: [ContactProtocol] = []
 		let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
 		do {
 			try store.enumerateContacts(with: request, usingBlock: {(contact, stopPointer)
 				in
-				fetchedContacts.append(contact)
-				print(contact.description)
+
+				if contact.imageDataAvailable {
+					print(contact.givenName)
+				}
+				
+				fetchedContacts.append(contact.transform())
+//				print(contact.description)
 				onCompletion(fetchedContacts)
 			})
 		} catch let error {
 			print("Failed to enumerate contact", error)
 			onCompletion([])
 		}
+	}
+}
+
+extension CNContact {
+	
+	func transform() -> ContactProtocol {
+		ContactBridge.transform(type: self)
+	}
+}
+
+struct ContactBridge {
+	static func transform(type: CNContact) -> ContactProtocol {
+		return Contact(id: type.identifier,
+							  firstName: type.givenName,
+							  lastName: type.familyName,
+							  phoneNumber: type.phoneNumbers.first?.value.stringValue,
+							  email: "", //TODO: - Need to fix this
+							  isMamoContact: false, isFrequentContact: false)
 	}
 }

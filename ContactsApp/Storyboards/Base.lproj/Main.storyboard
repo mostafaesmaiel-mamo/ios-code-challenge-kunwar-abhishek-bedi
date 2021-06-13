@@ -75,7 +75,7 @@
         <!--Contact Picker-->
         <scene sceneID="QGa-zZ-xtg">
             <objects>
-                <collectionViewController storyboardIdentifier="ChooseContactViewController" title="Contact Picker" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wfG-dr-FBQ" customClass="ChooseContactCollectionViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="ChooseContactViewController" title="Contact Picker" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wfG-dr-FBQ" customClass="CollectionViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="wuj-yK-IqM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="738"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

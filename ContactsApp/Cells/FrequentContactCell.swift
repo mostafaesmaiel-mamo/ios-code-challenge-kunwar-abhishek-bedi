@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FrequentContactCell: UICollectionViewCell {
+final class FrequentContactCell: UICollectionViewCell {
 
     @IBOutlet private weak var firstNameLabel: UILabel!
     @IBOutlet private weak var lastNameLabel: UILabel!
@@ -24,7 +24,7 @@ class FrequentContactCell: UICollectionViewCell {
         reset()
     }
     
-    func reset() {
+    private func reset() {
         firstNameLabel.text = nil
         lastNameLabel.text = nil
         imageView.image = nil
@@ -45,9 +45,9 @@ class FrequentContactCell: UICollectionViewCell {
 }
 
 extension FrequentContactCell: ContactPresentable {
-    func configure(withFirstName firstName: String, lastName: String, imageUrl: String? = nil) {
-        firstNameLabel.text = firstName
-        lastNameLabel.text = lastName
-        imageView.image = UIImage(named: "bg")
-    }
+	func configure(withContact contact: ContactProtocol) {
+		firstNameLabel.text = contact.firstName
+		lastNameLabel.text = contact.lastName
+		imageView.image = UIImage(named: "bg")
+	}
 }

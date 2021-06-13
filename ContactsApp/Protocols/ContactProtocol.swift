@@ -10,10 +10,22 @@ import ContactsUI
 protocol PhoneContactsFetchable {
 	var store: CNContactStore { get set }
 	var keys: [String] { get set }
-	func fetchContacts(onCompletion: @escaping ([CNContact]) -> ())
+	func fetchContacts(onCompletion: @escaping ([ContactProtocol]) -> ())
+}
+
+/// To present the contact on UI
+protocol ContactProtocol {
+	var id: String {get set}
+	var firstName: String {get set}
+	var lastName: String {get set}
+	var phoneNumber: String? {get set}
+	var email: String? {get set}
+	var isMamoContact: Bool {get set}
+	var isFrequentContact: Bool {get set}
 }
 
 /// To present the contact on UI
 protocol ContactPresentable {
-    func configure(withFirstName firstName: String, lastName: String, imageUrl: String?)
+	func configure(withContact contact: ContactProtocol)
 }
+

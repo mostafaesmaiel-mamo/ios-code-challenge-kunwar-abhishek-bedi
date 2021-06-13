@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Contacts
 
 class ChooseRecipientViewController: UIViewController {
     
@@ -16,7 +17,7 @@ class ChooseRecipientViewController: UIViewController {
 	//MARK: - Variables
 	private var contactManager: PhoneContactsFetchable!
 	private var viewModel: ChooseRecipientViewModel =  ChooseRecipientViewModel()
-	private var collectionViewController: ChooseContactCollectionViewController!
+	private var collectionViewController: CollectionViewController!
 	lazy var loader = LoaderView()
 	
 	//MARK: - ViewController Lifecycle Methods
@@ -40,15 +41,26 @@ class ChooseRecipientViewController: UIViewController {
 extension ChooseRecipientViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "segue_embed" {
-			if let vc = segue.destination as? ChooseContactCollectionViewController {
+			if let vc = segue.destination as? CollectionViewController {
 				collectionViewController = vc
 			}
 		}
+	}
+	
+	func reload() {
+		collectionViewController.collectionView.reloadData()
 	}
 }
 
 //MARK: - Contacts Related Functions
 fileprivate extension ChooseRecipientViewController {
+	
+	func updateCollectionViewController(contacts: [ContactProtocol]) {
+		collectionViewController.configure(withContacts: contacts)
+		
+//		configure(withPhoneContacts: phoneContacts)
+		//viewmodel.phoneContacts = phoneContacts
+	}
 	
 	func fetchPhoneContacts() {
 		showHideViewsWhileLoading(canShow: false)
@@ -59,6 +71,10 @@ fileprivate extension ChooseRecipientViewController {
 				self?.showHideViewsWhileLoading(canShow: true)
 				self?.loader.hide()
 				
+				self?.updateCollectionViewController(contacts: phoneContacts)
+//				self?.collectionViewController.viewModel.configure(withContacts: phoneContacts: phoneContacts)
+//				self?.collectionViewController.configure(withPhoneContacts: phoneContacts)
+				self?.reload()
 			}
 		}
 	}

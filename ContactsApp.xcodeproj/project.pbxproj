@@ -191,9 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				3B4AD89F2670203500493D47 /* CollectionViewController.swift */,
-				3B131DDE26713E070080F4D6 /* ChooseRecipientViewController.swift */,
-				3B1ADCCA2677DF500013F6D1 /* ChooseRecipientViewController+UIStoryboard.swift */,
-				3B1ADCC82677DA410013F6D1 /* ChooseRecipientViewController+Contacts.swift */,
+				3B1ADCD026780D710013F6D1 /* Choose Recipient */,
 				3B89FB38267206A30002BDA6 /* WelcomeViewController.swift */,
 				3B89FB47267376E20002BDA6 /* WelcomeViewController+ContactAccess.swift */,
 			);
@@ -273,6 +271,16 @@
 				3B0FD68E26767823007802FE /* ContactsManagerTests.swift */,
 			);
 			path = ContactManagerTests;
+			sourceTree = "<group>";
+		};
+		3B1ADCD026780D710013F6D1 /* Choose Recipient */ = {
+			isa = PBXGroup;
+			children = (
+				3B131DDE26713E070080F4D6 /* ChooseRecipientViewController.swift */,
+				3B1ADCCA2677DF500013F6D1 /* ChooseRecipientViewController+UIStoryboard.swift */,
+				3B1ADCC82677DA410013F6D1 /* ChooseRecipientViewController+Contacts.swift */,
+			);
+			path = "Choose Recipient";
 			sourceTree = "<group>";
 		};
 		3B4AD88F2670203500493D47 = {

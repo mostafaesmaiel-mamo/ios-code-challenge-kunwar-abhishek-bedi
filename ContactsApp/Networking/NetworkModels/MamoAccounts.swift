@@ -21,7 +21,6 @@ struct MamoAccount: Codable {
 	enum CodingKeys: String, CodingKey {
 		case key, value, publicName
 		case mamoId = "id"
-		
 	}
 }
 

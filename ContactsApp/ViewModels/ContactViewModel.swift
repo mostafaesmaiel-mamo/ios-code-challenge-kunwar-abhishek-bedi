@@ -7,6 +7,7 @@
 import Foundation
 
 struct ContactViewModel {
+	
 	private var contacts: [ContactProtocol] = []
 	
 	mutating func configure(withContacts contacts: [ContactProtocol]) {
@@ -14,6 +15,8 @@ struct ContactViewModel {
 	}
 }
 
+
+//MARK: - CollectionView Related Functions
 extension ContactViewModel {
 	
 	func numberOfItems(inSection section: Int) -> Int {
@@ -44,3 +47,19 @@ extension ContactViewModel {
 	}
 }
 
+//MARK: - Private Extensions
+fileprivate extension Sequence where Self.Element == ContactProtocol {
+	
+	var frequent: [ContactProtocol] {
+		self.filter({$0.isFrequentContact && $0.isDisplayable })
+	}
+	
+	var mamo: [ContactProtocol] {
+		self.filter({ $0.isMamoContact && $0.isDisplayable })
+			+ self.filter({ $0.isFrequentContact && $0.isDisplayable})
+	}
+	
+	var phone: [ContactProtocol] {
+		self.filter({ !$0.isMamoContact && !$0.isFrequentContact && $0.isDisplayable})
+	}
+}

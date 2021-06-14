@@ -37,10 +37,4 @@ extension ContactCell: ContactPresentable {
 		lastNameLabel.text = contact.lastName
 		imageView.image = UIImage(named: "Vector")
 	}
-	
-    func configure(withFirstName firstName: String, lastName: String, imageUrl: String? = nil) {
-        firstNameLabel.text = firstName
-        lastNameLabel.text = lastName
-        imageView.image = UIImage(named: "Vector")
-    }
 }

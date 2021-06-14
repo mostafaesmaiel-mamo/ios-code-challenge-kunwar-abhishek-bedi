@@ -111,3 +111,15 @@ fileprivate extension ChooseRecipientViewController {
 		loader.hide()
 	}
 }
+
+fileprivate extension Sequence where Self.Element == ContactProtocol {
+	var filteredEmails: [String] {
+		self.compactMap { contact in
+			//TODO: - Check if One liner is possible
+			if let email = contact.email, !email.isEmpty {
+				return email
+			}
+			return nil
+		}
+	}
+}

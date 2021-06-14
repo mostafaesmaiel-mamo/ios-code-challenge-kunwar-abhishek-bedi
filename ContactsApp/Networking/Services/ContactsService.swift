@@ -10,6 +10,7 @@ import Foundation
 enum ContactsService: Buildable {
 
 	case searchAccounts(emails: [String], orPhones: [String])
+	case frequentAccounts
 
 	var url: URL? {
 		let baseUrl = AppConstants.baseUrl
@@ -17,6 +18,8 @@ enum ContactsService: Buildable {
 		switch self {
 			case .searchAccounts:
 				relativePath = "api/v2/accounts"
+			case .frequentAccounts:
+				relativePath = "api/v2/frequents"
 		}
 		
 		if let relativePath = relativePath {
@@ -30,17 +33,24 @@ enum ContactsService: Buildable {
 			case .searchAccounts(let emails, let phones):
 				return ["emails": emails,
 						"phones": phones]
+			
+			case .frequentAccounts:
+				return nil
 		}
 	}
 	
 	var method: HTTPMethodType {
 		switch self {
 			case .searchAccounts: return .post
+			case .frequentAccounts: return .get
 		}
 	}
 	
 	var encoding: Encoding {
-		return .json
+		switch self {
+			case .searchAccounts: return .json
+			case .frequentAccounts: return .url
+		}
 	}
 	
 }

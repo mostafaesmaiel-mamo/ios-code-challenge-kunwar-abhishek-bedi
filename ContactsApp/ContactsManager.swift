@@ -11,7 +11,13 @@ enum ContactResult {
 	case failure(ServiceError)
 }
 
-class ContactsManager {}
+class ContactsManager {
+	let networkAdaptor: NetworkAdaptor
+	
+	init(networkAdaptor: NetworkAdaptor = NetworkManager()) {
+		self.networkAdaptor = networkAdaptor
+	}
+}
 
 extension ContactsManager: PhoneContactsFetchable {
 	
@@ -35,10 +41,6 @@ extension ContactsManager: PhoneContactsFetchable {
 			try store.enumerateContacts(with: request, usingBlock: {(contact, stopPointer)
 				in
 
-				if contact.imageDataAvailable {
-//					print(contact.givenName)
-				}
-				
 				fetchedContacts.append(contact.transform())
 				print(contact.description)
 			})
@@ -53,9 +55,6 @@ extension ContactsManager: PhoneContactsFetchable {
 
 //MARK: - Mamo Contacts API
 extension ContactsManager: MamoContactsFetchable {
-	var networkAdaptor: NetworkAdaptor {
-		NetworkManager()
-	}
 	
 	func fetchSearchMamoContacts(emails: [String], orPhones: [String], onCompletion: @escaping (ContactResult) -> ()) {
 		let service = ContactsService.searchAccounts(emails: emails, orPhones: orPhones)
@@ -72,11 +71,10 @@ extension ContactsManager: MamoContactsFetchable {
 			}
 		}
 	}
-	
 }
 
 
-//MARK: - Other Useful Extenstions
+//MARK: - Other Useful Extensions
 fileprivate extension CNContact {
 	
 	func transform() -> ContactProtocol {

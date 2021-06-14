@@ -16,7 +16,6 @@ protocol PhoneContactsFetchable: ContactFetchable {
 }
 
 protocol MamoContactsFetchable: ContactFetchable {
-	var networkAdaptor: NetworkAdaptor { get }
 	func fetchSearchMamoContacts(emails: [String], orPhones: [String], onCompletion: @escaping (ContactResult) -> ())	
 }
 
@@ -30,6 +29,19 @@ protocol ContactProtocol {
 	var isMamoContact: Bool {get}
 	var isFrequentContact: Bool {get}
 }
+
+extension Array where Self.Element:ContactProtocol {
+	var filteredEmails: [String] {
+		self.compactMap { contact in
+			if let email = contact.email, !email.isEmpty {
+				return email
+			}
+			return nil
+		}
+	}
+}
+
+
 
 /// To present the contact on UI
 protocol ContactPresentable {

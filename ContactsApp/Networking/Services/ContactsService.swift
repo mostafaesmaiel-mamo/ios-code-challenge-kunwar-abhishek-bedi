@@ -39,4 +39,8 @@ enum ContactsService: Buildable {
 		}
 	}
 	
+	var encoding: Encoding {
+		return .json
+	}
+	
 }

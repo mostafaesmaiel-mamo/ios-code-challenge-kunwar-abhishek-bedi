@@ -100,11 +100,13 @@ fileprivate extension CNContact {
 
 fileprivate struct ContactBridge {
 	static func transform(type: CNContact) -> ContactProtocol {
+		
 		return Contact(id: type.identifier,
 							  firstName: type.givenName,
 							  lastName: type.familyName,
 							  phoneNumber: type.phoneNumbers.first?.value.stringValue,
 							  email: type.emailAddresses.first?.value as String?,
+							  imageData: type.thumbnailImageData,
 							  isMamoContact: false, isFrequentContact: false)
 	}
 }

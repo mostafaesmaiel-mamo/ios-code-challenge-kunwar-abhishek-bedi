@@ -28,9 +28,16 @@ protocol ContactProtocol {
 	var email: String? {get}
 	var isMamoContact: Bool {get}
 	var isFrequentContact: Bool {get}
+	var publicName: String {get}
 }
 
-extension Array where Self.Element:ContactProtocol {
+extension ContactProtocol {	
+	var publicName: String {
+		firstName + " " + lastName
+	}
+}
+
+extension Sequence where Self.Element == ContactProtocol {
 	var filteredEmails: [String] {
 		self.compactMap { contact in
 			if let email = contact.email, !email.isEmpty {

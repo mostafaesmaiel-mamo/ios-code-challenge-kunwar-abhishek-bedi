@@ -60,4 +60,12 @@ class ContactsServiceTests: XCTestCase {
 		XCTAssertEqual(service.method, .post)
 		
 	}
+	
+	func testFrequentContactService() {
+		service = ContactsService.frequentAccounts
+		XCTAssertEqual(service.url?.absoluteString, "https://60adf30580a61f001733208d.mockapi.io/api/v2/frequents")
+		XCTAssertEqual(service.encoding, .url)
+		XCTAssertEqual(service.method, .get)
+
+	}
 }

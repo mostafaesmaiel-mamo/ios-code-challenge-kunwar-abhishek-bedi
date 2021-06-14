@@ -11,7 +11,8 @@ final class FrequentContactCell: UICollectionViewCell {
 
     @IBOutlet private weak var firstNameLabel: UILabel!
     @IBOutlet private weak var lastNameLabel: UILabel!
-    @IBOutlet private weak var imageView: RoundedImageView!
+	@IBOutlet private weak var imageView: RoundedImageView!
+	@IBOutlet private weak var logoImageView: RoundedImageView!
     @IBOutlet private weak var bgView: UIView!
 
     override func awakeFromNib() {

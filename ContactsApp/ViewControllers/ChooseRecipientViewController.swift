@@ -38,17 +38,7 @@ class ChooseRecipientViewController: UIViewController {
 			}
 			
 			// Matching Mamo Contacts
-			//TODO: - Cleanup required.
-			let emails: [(String)] = contacts.compactMap { c in
-				//		self.compactMap { contact in
-				if let email = c.email, !email.isEmpty {
-					return email
-				}
-				return nil
-			}
-
-			
-			
+			let emails: [(String)] = contacts.filteredEmails
 			let phones = contacts.compactMap({ $0.phoneNumber })
 			
 			self?.fetchMamoContacts(emails: emails, phones: phones) { mamoContacts in
@@ -59,9 +49,6 @@ class ChooseRecipientViewController: UIViewController {
 				self?.reload()
 
 			}
-			
-			
-			
 			
 		}
 	}

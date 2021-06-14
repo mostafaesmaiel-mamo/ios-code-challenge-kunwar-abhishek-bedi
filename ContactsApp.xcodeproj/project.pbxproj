@@ -29,6 +29,7 @@
 		3B131DDD267138180080F4D6 /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B131DDB267138180080F4D6 /* FooterView.xib */; };
 		3B131DDF26713E070080F4D6 /* ChooseRecipientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DDE26713E070080F4D6 /* ChooseRecipientViewController.swift */; };
 		3B1ADCC326777C5A0013F6D1 /* FrequentContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1ADCC226777C5A0013F6D1 /* FrequentContact.swift */; };
+		3B1ADCC726777F510013F6D1 /* mock_frequent_accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B1ADCC626777F510013F6D1 /* mock_frequent_accounts.json */; };
 		3B2959582674F61200F5F745 /* ChooseRecipientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2959572674F61200F5F745 /* ChooseRecipientViewModel.swift */; };
 		3B4AD89C2670203500493D47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89B2670203500493D47 /* AppDelegate.swift */; };
 		3B4AD89E2670203500493D47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89D2670203500493D47 /* SceneDelegate.swift */; };
@@ -105,6 +106,7 @@
 		3B131DDB267138180080F4D6 /* FooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
 		3B131DDE26713E070080F4D6 /* ChooseRecipientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRecipientViewController.swift; sourceTree = "<group>"; };
 		3B1ADCC226777C5A0013F6D1 /* FrequentContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentContact.swift; sourceTree = "<group>"; };
+		3B1ADCC626777F510013F6D1 /* mock_frequent_accounts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock_frequent_accounts.json; sourceTree = "<group>"; };
 		3B2959572674F61200F5F745 /* ChooseRecipientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRecipientViewModel.swift; sourceTree = "<group>"; };
 		3B4AD8982670203500493D47 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4AD89B2670203500493D47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -243,6 +245,25 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		3B1ADCC426777EF80013F6D1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3B0FD69026767924007802FE /* MockResponseNetworkAdaptor.swift */,
+				3B0FD69226767972007802FE /* JsonUtility.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3B1ADCC526777F110013F6D1 /* ContactManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				3B1ADCC626777F510013F6D1 /* mock_frequent_accounts.json */,
+				3B0FD694267681A4007802FE /* mock_search_mamo_accounts.json */,
+				3B0FD68E26767823007802FE /* ContactsManagerTests.swift */,
+			);
+			path = ContactManagerTests;
+			sourceTree = "<group>";
+		};
 		3B4AD88F2670203500493D47 = {
 			isa = PBXGroup;
 			children = (
@@ -292,11 +313,9 @@
 		3B4AD8B12670203800493D47 /* ContactsAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				3B0FD694267681A4007802FE /* mock_search_mamo_accounts.json */,
+				3B1ADCC526777F110013F6D1 /* ContactManagerTests */,
 				3B4AD8B22670203800493D47 /* ContactsServiceTests.swift */,
-				3B0FD69026767924007802FE /* MockResponseNetworkAdaptor.swift */,
-				3B0FD69226767972007802FE /* JsonUtility.swift */,
-				3B0FD68E26767823007802FE /* ContactsManagerTests.swift */,
+				3B1ADCC426777EF80013F6D1 /* Utils */,
 				3B89FB43267226F20002BDA6 /* WelcomeViewModelTests.swift */,
 				3B4AD8B42670203800493D47 /* Info.plist */,
 			);
@@ -536,6 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B0FD695267681A4007802FE /* mock_search_mamo_accounts.json in Resources */,
+				3B1ADCC726777F510013F6D1 /* mock_frequent_accounts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

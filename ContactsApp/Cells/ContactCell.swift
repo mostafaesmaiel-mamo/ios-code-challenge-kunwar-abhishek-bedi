@@ -32,14 +32,10 @@ final class ContactCell: UICollectionViewCell {
 }
 
 extension ContactCell: ContactPresentable {
+	
 	func configure(withContact contact: ContactProtocol) {
 		firstNameLabel.text = contact.firstName
 		lastNameLabel.text = contact.lastName
-		if let data = contact.imageData, let image = UIImage(data: data) {
-			imageView.image = image
-		}
-		else {
-			imageView.image = UIImage.init(systemName: "circle")
-		}
+		setup(imageView: imageView, withContact: contact)
 	}
 }

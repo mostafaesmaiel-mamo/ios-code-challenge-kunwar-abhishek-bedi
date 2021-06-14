@@ -14,11 +14,11 @@ struct FrequentContact: Resultable {
 
 // MARK: - Frequent
 struct Frequent: Codable {
-	let mamoId, publicName: String?
+	let mamoId, frequentPublicName: String?
 	
 	enum CodingKeys: String, CodingKey {
-		case publicName
 		case mamoId = "id"
+		case frequentPublicName = "publicName"
 	}
 }
 
@@ -28,11 +28,11 @@ extension Frequent: ContactProtocol {
 	}
 	
 	var firstName: String {
-		publicName.components(separatedBy: " ").first ?? ""
+		frequentPublicName?.components(separatedBy: " ").first ?? ""
 	}
 	
 	var lastName: String {
-		publicName.components(separatedBy: " ").last ?? ""
+		frequentPublicName?.components(separatedBy: " ").last ?? ""
 	}
 	
 	var phoneNumber: String? {

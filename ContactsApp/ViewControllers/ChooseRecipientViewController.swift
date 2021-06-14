@@ -21,7 +21,6 @@ class ChooseRecipientViewController: UIViewController {
 	
 	
 	//MARK: - Variables
-	private var viewModel =  ChooseRecipientViewModel()
 	private(set) var collectionViewController: CollectionViewController!
 	private(set) lazy var loader = LoaderView()
 	

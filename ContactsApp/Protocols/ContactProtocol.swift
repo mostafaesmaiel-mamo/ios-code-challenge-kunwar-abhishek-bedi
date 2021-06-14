@@ -30,11 +30,15 @@ protocol ContactProtocol {
 	var isMamoContact: Bool {get}
 	var isFrequentContact: Bool {get}
 	var publicName: String {get}
+	var isDisplayable:Bool {get}
 }
 
 extension ContactProtocol {	
 	var publicName: String {
 		firstName + " " + lastName
+	}
+	var isDisplayable: Bool {
+		!publicName.trimmingCharacters(in: .whitespaces).isEmpty //&& publicName != " "
 	}
 }
 
@@ -50,14 +54,18 @@ extension Sequence where Self.Element == ContactProtocol {
 }
 
 extension Sequence where Self.Element == ContactProtocol {
+	
 	var frequent: [ContactProtocol] {
-		self.filter({$0.isFrequentContact })
+		self.filter({$0.isFrequentContact && $0.isDisplayable })
 	}
+	
 	var mamo: [ContactProtocol] {
-		self.filter({$0.isMamoContact }) + self.filter({$0.isFrequentContact })
+		self.filter({ $0.isMamoContact && $0.isDisplayable })
+					+ self.filter({ $0.isFrequentContact && $0.isDisplayable})
 	}
+	
 	var phone: [ContactProtocol] {
-		self.filter({!$0.isMamoContact && !$0.isFrequentContact })
+		self.filter({ !$0.isMamoContact && !$0.isFrequentContact && $0.isDisplayable})
 	}
 }
 

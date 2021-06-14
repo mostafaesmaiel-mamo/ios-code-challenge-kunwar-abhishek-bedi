@@ -23,6 +23,7 @@ struct Frequent: Codable {
 }
 
 extension Frequent: ContactProtocol {
+	
 	var id: String {
 		mamoId ?? ""
 	}
@@ -50,6 +51,4 @@ extension Frequent: ContactProtocol {
 	var isFrequentContact: Bool {
 		true
 	}
-	
-	
 }

@@ -30,6 +30,7 @@
 		3B131DDF26713E070080F4D6 /* ChooseRecipientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DDE26713E070080F4D6 /* ChooseRecipientViewController.swift */; };
 		3B1ADCC326777C5A0013F6D1 /* FrequentContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1ADCC226777C5A0013F6D1 /* FrequentContact.swift */; };
 		3B1ADCC726777F510013F6D1 /* mock_frequent_accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B1ADCC626777F510013F6D1 /* mock_frequent_accounts.json */; };
+		3B1ADCC92677DA410013F6D1 /* ChooseRecipientViewController+Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1ADCC82677DA410013F6D1 /* ChooseRecipientViewController+Contacts.swift */; };
 		3B2959582674F61200F5F745 /* ChooseRecipientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2959572674F61200F5F745 /* ChooseRecipientViewModel.swift */; };
 		3B4AD89C2670203500493D47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89B2670203500493D47 /* AppDelegate.swift */; };
 		3B4AD89E2670203500493D47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89D2670203500493D47 /* SceneDelegate.swift */; };
@@ -107,6 +108,7 @@
 		3B131DDE26713E070080F4D6 /* ChooseRecipientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRecipientViewController.swift; sourceTree = "<group>"; };
 		3B1ADCC226777C5A0013F6D1 /* FrequentContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentContact.swift; sourceTree = "<group>"; };
 		3B1ADCC626777F510013F6D1 /* mock_frequent_accounts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock_frequent_accounts.json; sourceTree = "<group>"; };
+		3B1ADCC82677DA410013F6D1 /* ChooseRecipientViewController+Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChooseRecipientViewController+Contacts.swift"; sourceTree = "<group>"; };
 		3B2959572674F61200F5F745 /* ChooseRecipientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRecipientViewModel.swift; sourceTree = "<group>"; };
 		3B4AD8982670203500493D47 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4AD89B2670203500493D47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				3B4AD89F2670203500493D47 /* CollectionViewController.swift */,
 				3B131DDE26713E070080F4D6 /* ChooseRecipientViewController.swift */,
+				3B1ADCC82677DA410013F6D1 /* ChooseRecipientViewController+Contacts.swift */,
 				3B89FB38267206A30002BDA6 /* WelcomeViewController.swift */,
 				3B89FB47267376E20002BDA6 /* WelcomeViewController+ContactAccess.swift */,
 			);
@@ -705,6 +708,7 @@
 				3B131DBF2670CEFD0080F4D6 /* Section.swift in Sources */,
 				3B1ADCC326777C5A0013F6D1 /* FrequentContact.swift in Sources */,
 				3B89FB3D26720C810002BDA6 /* UIView+Extension.swift in Sources */,
+				3B1ADCC92677DA410013F6D1 /* ChooseRecipientViewController+Contacts.swift in Sources */,
 				3B131DD7267107A20080F4D6 /* MamoColor.swift in Sources */,
 				3B60DD622673F8CF003E4D7A /* ContactsManager.swift in Sources */,
 				3B131DD22670E95A0080F4D6 /* ContactProtocol.swift in Sources */,

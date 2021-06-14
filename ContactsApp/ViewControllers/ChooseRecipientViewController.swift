@@ -21,7 +21,7 @@ class ChooseRecipientViewController: UIViewController {
 	
 	
 	//MARK: - Variables
-	private(set) var collectionViewController: CollectionViewController!
+	var collectionViewController: CollectionViewController!
 	private(set) lazy var loader = LoaderView()
 	
 	
@@ -76,23 +76,13 @@ class ChooseRecipientViewController: UIViewController {
 	}
 }
 
-extension ChooseRecipientViewController {
-	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "segue_embed" {
-			if let vc = segue.destination as? CollectionViewController {
-				collectionViewController = vc
-			}
-		}
-	}
+
+//MARK: - Private UI related functions
+fileprivate extension ChooseRecipientViewController {
 	
 	func reload() {
 		collectionViewController.collectionView.reloadData()
 	}
-}
-
-//MARK: - Private UI related functions
-fileprivate extension ChooseRecipientViewController {
 	
 	func updateCollectionViewController(contacts: [ContactProtocol]) {
 		collectionViewController.configure(withContacts: contacts)

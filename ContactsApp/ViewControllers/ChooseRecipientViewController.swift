@@ -38,12 +38,20 @@ class ChooseRecipientViewController: UIViewController {
 			}
 			
 			// Matching Mamo Contacts
-			let emails = contacts.compactMap( { $0.email} )
-			let phones = contacts.compactMap( { $0.phoneNumber} )
+			//TODO: - Cleanup required.
+			let emails: [(String)] = contacts.compactMap { c in
+				//		self.compactMap { contact in
+				if let email = c.email, !email.isEmpty {
+					return email
+				}
+				return nil
+			}
+
+			
+			
+			let phones = contacts.compactMap({ $0.phoneNumber })
 			
 			self?.fetchMamoContacts(emails: emails, phones: phones) { mamoContacts in
-				
-//				mamoContacts.
 				
 				self?.showHideViewsWhileLoading(canShow: true)
 				self?.loader.hide()

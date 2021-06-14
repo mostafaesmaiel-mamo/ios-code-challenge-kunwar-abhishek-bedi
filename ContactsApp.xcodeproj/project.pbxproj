@@ -234,6 +234,7 @@
 		3B131DCA2670DA8D0080F4D6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3B60DD7D26741755003E4D7A /* AppConstants.swift */,
 				3B131DC82670DA1E0080F4D6 /* UICollectionView+Extension.swift */,
 				3B131DD4267106860080F4D6 /* UIColor+Extension.swift */,
 				3B89FB3C26720C810002BDA6 /* UIView+Extension.swift */,
@@ -302,7 +303,6 @@
 				3B4AD89B2670203500493D47 /* AppDelegate.swift */,
 				3B4AD89D2670203500493D47 /* SceneDelegate.swift */,
 				3B60DD612673F8CF003E4D7A /* ContactsManager.swift */,
-				3B60DD7D26741755003E4D7A /* AppConstants.swift */,
 				3BB4561B2675F4E00065DB6E /* Models */,
 				3B60DD632673FD5E003E4D7A /* Networking */,
 				3B131DD32670F57D0080F4D6 /* Protocols */,

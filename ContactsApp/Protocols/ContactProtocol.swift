@@ -49,6 +49,18 @@ extension Sequence where Self.Element == ContactProtocol {
 	}
 }
 
+extension Sequence where Self.Element == ContactProtocol {
+	var frequent: [ContactProtocol] {
+		self.filter({$0.isFrequentContact })
+	}
+	var mamo: [ContactProtocol] {
+		self.filter({$0.isMamoContact }) + self.filter({$0.isFrequentContact })
+	}
+	var phone: [ContactProtocol] {
+		self.filter({!$0.isMamoContact && !$0.isFrequentContact })
+	}
+}
+
 
 
 /// To present the contact on UI

@@ -35,7 +35,7 @@ extension CollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		viewModel.numberOfRow(inSection: section)
+		viewModel.numberOfItems(inSection: section)
     }
     
     func frequentContactCell(_ collectionView: UICollectionView, forIndexPath indexPath: IndexPath) -> FrequentContactCell? {
@@ -59,7 +59,7 @@ extension CollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-		guard let contact = viewModel.contact(atIndex: indexPath.row) else {
+		guard let contact = viewModel.contact(atIndexPath: indexPath) else {
 			return UICollectionViewCell()
 		}
 		

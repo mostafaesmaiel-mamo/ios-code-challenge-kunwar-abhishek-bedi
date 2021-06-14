@@ -11,7 +11,9 @@ final class ContactCell: UICollectionViewCell {
    
     @IBOutlet private weak var firstNameLabel: UILabel!
     @IBOutlet private weak var lastNameLabel: UILabel!
-    @IBOutlet private weak var imageView: RoundedImageView!
+	@IBOutlet private weak var imageView: RoundedImageView!
+	@IBOutlet private weak var logoImageView: RoundedImageView!
+	@IBOutlet private weak var logoView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,6 +38,7 @@ extension ContactCell: ContactPresentable {
 	func configure(withContact contact: ContactProtocol) {
 		firstNameLabel.text = contact.firstName
 		lastNameLabel.text = contact.lastName
+		logoView.isHidden = false //contact.isMamoContact
 		setup(imageView: imageView, withContact: contact)
 	}
 }

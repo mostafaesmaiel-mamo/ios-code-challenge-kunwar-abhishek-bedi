@@ -16,11 +16,12 @@ struct MamoAccounts: Resultable {
 struct MamoAccount: Codable {
 	var mamoId: String?
 	var key: Key?
-	var value, publicName: String?
+	var value, mamoPublicName: String?
 	
 	enum CodingKeys: String, CodingKey {
-		case key, value, publicName
+		case key, value
 		case mamoId = "id"
+		case mamoPublicName = "publicName"
 	}
 }
 
@@ -51,11 +52,11 @@ fileprivate extension String {
 
 extension MamoAccount: ContactProtocol {
 	var firstName: String {
-		publicName?.firstName ?? ""
+		mamoPublicName?.firstName ?? ""
 	}
 	
 	var lastName: String {
-		publicName?.lastName ?? ""
+		mamoPublicName?.lastName ?? ""
 	}
 	
 	var phoneNumber: String? {

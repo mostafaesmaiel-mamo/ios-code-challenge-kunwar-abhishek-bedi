@@ -56,7 +56,7 @@ class ContactsServiceTests: XCTestCase {
 		XCTAssertEqual((serviceParams["phones"] as? [String])?.count, 5 )
 
 		
-		XCTAssertEqual(service.encoding, .url)
+		XCTAssertEqual(service.encoding, .json)
 		XCTAssertEqual(service.method, .post)
 		
 	}

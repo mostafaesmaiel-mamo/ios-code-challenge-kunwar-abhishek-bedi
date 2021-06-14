@@ -104,7 +104,7 @@ fileprivate struct ContactBridge {
 							  firstName: type.givenName,
 							  lastName: type.familyName,
 							  phoneNumber: type.phoneNumbers.first?.value.stringValue,
-							  email: "", //TODO: - Need to fix this
+							  email: type.emailAddresses.first?.value as String?,
 							  isMamoContact: false, isFrequentContact: false)
 	}
 }

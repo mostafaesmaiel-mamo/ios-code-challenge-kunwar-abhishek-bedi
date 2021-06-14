@@ -26,6 +26,24 @@
                                     <constraint firstAttribute="width" secondItem="lxo-ST-1pn" secondAttribute="height" multiplier="1:1" id="hGC-A8-wmm"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="da8-Zt-Mk4">
+                                <rect key="frame" x="57" y="47" width="18" height="18"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mamo_icon" translatesAutoresizingMaskIntoConstraints="NO" id="or7-fD-pz2" customClass="RoundedImageView" customModule="ContactsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="4Mb-TJ-otL"/>
+                                    <constraint firstItem="or7-fD-pz2" firstAttribute="leading" secondItem="da8-Zt-Mk4" secondAttribute="leading" id="4e1-F7-s5M"/>
+                                    <constraint firstAttribute="width" constant="18" id="NCu-IN-gOn"/>
+                                    <constraint firstAttribute="bottom" secondItem="or7-fD-pz2" secondAttribute="bottom" id="iVy-kp-Jn4"/>
+                                    <constraint firstItem="or7-fD-pz2" firstAttribute="top" secondItem="da8-Zt-Mk4" secondAttribute="top" id="kAs-wP-EeO"/>
+                                    <constraint firstAttribute="trailing" secondItem="or7-fD-pz2" secondAttribute="trailing" id="sTR-hX-RVR"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Hi5-vI-Et9" userLabel="Stack View(FirstName and Lastname)">
                                 <rect key="frame" x="95" y="27.5" width="89" height="20.5"/>
                                 <subviews>
@@ -48,9 +66,11 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="lxo-ST-1pn" secondAttribute="bottom" constant="10" id="63S-Qe-MOz"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Hi5-vI-Et9" secondAttribute="trailing" constant="20" id="GMZ-78-jN5"/>
+                            <constraint firstItem="da8-Zt-Mk4" firstAttribute="trailing" secondItem="lxo-ST-1pn" secondAttribute="trailing" id="M3y-U2-Rd0"/>
                             <constraint firstItem="Hi5-vI-Et9" firstAttribute="leading" secondItem="lxo-ST-1pn" secondAttribute="trailing" constant="20" id="NBd-Jo-A8T"/>
                             <constraint firstItem="lxo-ST-1pn" firstAttribute="leading" secondItem="WpF-ew-NJv" secondAttribute="leading" constant="20" id="Ow5-wA-Vgt"/>
                             <constraint firstItem="Hi5-vI-Et9" firstAttribute="centerY" secondItem="WpF-ew-NJv" secondAttribute="centerY" id="UeU-3X-xr6"/>
+                            <constraint firstItem="da8-Zt-Mk4" firstAttribute="bottom" secondItem="lxo-ST-1pn" secondAttribute="bottom" id="bVY-Fn-rGo"/>
                             <constraint firstItem="lxo-ST-1pn" firstAttribute="top" secondItem="WpF-ew-NJv" secondAttribute="top" constant="10" id="bZI-sn-BS3"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -73,8 +93,13 @@
                 <outlet property="firstNameLabel" destination="xdo-lh-7gr" id="T8J-y7-nfp"/>
                 <outlet property="imageView" destination="lxo-ST-1pn" id="uVQ-92-oDp"/>
                 <outlet property="lastNameLabel" destination="dbl-lG-qZz" id="uAs-sx-NHI"/>
+                <outlet property="logoImageView" destination="or7-fD-pz2" id="lsB-zr-8sy"/>
+                <outlet property="logoView" destination="da8-Zt-Mk4" id="Ipq-ad-cmd"/>
             </connections>
             <point key="canvasLocation" x="139.85507246376812" y="6.3616071428571423"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="mamo_icon" width="12" height="12.5"/>
+    </resources>
 </document>

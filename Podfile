@@ -13,6 +13,7 @@ end
   pod 'SwiftyUserDefaults', '~> 5.3'
   pod 'iOS-Utils', '~> 1.6'
 	pod 'Alamofire', '~> 5.4'
+  pod 'UIImageView-Letters', '~> 1.1'
 
   # Pods for ContactsApp
 

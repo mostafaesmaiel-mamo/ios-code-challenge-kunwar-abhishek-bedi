@@ -55,6 +55,22 @@ extension ContactsManager: PhoneContactsFetchable {
 
 //MARK: - Mamo Contacts API
 extension ContactsManager: MamoContactsFetchable {
+	func fetchFrequentMamoContacts(onCompletion: @escaping (ContactResult) -> ()) {
+		let service = ContactsService.frequentAccounts
+		networkAdaptor.process(service, type: FrequentContact.self) { result in
+			
+			switch result {
+				case .success(let response):
+					if let accounts = response.frequents, !accounts.isEmpty {
+						onCompletion(.success(accounts))
+					}
+					
+				case .failure(let error):
+					onCompletion(.failure(error))
+			}
+		}
+	}
+	
 	
 	func fetchSearchMamoContacts(emails: [String], orPhones: [String], onCompletion: @escaping (ContactResult) -> ()) {
 		let service = ContactsService.searchAccounts(emails: emails, orPhones: orPhones)

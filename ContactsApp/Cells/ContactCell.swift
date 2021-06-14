@@ -35,6 +35,11 @@ extension ContactCell: ContactPresentable {
 	func configure(withContact contact: ContactProtocol) {
 		firstNameLabel.text = contact.firstName
 		lastNameLabel.text = contact.lastName
-		imageView.image = UIImage(named: "Vector")
+		if let data = contact.imageData, let image = UIImage(data: data) {
+			imageView.image = image
+		}
+		else {
+			imageView.image = UIImage.init(systemName: "circle")
+		}
 	}
 }

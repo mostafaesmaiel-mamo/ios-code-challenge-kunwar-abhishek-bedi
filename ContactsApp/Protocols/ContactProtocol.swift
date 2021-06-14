@@ -5,12 +5,15 @@
 //  Created by kbedi on 09/06/2021.
 //
 /// To present the contact on UI
+import Foundation
+
 protocol ContactProtocol {
 	var id: String {get}
 	var firstName: String {get}
 	var lastName: String {get}
 	var phoneNumber: String? {get}
 	var email: String? {get}
+	var imageData: Data? {get}
 	var isMamoContact: Bool {get}
 	var isFrequentContact: Bool {get}
 	var publicName: String {get}
@@ -25,5 +28,9 @@ extension ContactProtocol {
 	
 	var isDisplayable: Bool {
 		!publicName.trimmingCharacters(in: .whitespaces).isEmpty
+	}
+	
+	var imageData: Data? {
+		nil
 	}
 }

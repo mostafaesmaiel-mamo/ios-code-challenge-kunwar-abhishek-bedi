@@ -28,6 +28,7 @@
 		3B131DDC267138180080F4D6 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DDA267138180080F4D6 /* FooterView.swift */; };
 		3B131DDD267138180080F4D6 /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B131DDB267138180080F4D6 /* FooterView.xib */; };
 		3B131DDF26713E070080F4D6 /* ChooseRecipientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B131DDE26713E070080F4D6 /* ChooseRecipientViewController.swift */; };
+		3B1ADCC326777C5A0013F6D1 /* FrequentContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1ADCC226777C5A0013F6D1 /* FrequentContact.swift */; };
 		3B2959582674F61200F5F745 /* ChooseRecipientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2959572674F61200F5F745 /* ChooseRecipientViewModel.swift */; };
 		3B4AD89C2670203500493D47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89B2670203500493D47 /* AppDelegate.swift */; };
 		3B4AD89E2670203500493D47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89D2670203500493D47 /* SceneDelegate.swift */; };
@@ -103,6 +104,7 @@
 		3B131DDA267138180080F4D6 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		3B131DDB267138180080F4D6 /* FooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
 		3B131DDE26713E070080F4D6 /* ChooseRecipientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRecipientViewController.swift; sourceTree = "<group>"; };
+		3B1ADCC226777C5A0013F6D1 /* FrequentContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentContact.swift; sourceTree = "<group>"; };
 		3B2959572674F61200F5F745 /* ChooseRecipientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRecipientViewModel.swift; sourceTree = "<group>"; };
 		3B4AD8982670203500493D47 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4AD89B2670203500493D47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				3B60DD6C2674020C003E4D7A /* MamoAccounts.swift */,
+				3B1ADCC226777C5A0013F6D1 /* FrequentContact.swift */,
 			);
 			path = NetworkModels;
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 				3B131DC92670DA1E0080F4D6 /* UICollectionView+Extension.swift in Sources */,
 				3B131DD5267106860080F4D6 /* UIColor+Extension.swift in Sources */,
 				3B131DBF2670CEFD0080F4D6 /* Section.swift in Sources */,
+				3B1ADCC326777C5A0013F6D1 /* FrequentContact.swift in Sources */,
 				3B89FB3D26720C810002BDA6 /* UIView+Extension.swift in Sources */,
 				3B131DD7267107A20080F4D6 /* MamoColor.swift in Sources */,
 				3B60DD622673F8CF003E4D7A /* ContactsManager.swift in Sources */,

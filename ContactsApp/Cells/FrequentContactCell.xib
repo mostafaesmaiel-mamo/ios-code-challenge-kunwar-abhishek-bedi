@@ -20,24 +20,44 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYM-EN-5wn">
                         <rect key="frame" x="0.0" y="44" width="170" height="196"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="cDJ-vd-wRm" customClass="RoundedImageView" customModule="ContactsApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rD2-sx-3zg">
                                 <rect key="frame" x="45" y="20" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="EC9-xG-DnL"/>
-                                    <constraint firstAttribute="width" constant="80" id="x2c-to-eUr"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="IVr-pC-7dM" userLabel="Stack View(FirstName and Lastname)">
-                                <rect key="frame" x="64.5" y="120" width="41.5" height="47"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbi-kF-8di">
-                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vector" translatesAutoresizingMaskIntoConstraints="NO" id="cDJ-vd-wRm" customClass="RoundedImageView" customModule="ContactsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mamo_icon" translatesAutoresizingMaskIntoConstraints="NO" id="GaT-PY-kf3" userLabel="Logo">
+                                        <rect key="frame" x="56" y="56" width="24" height="24"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="TsO-F7-NQX"/>
+                                            <constraint firstAttribute="width" constant="24" id="xSD-W1-JSe"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="5gl-2i-Nev"/>
+                                    <constraint firstAttribute="bottom" secondItem="GaT-PY-kf3" secondAttribute="bottom" id="IWO-7m-EkH"/>
+                                    <constraint firstItem="cDJ-vd-wRm" firstAttribute="top" secondItem="rD2-sx-3zg" secondAttribute="top" id="Ija-aS-l1S"/>
+                                    <constraint firstAttribute="bottom" secondItem="cDJ-vd-wRm" secondAttribute="bottom" id="Kt9-bN-mAH"/>
+                                    <constraint firstAttribute="trailing" secondItem="cDJ-vd-wRm" secondAttribute="trailing" id="Q2J-VY-5EH"/>
+                                    <constraint firstAttribute="trailing" secondItem="GaT-PY-kf3" secondAttribute="trailing" id="UJg-7c-AfJ"/>
+                                    <constraint firstItem="cDJ-vd-wRm" firstAttribute="leading" secondItem="rD2-sx-3zg" secondAttribute="leading" id="jQG-bU-iWV"/>
+                                    <constraint firstAttribute="width" constant="80" id="xF6-LN-CiQ"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="IVr-pC-7dM" userLabel="Stack View(FirstName and Lastname)">
+                                <rect key="frame" x="46" y="120" width="78" height="47"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="FirstName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbi-kF-8di">
+                                        <rect key="frame" x="0.0" y="0.0" width="78" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.50980392156862742" green="0.51372549019607838" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9w-vP-5uq">
-                                        <rect key="frame" x="0.0" y="26.5" width="41.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="LastName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9w-vP-5uq">
+                                        <rect key="frame" x="0.0" y="26.5" width="78" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.50980392159999999" green="0.51372549020000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -47,10 +67,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.96078431372549022" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="IVr-pC-7dM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cDJ-vd-wRm" secondAttribute="bottom" constant="20" id="65S-71-AYc"/>
-                            <constraint firstItem="cDJ-vd-wRm" firstAttribute="top" secondItem="TYM-EN-5wn" secondAttribute="top" constant="20" symbolic="YES" id="8x2-7n-6FK"/>
+                            <constraint firstItem="IVr-pC-7dM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rD2-sx-3zg" secondAttribute="bottom" constant="20" id="IL5-ZS-az1"/>
                             <constraint firstAttribute="bottom" secondItem="IVr-pC-7dM" secondAttribute="bottom" constant="29" id="S8z-aS-z4K"/>
-                            <constraint firstItem="cDJ-vd-wRm" firstAttribute="centerX" secondItem="TYM-EN-5wn" secondAttribute="centerX" id="u1f-eK-szx"/>
+                            <constraint firstItem="rD2-sx-3zg" firstAttribute="centerX" secondItem="TYM-EN-5wn" secondAttribute="centerX" id="fIq-hl-Xie"/>
+                            <constraint firstItem="rD2-sx-3zg" firstAttribute="top" secondItem="TYM-EN-5wn" secondAttribute="top" constant="20" id="wxa-dM-OTj"/>
                             <constraint firstItem="IVr-pC-7dM" firstAttribute="centerX" secondItem="TYM-EN-5wn" secondAttribute="centerX" id="xlf-ah-zga"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -78,12 +98,8 @@
             <point key="canvasLocation" x="84" y="17"/>
         </collectionViewCell>
     </objects>
-    <designables>
-        <designable name="cDJ-vd-wRm">
-            <size key="intrinsicContentSize" width="800" height="1065"/>
-        </designable>
-    </designables>
     <resources>
-        <image name="bg" width="800" height="1065"/>
+        <image name="Vector" width="40" height="40.5"/>
+        <image name="mamo_icon" width="12" height="12.5"/>
     </resources>
 </document>

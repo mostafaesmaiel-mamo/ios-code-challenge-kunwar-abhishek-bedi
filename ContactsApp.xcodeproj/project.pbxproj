@@ -32,6 +32,8 @@
 		3B1ADCC726777F510013F6D1 /* mock_frequent_accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B1ADCC626777F510013F6D1 /* mock_frequent_accounts.json */; };
 		3B1ADCC92677DA410013F6D1 /* ChooseRecipientViewController+Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1ADCC82677DA410013F6D1 /* ChooseRecipientViewController+Contacts.swift */; };
 		3B1ADCCB2677DF500013F6D1 /* ChooseRecipientViewController+UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1ADCCA2677DF500013F6D1 /* ChooseRecipientViewController+UIStoryboard.swift */; };
+		3B1ADCCD2677E9070013F6D1 /* ContactFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1ADCCC2677E9070013F6D1 /* ContactFetchable.swift */; };
+		3B1ADCCF2677ECD00013F6D1 /* ContactPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1ADCCE2677ECD00013F6D1 /* ContactPresentable.swift */; };
 		3B4AD89C2670203500493D47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89B2670203500493D47 /* AppDelegate.swift */; };
 		3B4AD89E2670203500493D47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89D2670203500493D47 /* SceneDelegate.swift */; };
 		3B4AD8A02670203500493D47 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89F2670203500493D47 /* CollectionViewController.swift */; };
@@ -110,6 +112,8 @@
 		3B1ADCC626777F510013F6D1 /* mock_frequent_accounts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock_frequent_accounts.json; sourceTree = "<group>"; };
 		3B1ADCC82677DA410013F6D1 /* ChooseRecipientViewController+Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChooseRecipientViewController+Contacts.swift"; sourceTree = "<group>"; };
 		3B1ADCCA2677DF500013F6D1 /* ChooseRecipientViewController+UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChooseRecipientViewController+UIStoryboard.swift"; sourceTree = "<group>"; };
+		3B1ADCCC2677E9070013F6D1 /* ContactFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFetchable.swift; sourceTree = "<group>"; };
+		3B1ADCCE2677ECD00013F6D1 /* ContactPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPresentable.swift; sourceTree = "<group>"; };
 		3B4AD8982670203500493D47 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4AD89B2670203500493D47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B4AD89D2670203500493D47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				3B131DD12670E95A0080F4D6 /* ContactProtocol.swift */,
+				3B1ADCCE2677ECD00013F6D1 /* ContactPresentable.swift */,
+				3B1ADCCC2677E9070013F6D1 /* ContactFetchable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -707,6 +713,7 @@
 				3B131DC92670DA1E0080F4D6 /* UICollectionView+Extension.swift in Sources */,
 				3B131DD5267106860080F4D6 /* UIColor+Extension.swift in Sources */,
 				3B131DBF2670CEFD0080F4D6 /* Section.swift in Sources */,
+				3B1ADCCD2677E9070013F6D1 /* ContactFetchable.swift in Sources */,
 				3B1ADCC326777C5A0013F6D1 /* FrequentContact.swift in Sources */,
 				3B89FB3D26720C810002BDA6 /* UIView+Extension.swift in Sources */,
 				3B1ADCC92677DA410013F6D1 /* ChooseRecipientViewController+Contacts.swift in Sources */,
@@ -726,6 +733,7 @@
 				3B89FB39267206A30002BDA6 /* WelcomeViewController.swift in Sources */,
 				3BB4561F2675F5640065DB6E /* ContactViewModel.swift in Sources */,
 				3B60DD7E26741755003E4D7A /* AppConstants.swift in Sources */,
+				3B1ADCCF2677ECD00013F6D1 /* ContactPresentable.swift in Sources */,
 				3BB4561D2675F51A0065DB6E /* Contact.swift in Sources */,
 				3B89FB41267226930002BDA6 /* WelcomeViewModel.swift in Sources */,
 				3B60DD7126740904003E4D7A /* Configurations.swift in Sources */,

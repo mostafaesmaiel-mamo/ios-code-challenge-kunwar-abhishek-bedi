@@ -53,15 +53,15 @@ struct ContactViewModel {
 			if !didAddContact {
 				contacts.append(phone)
 			}
-
+	
+		}
+		
+		// Frequent Contact Updates
+		for freq in frequentContacts {
 			
-			// Frequent Contact Updates
-			for freq in frequentContacts {
-				
-				if var pc = phoneContacts.first(where: { $0.publicName == freq.frequentPublicName }) {
-					pc.isFrequentContact = true
-					contacts.append(pc)
-				}
+			if var pc = phoneContacts.first(where: { $0.firstName == freq.firstName }) {
+				pc.isFrequentContact = true
+				contacts.append(pc)
 			}
 		}
 		

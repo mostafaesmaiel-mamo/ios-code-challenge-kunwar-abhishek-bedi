@@ -28,6 +28,13 @@ struct MamoAccount: Codable {
 enum Key: String, Codable {
 	case email = "email"
 	case phone = "phone"
+	
+	var isEmail: Bool {
+		self == .email
+	}
+	var isPhone: Bool {
+		self == .phone
+	}
 }
 
 extension MamoAccount {

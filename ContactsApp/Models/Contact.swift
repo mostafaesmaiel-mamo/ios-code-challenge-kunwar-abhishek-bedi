@@ -56,9 +56,27 @@ extension Contact {
 	}
 }
 
-//extension Contact {
-//	static func == (lhs: Contact, rhs: Contact) -> Bool {
-//		lhs.id == rhs.id
-//	}
-//}
+extension Array where Self.Element: Contact {
+	func contact(matchingEmail email: String) -> Contact? {
+		let matchingContact = self.first(where: { contact in
+			if let emails = contact.emails {
+				return emails.contains(email)
+			}
+			return false
+		})
+		
+		return matchingContact
+	}
+	
+	func contact(matchingPhone phoneNumber: String) -> Contact? {
+		let matchingContact = self.first(where: { contact in
+			if let phoneNumbers = contact.phoneNumbers {
+				return phoneNumbers.contains(phoneNumber)
+			}
+			return false
+		})
+		
+		return matchingContact
+	}
+}
 

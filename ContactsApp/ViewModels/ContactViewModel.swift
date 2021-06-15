@@ -20,48 +20,25 @@ struct ContactViewModel {
 								 _ mamoContacts: [MamoAccount],
 								 _ frequentContacts: [Frequent]) -> [Contact]{
 		
-		var contacts:[Contact] = []
-		
-		for phone in phoneContacts {
-			var didAddContact = false
-			for mamo in mamoContacts {
-				
-				if mamo.mamoPublicName == phone.publicName {
-					var pc = phone
-					pc.isMamoContact = true
-					contacts.append(pc)
-					didAddContact = true
-				}
-				else if let phoneEmails = phone.emails, phoneEmails.contains(mamo.value ?? "") {
-					var pc = phone
-					pc.isMamoContact = true
-					contacts.append(pc)
-					didAddContact = true
-				}
-				else if let phoneNumbers = phone.phoneNumbers, phoneNumbers.contains(mamo.value ?? "") {
-					var pc = phone
-					pc.isMamoContact = true
-					contacts.append(pc)
-					didAddContact = true
-				}
+		for mamo in mamoContacts {
+			if ((mamo.key?.isEmail) != nil),
+			   let mamoEmail = mamo.value,
+			   let pc = phoneContacts.contact(matchingEmail: mamoEmail) {
+				pc.isMamoContact = true
 			}
-
-			if !didAddContact {
-				contacts.append(phone)
+			else if ((mamo.key?.isPhone) != nil),
+			   let mamoPhone = mamo.value,
+			   let pc = phoneContacts.contact(matchingPhone: mamoPhone) {
+				pc.isMamoContact = true
 			}
-	
 		}
 		
-		// Frequent Contact Updates
 		for freq in frequentContacts {
-			
-			if var pc = phoneContacts.first(where: { $0.firstName == freq.firstName }) {
-				pc.isFrequentContact = true
-				contacts.append(pc)
+			if let matchingContact = phoneContacts.first(where: { $0.firstName == freq.firstName }) {
+				matchingContact.isFrequentContact = true
 			}
 		}
-		
-		return Array(Set(contacts)) //contacts
+		return phoneContacts
 	}
 }
 
@@ -104,8 +81,7 @@ fileprivate extension Sequence where Self.Element == Contact {
 	}
 	
 	var mamo: [Contact] {
-		self.filter({ $0.isMamoContact && $0.isDisplayable })
-			+ self.filter({ $0.isFrequentContact && $0.isDisplayable})
+		self.filter({ ($0.isMamoContact || $0.isFrequentContact) && $0.isDisplayable })
 	}
 	
 	var phone: [Contact] {

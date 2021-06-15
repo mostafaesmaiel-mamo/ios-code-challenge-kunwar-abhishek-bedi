@@ -33,12 +33,13 @@ final class ContactCell: UICollectionViewCell {
 
 }
 
-extension ContactCell: ContactPresentable {
+extension ContactCell: ContactPresentable, BorderPresentable {
 	
 	func configure(withContact contact: ContactProtocol) {
 		firstNameLabel.text = contact.firstName
 		lastNameLabel.text = contact.lastName
 		logoView.isHidden = !contact.isMamoContact
-		imageView.setup(withContact: contact)		
+		imageView.setup(withContact: contact)
+		contact.isSelected ? showBorder(onView: contentView) : hideBorder(onView: contentView)
 	}
 }

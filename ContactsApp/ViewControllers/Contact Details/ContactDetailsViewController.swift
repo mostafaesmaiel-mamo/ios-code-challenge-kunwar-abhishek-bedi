@@ -36,7 +36,7 @@ class ContactDetailsViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		
+		navigationItem.title = "Selected Contact Info"
 		guard contact != nil else {
 			fatalError("Conact should be initialized. Use configure func")
 		}

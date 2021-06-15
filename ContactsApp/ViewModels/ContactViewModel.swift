@@ -8,7 +8,7 @@ import Foundation
 
 struct ContactViewModel {
 	
-	private var contacts: [ContactProtocol] = []
+	private(set) var contacts: [ContactProtocol] = []
 	
 	private var mamoContacts: [ContactProtocol] = []
 	

@@ -49,6 +49,6 @@ extension FrequentContactCell: ContactPresentable {
 	func configure(withContact contact: ContactProtocol) {
 		firstNameLabel.text = contact.firstName
 		lastNameLabel.text = contact.lastName
-		setup(imageView: imageView, withContact: contact)
+		imageView.setup(withContact: contact)
 	}
 }

@@ -39,6 +39,6 @@ extension ContactCell: ContactPresentable {
 		firstNameLabel.text = contact.firstName
 		lastNameLabel.text = contact.lastName
 		logoView.isHidden = false //contact.isMamoContact
-		setup(imageView: imageView, withContact: contact)
+		imageView.setup(withContact: contact)		
 	}
 }

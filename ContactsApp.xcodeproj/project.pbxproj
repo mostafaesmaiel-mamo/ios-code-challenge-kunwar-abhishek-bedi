@@ -38,6 +38,7 @@
 		3B1ADCDC267832580013F6D1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B1ADCDB267832580013F6D1 /* README.md */; };
 		3B1ADCE226783C8D0013F6D1 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1ADCE126783C8D0013F6D1 /* ContactDetailsViewController.swift */; };
 		3B1ADCE4267841830013F6D1 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1ADCE3267841830013F6D1 /* UIImageView+Extension.swift */; };
+		3B1ADCE626784CF70013F6D1 /* ContactViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1ADCE526784CF70013F6D1 /* ContactViewModelTests.swift */; };
 		3B4AD89C2670203500493D47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89B2670203500493D47 /* AppDelegate.swift */; };
 		3B4AD89E2670203500493D47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89D2670203500493D47 /* SceneDelegate.swift */; };
 		3B4AD8A02670203500493D47 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89F2670203500493D47 /* CollectionViewController.swift */; };
@@ -125,6 +126,7 @@
 		3B1ADCDB267832580013F6D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3B1ADCE126783C8D0013F6D1 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		3B1ADCE3267841830013F6D1 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		3B1ADCE526784CF70013F6D1 /* ContactViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModelTests.swift; sourceTree = "<group>"; };
 		3B4AD8982670203500493D47 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4AD89B2670203500493D47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B4AD89D2670203500493D47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 			children = (
 				3B1ADCC526777F110013F6D1 /* ContactManagerTests */,
 				3B4AD8B22670203800493D47 /* ContactsServiceTests.swift */,
+				3B1ADCE526784CF70013F6D1 /* ContactViewModelTests.swift */,
 				3B1ADCC426777EF80013F6D1 /* Utils */,
 				3B89FB43267226F20002BDA6 /* WelcomeViewModelTests.swift */,
 				3B4AD8B42670203800493D47 /* Info.plist */,
@@ -797,6 +800,7 @@
 				3B4AD8B32670203800493D47 /* ContactsServiceTests.swift in Sources */,
 				3B0FD69326767972007802FE /* JsonUtility.swift in Sources */,
 				3B89FB44267226F20002BDA6 /* WelcomeViewModelTests.swift in Sources */,
+				3B1ADCE626784CF70013F6D1 /* ContactViewModelTests.swift in Sources */,
 				3B0FD69126767924007802FE /* MockResponseNetworkAdaptor.swift in Sources */,
 				3B0FD68F26767823007802FE /* ContactsManagerTests.swift in Sources */,
 			);

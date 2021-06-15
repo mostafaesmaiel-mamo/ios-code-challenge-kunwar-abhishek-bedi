@@ -53,7 +53,6 @@ extension CollectionViewController {
 
 		switch section {
 			case .frequentContacts:
-				print("\(indexPath.section) \(contact.id) - \(contact.publicName)")
 				if let cell = frequentContactCell(collectionView, forIndexPath: indexPath) {
 					cell.configure(withContact: contact)
 					return cell

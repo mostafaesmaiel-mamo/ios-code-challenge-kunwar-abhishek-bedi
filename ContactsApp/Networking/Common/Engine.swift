@@ -33,9 +33,7 @@ fileprivate extension NetworkEngine {
 							  completion: @escaping (ServiceResult<T>) -> Void) {
 		
 		let dataRequest = manager.request(request).validate()
-		fetch(dataRequest) { (data, response, error) in
-			print(request)
-			
+		fetch(dataRequest) { (data, response, error) in			
 			guard let responseData = data, response != nil else {
 				completion(.failure(ServiceError(error: NetworkError.noData.value)))
 				return

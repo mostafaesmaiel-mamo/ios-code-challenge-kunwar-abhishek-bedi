@@ -35,9 +35,7 @@ extension ContactsManager: PhoneContactsFetchable {
 		do {
 			try store.enumerateContacts(with: request, usingBlock: {(contact, stopPointer)
 				in
-				print(contact.transform())
 				fetchedContacts.append(contact.transform())
-//				print(contact.description)
 			})
 		} catch let error {
 			print("Failed to enumerate contact", error)

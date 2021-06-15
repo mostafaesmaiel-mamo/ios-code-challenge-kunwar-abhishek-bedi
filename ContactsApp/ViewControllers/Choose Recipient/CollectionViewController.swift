@@ -65,11 +65,12 @@ extension CollectionViewController {
 			return UICollectionViewCell()
 		}
 		
+		
         let section = sections[indexPath.section]
 
 		switch section {
 			case .frequentContacts:
-				
+				print("\(indexPath.section) \(contact.id) - \(contact.publicName)")
 				if let cell = frequentContactCell(collectionView, forIndexPath: indexPath) {
 					cell.configure(withContact: contact)
 					return cell
@@ -85,16 +86,36 @@ extension CollectionViewController {
 
 		return UICollectionViewCell()
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.name, for: indexPath) as? HeaderView {
-            let title = sections[indexPath.section].headerTitle
-            header.configure(withTitle: title)
-            return header
-        }
-        
-        return UICollectionReusableView()
-    }
+	
+	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		viewModel.contact(atIndexPath: indexPath)?.toggleSelection()
+		collectionView.reloadData()
+//		let section = sections[indexPath.section]
+//
+//		switch section {
+//			case .frequentContacts:
+//
+//				viewModel.contact(atIndexPath: indexPath)?.toggleSelection()
+//				collectionView.reloadData()
+//
+//
+//
+//			case .mamoContacts, .phoneContacts:
+//				viewModel.contact(atIndexPath: indexPath)
+//
+//
+//		}
+	}
+	
+	override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+		if let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.name, for: indexPath) as? HeaderView {
+			let title = sections[indexPath.section].headerTitle
+			header.configure(withTitle: title)
+			return header
+		}
+		
+		return UICollectionReusableView()
+	}
 }
 
 private extension CollectionViewController {

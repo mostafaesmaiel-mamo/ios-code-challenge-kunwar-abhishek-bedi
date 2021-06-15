@@ -290,6 +290,14 @@
 			path = "Choose Recipient";
 			sourceTree = "<group>";
 		};
+		3B1ADCDD267835140013F6D1 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				3B60DD612673F8CF003E4D7A /* ContactsManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		3B4AD88F2670203500493D47 = {
 			isa = PBXGroup;
 			children = (
@@ -318,7 +326,7 @@
 			children = (
 				3B4AD89B2670203500493D47 /* AppDelegate.swift */,
 				3B4AD89D2670203500493D47 /* SceneDelegate.swift */,
-				3B60DD612673F8CF003E4D7A /* ContactsManager.swift */,
+				3B1ADCDD267835140013F6D1 /* DataManager */,
 				3BB4561B2675F4E00065DB6E /* Models */,
 				3B60DD632673FD5E003E4D7A /* Networking */,
 				3B131DD32670F57D0080F4D6 /* Protocols */,

@@ -22,16 +22,10 @@ class ContactsManagerTests: XCTestCase {
 		mockAdaptor = MockResponseNetworkAdaptor(fileName: "mock_search_mamo_accounts")
 		mockContactManager = ContactsManager(networkAdaptor: mockAdaptor)
 
-		mockContactManager.fetchSearchMamoContacts(emails: [], orPhones: []){ result in
-			switch result {
-				case .success(let response):
-					
-					let firstAccount = try? XCTUnwrap(response.first)
-					XCTAssertEqual(firstAccount?.publicName, "Clara J.")
-					
-				case .failure:
-					XCTFail("Test should have passed")
-			}
+		mockContactManager.fetchSearchMamoContacts(emails: [], orPhones: []){ response in
+			
+			let firstAccount = try? XCTUnwrap(response.first)
+			XCTAssertEqual(firstAccount?.publicName, "Clara J.")
 		}
 	}
 	
@@ -39,21 +33,15 @@ class ContactsManagerTests: XCTestCase {
 		mockAdaptor = MockResponseNetworkAdaptor(fileName: "mock_frequent_accounts")
 		mockContactManager = ContactsManager(networkAdaptor: mockAdaptor)
 
-		mockContactManager.fetchFrequentMamoContacts(onCompletion: { result in
-			switch result {
-				case .success(let response):
-					
-					XCTAssertEqual(response.count, 7)
-					
-					let firstAccount = try? XCTUnwrap(response.first)
-					XCTAssertEqual(firstAccount?.publicName, "Clara J.")
-					
-					let lastAccount = try? XCTUnwrap(response.last)
-					XCTAssertEqual(lastAccount?.publicName, "Gardy .F")
-					
-				case .failure:
-					XCTFail("Test should have passed")
-			}
+		mockContactManager.fetchFrequentMamoContacts(onCompletion: { response in
+			
+			XCTAssertEqual(response.count, 7)
+			
+			let firstAccount = try? XCTUnwrap(response.first)
+			XCTAssertEqual(firstAccount?.publicName, "Clara J.")
+			
+			let lastAccount = try? XCTUnwrap(response.last)
+			XCTAssertEqual(lastAccount?.publicName, "Gardy .F")
 		})
 	}
 }

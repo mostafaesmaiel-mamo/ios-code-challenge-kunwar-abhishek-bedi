@@ -8,11 +8,7 @@ import Foundation
 
 struct ContactViewModel {
 	
-	private(set) var contacts: [ContactProtocol] = []
-	
-	private var mamoContacts: [ContactProtocol] = []
-	
-	private var frequentContacts: [ContactProtocol] = []
+	private(set) var contacts: [Contact] = []
 	
 	mutating func configure(withPhoneContacts phoneContacts: [Contact],
 							mamoContacts: [MamoAccount],
@@ -22,7 +18,7 @@ struct ContactViewModel {
 	
 	private mutating func processContacts(_ phoneContacts: [Contact],
 								 _ mamoContacts: [MamoAccount],
-								 _ frequentContacts: [Frequent]) -> [ContactProtocol]{
+								 _ frequentContacts: [Frequent]) -> [Contact]{
 		
 		var contacts:[Contact] = []
 		
@@ -65,7 +61,7 @@ struct ContactViewModel {
 			}
 		}
 		
-		return contacts
+		return Array(Set(contacts)) //contacts
 	}
 }
 
@@ -85,9 +81,9 @@ extension ContactViewModel {
 		return count
 	}
 	
-	func contact(atIndexPath indexPath: IndexPath) -> ContactProtocol? {
+	func contact(atIndexPath indexPath: IndexPath) -> Contact? {
 		
-		var contact: ContactProtocol?
+		var contact: Contact?
 		if let section = Section(rawValue: indexPath.section) {
 			switch section {
 				case .frequentContacts: contact = contacts.frequent[indexPath.row]
@@ -101,18 +97,18 @@ extension ContactViewModel {
 }
 
 //MARK: - Private Extensions
-fileprivate extension Sequence where Self.Element == ContactProtocol {
+fileprivate extension Sequence where Self.Element == Contact {
 	
-	var frequent: [ContactProtocol] {
+	var frequent: [Contact] {
 		self.filter({$0.isFrequentContact && $0.isDisplayable })
 	}
 	
-	var mamo: [ContactProtocol] {
+	var mamo: [Contact] {
 		self.filter({ $0.isMamoContact && $0.isDisplayable })
 			+ self.filter({ $0.isFrequentContact && $0.isDisplayable})
 	}
 	
-	var phone: [ContactProtocol] {
+	var phone: [Contact] {
 		self.filter({ !$0.isMamoContact && !$0.isFrequentContact && $0.isDisplayable})
 	}
 }

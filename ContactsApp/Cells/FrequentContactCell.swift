@@ -30,25 +30,13 @@ final class FrequentContactCell: UICollectionViewCell {
         lastNameLabel.text = nil
         imageView.image = nil
     }
-    
-    func showBorder() {
-        bgView.layer.borderWidth = 4.0
-        bgView.layer.borderColor = MamoColor.blue.value?.cgColor
-        layoutIfNeeded()
-    }
-
-    func hideBorder() {
-        bgView.layer.borderWidth = 0.0
-        bgView.layer.borderColor = UIColor.clear.cgColor
-        layoutIfNeeded()
-    }
-    
 }
 
-extension FrequentContactCell: ContactPresentable {
+extension FrequentContactCell: ContactPresentable, BorderPresentable {
 	func configure(withContact contact: ContactProtocol) {
 		firstNameLabel.text = contact.firstName
 		lastNameLabel.text = contact.lastName
 		imageView.setup(withContact: contact)
+		contact.isSelected ? showBorder(onView: bgView) : hideBorder(onView: bgView)
 	}
 }

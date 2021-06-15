@@ -18,6 +18,8 @@ protocol ContactProtocol {
 	var isFrequentContact: Bool {get}
 	var publicName: String {get}
 	var isDisplayable:Bool {get}
+	
+	var isSelected: Bool {get}
 }
 
 extension ContactProtocol {
@@ -32,5 +34,9 @@ extension ContactProtocol {
 	
 	var imageData: Data? {
 		nil
+	}
+	
+	var isSelected: Bool {
+		false
 	}
 }

@@ -6,11 +6,6 @@
 //
 import ContactsUI
 
-enum ContactResult {
-	case success([ContactProtocol])
-	case failure(ServiceError)
-}
-
 class ContactsManager {
 	let networkAdaptor: NetworkAdaptor
 	

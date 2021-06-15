@@ -15,9 +15,4 @@ extension UICollectionView {
             register(nib, forCellWithReuseIdentifier: className)
         }
     }
-    
-    func registerNibs<T: UICollectionViewCell>(_ cellTypes: [T.Type], bundle: Bundle? = nil) {
-        cellTypes.forEach { registerNib($0, bundle: bundle) }
-    }
-
 }

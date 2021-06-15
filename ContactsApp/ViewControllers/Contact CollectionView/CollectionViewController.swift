@@ -12,6 +12,8 @@ class CollectionViewController: UICollectionViewController {
 	private(set) var viewModel: ContactViewModel = ContactViewModel()
 	
     var sections: [Section] = []
+	
+	var onContactInteraction: (() -> ())?
 
     //MARK:- View Controller Lifecycle Methods
     override func viewDidLoad() {
@@ -72,6 +74,7 @@ extension CollectionViewController {
 		if indexPath.section == Section.frequentContacts.rawValue {
 			viewModel.contact(atIndexPath: indexPath)?.toggleSelection()
 			reloadCollectionViewSections(collectionView)
+			onContactInteraction?()
 		}
 	}
 	

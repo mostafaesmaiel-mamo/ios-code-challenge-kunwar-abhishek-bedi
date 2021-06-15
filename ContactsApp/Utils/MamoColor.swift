@@ -10,11 +10,16 @@ import UIKit
 enum MamoColor {
     
     case blue
-    
+	case gray
+	case grayBackground
+
     var value: UIColor? {
         switch self {
-        case .blue: return UIColor(hex: "#3333FF")
+			case .blue: return UIColor(hex: "#3333FF")
+			case .gray: return UIColor(hex: "#C7D1DC")
+			case .grayBackground: return UIColor(hex: "#F3F5F9")
         }
+		
     }
     
 }

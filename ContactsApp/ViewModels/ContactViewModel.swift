@@ -16,6 +16,10 @@ struct ContactViewModel {
 		self.contacts = processContacts(phoneContacts, mamoContacts, frequentContacts)
 	}
 	
+	var isAnyContactSelected: Bool {
+		contacts.first(where: {$0.isSelected}) != nil
+	}
+	
 	private mutating func processContacts(_ phoneContacts: [Contact],
 								 _ mamoContacts: [MamoAccount],
 								 _ frequentContacts: [Frequent]) -> [Contact]{

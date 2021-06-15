@@ -13,12 +13,11 @@ class ChooseRecipientViewController: UIViewController {
 	//MARK: - IBOutlets
 	@IBOutlet weak var containerView: UIView!
 	@IBOutlet weak var footerView: UIView!
-
+	@IBOutlet weak var nextButton: UIButton!
 	
 	//MARK: - Dependencies
 	private(set) var phoneContactManager: PhoneContactsFetchable!
 	private(set) var mamoContactManager: MamoContactsFetchable!
-	
 	
 	//MARK: - Variables
 	var collectionViewController: CollectionViewController!
@@ -36,6 +35,12 @@ class ChooseRecipientViewController: UIViewController {
 		}
 		
 		fetchAllContacts()
+		updateNextButton()
+	}
+	
+	func updateNextButton() {
+		let isAnyContactSelected = collectionViewController.viewModel.isAnyContactSelected
+		updateNextButtonState(isSelected: isAnyContactSelected)
 	}
 	
 	//MARK: - Configuration Methods -  Single Entry Point for This VC
@@ -79,6 +84,12 @@ class ChooseRecipientViewController: UIViewController {
 
 //MARK: - Private UI related functions
 fileprivate extension ChooseRecipientViewController {
+	
+	func updateNextButtonState(isSelected: Bool) {
+		nextButton.isEnabled = isSelected
+		nextButton.titleLabel?.textColor = isSelected ? .white : MamoColor.gray.value
+		nextButton.backgroundColor = isSelected ? MamoColor.blue.value : MamoColor.gray.value
+	}
 	
 	func reload() {
 		collectionViewController.collectionView.reloadData()

@@ -28,7 +28,7 @@ class ChooseRecipientViewController: UIViewController {
 	//MARK: - ViewController Lifecycle Methods
 	override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "#Choose Recipient"
+        navigationItem.title = "Choose Recipient"
 		
 		guard phoneContactManager != nil else {
 			fatalError("Contact Manager Cannot be Nil")

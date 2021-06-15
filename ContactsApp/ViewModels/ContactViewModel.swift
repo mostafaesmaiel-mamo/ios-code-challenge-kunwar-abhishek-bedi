@@ -75,7 +75,7 @@ extension ContactViewModel {
 	
 	func numberOfItems(inSection section: Int) -> Int {
 		var count = 0
-		if let section = Section(rawValue: section) { //TODO: - Need Safe Here
+		if let section = Section(rawValue: section) {
 			switch section {
 				case .frequentContacts: count = contacts.frequent.count
 				case .mamoContacts: 	count = contacts.mamo.count
@@ -88,7 +88,6 @@ extension ContactViewModel {
 	func contact(atIndexPath indexPath: IndexPath) -> ContactProtocol? {
 		
 		var contact: ContactProtocol?
-		//TODO: - Need Safe Here
 		if let section = Section(rawValue: indexPath.section) {
 			switch section {
 				case .frequentContacts: contact = contacts.frequent[indexPath.row]

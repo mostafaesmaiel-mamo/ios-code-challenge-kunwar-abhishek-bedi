@@ -1,0 +1,15 @@
+
+/* Class = "UIButton"; normalTitle = "#Next"; ObjectID = "0Ya-FO-Vcu"; */
+"0Ya-FO-Vcu.normalTitle" = "#Next";
+
+/* Class = "UIButton"; normalTitle = "#English"; ObjectID = "Yxl-2z-9hu"; */
+"Yxl-2z-9hu.normalTitle" = "#English";
+
+/* Class = "UILabel"; text = "#Secure instant everyday payments\n"; ObjectID = "j6r-u6-8SN"; */
+"j6r-u6-8SN.text" = "#Secure instant everyday payments\n";
+
+/* Class = "UIButton"; normalTitle = "#Arabic"; ObjectID = "jnd-fh-s98"; */
+"jnd-fh-s98.normalTitle" = "#Arabic";
+
+/* Class = "UICollectionViewController"; title = "Contact Picker"; ObjectID = "wfG-dr-FBQ"; */
+"wfG-dr-FBQ.title" = "Contact Picker";

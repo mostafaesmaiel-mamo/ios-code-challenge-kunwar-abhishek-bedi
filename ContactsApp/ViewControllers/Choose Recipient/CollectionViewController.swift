@@ -65,7 +65,6 @@ extension CollectionViewController {
 			return UICollectionViewCell()
 		}
 		
-		
         let section = sections[indexPath.section]
 
 		switch section {

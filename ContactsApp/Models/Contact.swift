@@ -18,10 +18,10 @@ class Contact: ContactProtocol, Hashable {
 
 	var isSelected: Bool = false
 	
-	var hashValue: Int {
-		get {
-			return id.hashValue << 15
-		}
+	
+	//MARK: - Hashable Conformance
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(id)
 	}
 	
 	static func == (lhs: Contact, rhs: Contact) -> Bool {

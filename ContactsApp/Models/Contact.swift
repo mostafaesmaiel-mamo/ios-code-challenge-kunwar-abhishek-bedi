@@ -33,11 +33,11 @@ extension Contact {
 	convenience init(id: String,
 		 firstName: String,
 		 lastName: String,
-		 phoneNumbers: [String],
-		 emails: [String],
-		 imageData: Data?,
-		 isMamoContact: Bool,
-		 isFrequentContact: Bool) {
+		 phoneNumbers: [String] = [],
+		 emails: [String] = [],
+		 imageData: Data? = nil,
+		 isMamoContact: Bool = false,
+		 isFrequentContact: Bool = false) {
 		self.init()
 		self.id = id
 		self.firstName = firstName

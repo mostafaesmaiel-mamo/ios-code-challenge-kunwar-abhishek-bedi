@@ -21,6 +21,7 @@ class CollectionViewController: UICollectionViewController {
         setupCollectionView()
     }
 	
+	//MARK: - Configuration - Single Entry Point
 	func configure(withPhoneContacts phoneContacts: [Contact],
 							mamoContacts: [MamoAccount],
 							frequentContacts: [Frequent]) {
@@ -38,24 +39,7 @@ extension CollectionViewController {
 		viewModel.numberOfItems(inSection: section)
     }
     
-    func frequentContactCell(_ collectionView: UICollectionView, forIndexPath indexPath: IndexPath) -> FrequentContactCell? {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FrequentContactCell.name, for: indexPath) as? FrequentContactCell else {
-            fatalError("FrequentContactCell cannot be nil")
-        }
-        
-        return cell
-    }
-
-    func otherContactCell(_ collectionView: UICollectionView, forIndexPath indexPath: IndexPath) -> ContactCell? {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContactCell.name, for: indexPath) as? ContactCell else {
-            fatalError("ContactCell cannot be nil")
-        }
-        
-        return cell
-    }
-
+    
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
@@ -128,5 +112,23 @@ private extension CollectionViewController {
 			collectionView.reloadSections([Section.frequentContacts.rawValue,
 										   Section.mamoContacts.rawValue])
 		}
+	}
+	
+	func frequentContactCell(_ collectionView: UICollectionView, forIndexPath indexPath: IndexPath) -> FrequentContactCell? {
+		
+		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FrequentContactCell.name, for: indexPath) as? FrequentContactCell else {
+			fatalError("FrequentContactCell cannot be nil")
+		}
+		
+		return cell
+	}
+	
+	func otherContactCell(_ collectionView: UICollectionView, forIndexPath indexPath: IndexPath) -> ContactCell? {
+		
+		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContactCell.name, for: indexPath) as? ContactCell else {
+			fatalError("ContactCell cannot be nil")
+		}
+		
+		return cell
 	}
 }

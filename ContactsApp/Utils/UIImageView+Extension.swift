@@ -14,7 +14,7 @@ extension UIImageView {
 			self.image = image
 		}
 		else {
-			// Use a fixed color here of needed.
+			// Use a fixed color here if needed.
 			self.setImageWith(contact.firstName, color: UIColor.random(), circular: true)
 		}
 	}

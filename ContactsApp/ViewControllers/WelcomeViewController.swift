@@ -12,9 +12,9 @@ class WelcomeViewController: UIViewController {
 
     private let viewModel = WelcomeViewModel()
     
-	private let contactAccessMessage = "#Hi! We would like you to grant us access to your contacts so that we can give you an amazing payment experience"
-	private let contactAccessDeniedMessage = "#Hi! It seems that you have not given us access to your contacts. Please provide access via Settings apps. We dont store any personal information."
-	private let contactAccessRestrictedMessage = "#Hi! It seems that you have active restrictions such as parental controls, etc in place."
+	private let contactAccessMessage = "Hi! We would like you to grant us access to your contacts so that we can give you an amazing payment experience"
+	private let contactAccessDeniedMessage = "Hi! It seems that you have not given us access to your contacts. Please provide access via Settings apps. We dont store any personal information."
+	private let contactAccessRestrictedMessage = "Hi! It seems that you have active restrictions such as parental controls, etc in place."
 
     
     //:MARK - View Controller Lifecycle Methods

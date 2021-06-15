@@ -13,7 +13,7 @@ extension WelcomeViewController {
 	
 	func showPermissionPrimingAlert(message: String, onOkayAction: (() -> ())? = nil ) {
 		
-		let alert = UIAlertController(title: "#Permission Priming Alert", message: message, preferredStyle: .actionSheet, alertActions: [
+		let alert = UIAlertController(title: "Permission Priming Alert", message: message, preferredStyle: .actionSheet, alertActions: [
 			.okay({ _ in
 				// Okay Pressed
 				onOkayAction?()

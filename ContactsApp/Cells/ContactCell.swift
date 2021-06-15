@@ -38,7 +38,7 @@ extension ContactCell: ContactPresentable, BorderPresentable {
 	func configure(withContact contact: ContactProtocol) {
 		firstNameLabel.text = contact.firstName
 		lastNameLabel.text = contact.lastName
-		logoView.isHidden = !contact.isMamoContact
+		logoView.isHidden = !(contact.isMamoContact || contact.isFrequentContact)
 		imageView.setup(withContact: contact)
 		contact.isSelected ? showBorder(onView: contentView) : hideBorder(onView: contentView)
 	}

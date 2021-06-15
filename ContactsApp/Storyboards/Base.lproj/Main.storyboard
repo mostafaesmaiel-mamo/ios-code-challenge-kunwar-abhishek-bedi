@@ -69,6 +69,7 @@
                     <connections>
                         <outlet property="containerView" destination="zgh-hD-0YH" id="Hhn-c6-O93"/>
                         <outlet property="footerView" destination="Xjd-a8-Zwp" id="mtt-3c-NxX"/>
+                        <outlet property="nextButton" destination="0Ya-FO-Vcu" id="1FW-Fd-WlJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wpK-aJ-s4b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -11,6 +11,7 @@ extension ChooseRecipientViewController {
 		if segue.identifier == "segue_embed" {
 			if let vc = segue.destination as? CollectionViewController {
 				collectionViewController = vc
+				collectionViewController.onContactInteraction = updateNextButton
 			}
 		}
 		else if segue.identifier == "segue_push_contact_details" {

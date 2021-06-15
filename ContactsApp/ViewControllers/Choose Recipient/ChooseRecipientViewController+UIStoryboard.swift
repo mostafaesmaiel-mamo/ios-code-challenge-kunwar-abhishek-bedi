@@ -16,7 +16,7 @@ extension ChooseRecipientViewController {
 		else if segue.identifier == "segue_push_contact_details" {
 			if let vc = segue.destination as? ContactDetailsViewController {
 				contactDetailsViewController = vc
-				guard let contact = collectionViewController.viewModel.contacts.randomElement() else {
+				guard let contact = collectionViewController.viewModel.contacts.first(where: {$0.isSelected}) else {
 					return
 				}
 				contactDetailsViewController.configure(with: contact)

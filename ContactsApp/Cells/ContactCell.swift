@@ -38,7 +38,7 @@ extension ContactCell: ContactPresentable {
 	func configure(withContact contact: ContactProtocol) {
 		firstNameLabel.text = contact.firstName
 		lastNameLabel.text = contact.lastName
-		logoView.isHidden = false //contact.isMamoContact
+		logoView.isHidden = !contact.isMamoContact
 		imageView.setup(withContact: contact)		
 	}
 }

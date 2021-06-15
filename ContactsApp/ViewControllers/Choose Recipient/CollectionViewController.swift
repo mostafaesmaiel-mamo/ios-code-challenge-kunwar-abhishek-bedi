@@ -9,7 +9,7 @@ import UIKit
 
 class CollectionViewController: UICollectionViewController {
 
-	private var viewModel: ContactViewModel = ContactViewModel()
+	private(set) var viewModel: ContactViewModel = ContactViewModel()
 	
     fileprivate let sectionContentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
     

@@ -22,6 +22,7 @@ class ChooseRecipientViewController: UIViewController {
 	
 	//MARK: - Variables
 	var collectionViewController: CollectionViewController!
+	var contactDetailsViewController: ContactDetailsViewController!
 	private(set) lazy var loader = LoaderView()
 	
 	

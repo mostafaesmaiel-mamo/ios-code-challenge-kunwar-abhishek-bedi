@@ -18,12 +18,14 @@ extension ChooseRecipientViewController {
 	}
 	
 	func fetchMamoContacts(emails: [String], phones: [String], onCompletion: @escaping (([MamoAccount])-> Void)) {
+		
 		mamoContactManager.fetchSearchMamoContacts(emails: emails, orPhones: phones) { result in
 			onCompletion(result)
 		}
 	}
 	
 	func fetchFrequentContacts(onCompletion: @escaping (([Frequent])-> Void)) {
+		
 		mamoContactManager.fetchFrequentMamoContacts { result in
 			onCompletion(result)
 		}

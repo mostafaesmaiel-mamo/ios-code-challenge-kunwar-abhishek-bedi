@@ -36,7 +36,11 @@ class ContactDetailsViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		
+		guard contact != nil else {
+			fatalError("Conact should be initialized. Use configure func")
+		}
+		
         // Do any additional setup after loading the view.
 		setupUI()
     }

@@ -27,7 +27,7 @@ extension CollectionViewController {
 		
 		return section
 	}
-	
+	//TODO: - Remove contentinset
 	func otherContactsSection(contentInset: NSDirectionalEdgeInsets,
 							  headerId: String) -> NSCollectionLayoutSection? {
 		let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(80)))

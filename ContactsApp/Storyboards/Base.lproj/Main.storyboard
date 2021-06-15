@@ -143,12 +143,12 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Bz8-xW-L73" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QOg-Z2-oEt" secondAttribute="bottom" constant="20" id="3wg-56-lNW"/>
+                                    <constraint firstItem="Bz8-xW-L73" firstAttribute="top" secondItem="QOg-Z2-oEt" secondAttribute="bottom" constant="20" id="3wg-56-lNW"/>
                                     <constraint firstItem="QOg-Z2-oEt" firstAttribute="centerX" secondItem="64E-Sr-b1l" secondAttribute="centerX" id="7zH-0E-adH"/>
                                     <constraint firstAttribute="height" constant="196" id="9Dc-dV-EC6"/>
                                     <constraint firstItem="QOg-Z2-oEt" firstAttribute="top" secondItem="64E-Sr-b1l" secondAttribute="top" constant="20" id="AKk-bS-nQR"/>
                                     <constraint firstAttribute="width" constant="170" id="Eb8-T5-MR2"/>
-                                    <constraint firstAttribute="bottom" secondItem="Bz8-xW-L73" secondAttribute="bottom" constant="29" id="bnG-uX-f6H"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Bz8-xW-L73" secondAttribute="bottom" constant="29" id="bnG-uX-f6H"/>
                                     <constraint firstItem="Bz8-xW-L73" firstAttribute="centerX" secondItem="64E-Sr-b1l" secondAttribute="centerX" id="fx6-V7-ZDW"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>

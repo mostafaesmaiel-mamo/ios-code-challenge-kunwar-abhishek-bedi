@@ -77,8 +77,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.96078431372549022" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="IVr-pC-7dM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rD2-sx-3zg" secondAttribute="bottom" constant="20" id="IL5-ZS-az1"/>
-                            <constraint firstAttribute="bottom" secondItem="IVr-pC-7dM" secondAttribute="bottom" constant="29" id="S8z-aS-z4K"/>
+                            <constraint firstItem="IVr-pC-7dM" firstAttribute="top" secondItem="rD2-sx-3zg" secondAttribute="bottom" constant="20" id="IL5-ZS-az1"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IVr-pC-7dM" secondAttribute="bottom" constant="29" id="S8z-aS-z4K"/>
                             <constraint firstItem="rD2-sx-3zg" firstAttribute="centerX" secondItem="TYM-EN-5wn" secondAttribute="centerX" id="fIq-hl-Xie"/>
                             <constraint firstItem="rD2-sx-3zg" firstAttribute="top" secondItem="TYM-EN-5wn" secondAttribute="top" constant="20" id="wxa-dM-OTj"/>
                             <constraint firstItem="IVr-pC-7dM" firstAttribute="centerX" secondItem="TYM-EN-5wn" secondAttribute="centerX" id="xlf-ah-zga"/>

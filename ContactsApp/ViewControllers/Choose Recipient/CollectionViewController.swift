@@ -88,23 +88,10 @@ extension CollectionViewController {
     }
 	
 	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		viewModel.contact(atIndexPath: indexPath)?.toggleSelection()
-		collectionView.reloadData()
-//		let section = sections[indexPath.section]
-//
-//		switch section {
-//			case .frequentContacts:
-//
-//				viewModel.contact(atIndexPath: indexPath)?.toggleSelection()
-//				collectionView.reloadData()
-//
-//
-//
-//			case .mamoContacts, .phoneContacts:
-//				viewModel.contact(atIndexPath: indexPath)
-//
-//
-//		}
+		if indexPath.section == Section.frequentContacts.rawValue {
+			viewModel.contact(atIndexPath: indexPath)?.toggleSelection()
+			reloadCollectionViewSections(collectionView)
+		}
 	}
 	
 	override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -138,6 +125,14 @@ private extension CollectionViewController {
         // Setup Layout
         collectionView.collectionViewLayout = createLayout()
     }
+	
+	func reloadCollectionViewSections(_ collectionView: UICollectionView) {
+		UIView.performWithoutAnimation {
+			collectionView.reloadSections([Section.frequentContacts.rawValue,
+										   Section.mamoContacts.rawValue])
+		}
+	}
+	
     
     func frequentContactsSection(contentInset: NSDirectionalEdgeInsets,
                                              headerId: String) -> NSCollectionLayoutSection? {

@@ -10,8 +10,8 @@ struct Contact: ContactProtocol {
 	var id: String
 	var firstName: String
 	var lastName: String
-	var phoneNumber: String?
-	var email: String?
+	var phoneNumbers: [String]?
+	var emails: [String]?
 	var imageData: Data?
 	var isMamoContact: Bool = false
 	var isFrequentContact: Bool = false

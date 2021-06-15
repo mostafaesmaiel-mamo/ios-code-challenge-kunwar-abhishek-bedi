@@ -20,6 +20,7 @@ struct NetworkEngine: Fetchable {
 								completion: @escaping (ServiceResult<T>) -> Void) {
 		do {
 			let request = try buildable.asURLRequest()
+			print(request.cURL)
 			fetch(request, completion: completion)
 		} catch let exception {
 			completion(.failure(ServiceError(error: exception.localizedDescription)))

@@ -23,8 +23,10 @@ class CollectionViewController: UICollectionViewController {
         setupCollectionView()
     }
 	
-	func configure(withContacts contacts:[ContactProtocol]) {
-		viewModel.configure(withContacts: contacts)
+	func configure(withPhoneContacts phoneContacts: [Contact],
+							mamoContacts: [MamoAccount],
+							frequentContacts: [Frequent]) {
+		viewModel.configure(withPhoneContacts: phoneContacts, mamoContacts: mamoContacts, frequentContacts: frequentContacts)
 	}
 }
 

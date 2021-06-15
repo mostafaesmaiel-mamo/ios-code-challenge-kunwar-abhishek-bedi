@@ -58,16 +58,15 @@ class ChooseRecipientViewController: UIViewController {
 			}
 			
 			// Matching Mamo Contacts
-			let emails = contacts.filteredEmails
-			let phones = contacts.compactMap({ $0.phoneNumber })
+			let emails:[String] = contacts.allEmails
+			let phones:[String] = contacts.allPhoneNumbers
 			
 			self?.fetchMamoContacts(emails: emails, phones: phones) { mamoContacts in
 				
 				self?.fetchFrequentContacts { frequentContacts in
 					
-					let allContacts = contacts + mamoContacts + frequentContacts
 					self?.showViewsAndHideLoader()
-					self?.updateCollectionViewController(contacts: allContacts)
+					self?.updateCollectionViewController(withPhoneContacts: contacts, mamoContacts: mamoContacts, frequentContacts: frequentContacts)
 					self?.reload()
 					
 				}
@@ -84,8 +83,11 @@ fileprivate extension ChooseRecipientViewController {
 		collectionViewController.collectionView.reloadData()
 	}
 	
-	func updateCollectionViewController(contacts: [ContactProtocol]) {
-		collectionViewController.configure(withContacts: contacts)
+	func updateCollectionViewController(withPhoneContacts phoneContacts: [Contact],
+										mamoContacts: [MamoAccount],
+										frequentContacts: [Frequent]) {
+		
+		collectionViewController.configure(withPhoneContacts: phoneContacts, mamoContacts: mamoContacts, frequentContacts: frequentContacts)
 	}
 	
 	func showHideViewsWhileLoading(canShow: Bool) {
@@ -112,14 +114,26 @@ fileprivate extension ChooseRecipientViewController {
 	}
 }
 
-fileprivate extension Sequence where Self.Element == ContactProtocol {
-	var filteredEmails: [String] {
-		self.compactMap { contact in
-			//TODO: - Check if One liner is possible
-			if let email = contact.email, !email.isEmpty {
-				return email
+extension Sequence where Self.Element == Contact {
+	var allEmails: [String] {
+		
+		var allEmails:[String] = []
+		self.forEach { contact in
+			if let emails = contact.emails {
+				allEmails.append(contentsOf: emails)
 			}
-			return nil
 		}
+		return allEmails
+	}
+	
+	var allPhoneNumbers: [String] {
+		
+		var allPhoneNumbers:[String] = []
+		self.forEach { contact in
+			if let phoneNumbers = contact.phoneNumbers {
+				allPhoneNumbers.append(contentsOf: phoneNumbers)
+			}
+		}
+		return allPhoneNumbers
 	}
 }

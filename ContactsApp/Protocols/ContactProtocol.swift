@@ -11,8 +11,8 @@ protocol ContactProtocol {
 	var id: String {get}
 	var firstName: String {get}
 	var lastName: String {get}
-	var phoneNumber: String? {get}
-	var email: String? {get}
+	var phoneNumbers: [String]? {get}
+	var emails: [String]? {get}
 	var imageData: Data? {get}
 	var isMamoContact: Bool {get}
 	var isFrequentContact: Bool {get}

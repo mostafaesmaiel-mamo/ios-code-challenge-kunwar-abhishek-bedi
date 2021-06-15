@@ -59,12 +59,12 @@ extension MamoAccount: ContactProtocol {
 		mamoPublicName?.lastName ?? ""
 	}
 	
-	var phoneNumber: String? {
-		mamoPhoneNumber
+	var phoneNumbers: [String]? {
+		[mamoPhoneNumber].compactMap({ $0 })
 	}
 	
-	var email: String? {
-		mamoEmail
+	var emails: [String]? {
+		[mamoEmail].compactMap({ $0 })
 	}
 	
 	var isMamoContact: Bool {

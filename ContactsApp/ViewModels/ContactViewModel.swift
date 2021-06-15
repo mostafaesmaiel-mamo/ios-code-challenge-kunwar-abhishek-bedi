@@ -10,8 +10,62 @@ struct ContactViewModel {
 	
 	private var contacts: [ContactProtocol] = []
 	
-	mutating func configure(withContacts contacts: [ContactProtocol]) {
-		self.contacts = contacts
+	private var mamoContacts: [ContactProtocol] = []
+	
+	private var frequentContacts: [ContactProtocol] = []
+	
+	mutating func configure(withPhoneContacts phoneContacts: [Contact],
+							mamoContacts: [MamoAccount],
+							frequentContacts: [Frequent]) {
+		self.contacts = processContacts(phoneContacts, mamoContacts, frequentContacts)
+	}
+	
+	private mutating func processContacts(_ phoneContacts: [Contact],
+								 _ mamoContacts: [MamoAccount],
+								 _ frequentContacts: [Frequent]) -> [ContactProtocol]{
+		
+		var contacts:[Contact] = []
+		
+		for phone in phoneContacts {
+			var didAddContact = false
+			for mamo in mamoContacts {
+				
+				if mamo.mamoPublicName == phone.publicName {
+					var pc = phone
+					pc.isMamoContact = true
+					contacts.append(pc)
+					didAddContact = true
+				}
+				else if let phoneEmails = phone.emails, phoneEmails.contains(mamo.value ?? "") {
+					var pc = phone
+					pc.isMamoContact = true
+					contacts.append(pc)
+					didAddContact = true
+				}
+				else if let phoneNumbers = phone.phoneNumbers, phoneNumbers.contains(mamo.value ?? "") {
+					var pc = phone
+					pc.isMamoContact = true
+					contacts.append(pc)
+					didAddContact = true
+				}
+			}
+
+			if !didAddContact {
+				contacts.append(phone)
+			}
+
+			
+			// Frequent Contact Updates
+			for freq in frequentContacts {
+				
+				if var pc = phoneContacts.first(where: { $0.publicName == freq.frequentPublicName }) {
+					pc.isFrequentContact = true
+					contacts.append(pc)
+				}
+			}
+		}
+		
+		return contacts
 	}
 }
 

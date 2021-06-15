@@ -36,11 +36,11 @@ extension Frequent: ContactProtocol {
 		frequentPublicName?.components(separatedBy: " ").last ?? ""
 	}
 	
-	var phoneNumber: String? {
+	var phoneNumbers: [String]? {
 		nil
 	}
 	
-	var email: String? {
+	var emails: [String]? {
 		nil
 	}
 	

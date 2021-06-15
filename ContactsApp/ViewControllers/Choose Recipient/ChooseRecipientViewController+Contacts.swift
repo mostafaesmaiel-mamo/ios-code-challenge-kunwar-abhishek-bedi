@@ -10,38 +10,22 @@ import Foundation
 //MARK: - Contacts Related Functions -
 extension ChooseRecipientViewController {
 	
-	func fetchPhoneContacts(onCompletion: @escaping (([ContactProtocol])-> Void)) {
+	func fetchPhoneContacts(onCompletion: @escaping (([Contact])-> Void)) {
 		
-		phoneContactManager.fetchPhoneContacts { phoneContacts in
-			onCompletion(phoneContacts)
+		phoneContactManager.fetchPhoneContacts { result in
+			onCompletion(result)
 		}
 	}
 	
-	func fetchMamoContacts(emails: [String], phones: [String], onCompletion: @escaping (([ContactProtocol])-> Void)) {
-		mamoContactManager.fetchSearchMamoContacts(emails: emails, orPhones: phones) {[weak self] result in
-			self?.processResult(result, onCompletion: onCompletion)
+	func fetchMamoContacts(emails: [String], phones: [String], onCompletion: @escaping (([MamoAccount])-> Void)) {
+		mamoContactManager.fetchSearchMamoContacts(emails: emails, orPhones: phones) { result in
+			onCompletion(result)
 		}
 	}
 	
-	func fetchFrequentContacts(onCompletion: @escaping (([ContactProtocol])-> Void)) {
-		mamoContactManager.fetchFrequentMamoContacts {[weak self] result in
-			self?.processResult(result, onCompletion: onCompletion)
-		}
-	}
-}
-
-fileprivate extension ChooseRecipientViewController {
-	
-	func processResult(_ result: ContactResult, onCompletion: @escaping (([ContactProtocol])-> Void)) {
-		
-		switch result {
-			case .success(let accounts):
-				print(accounts)
-				
-				onCompletion(accounts)
-			case .failure(let error):
-				print(error.error.description)
-				onCompletion([])
+	func fetchFrequentContacts(onCompletion: @escaping (([Frequent])-> Void)) {
+		mamoContactManager.fetchFrequentMamoContacts { result in
+			onCompletion(result)
 		}
 	}
 }

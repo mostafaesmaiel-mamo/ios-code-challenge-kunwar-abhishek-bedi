@@ -13,12 +13,12 @@ protocol ContactFetchable {}
 protocol PhoneContactsFetchable: ContactFetchable {
 	var store: CNContactStore { get }
 	var keys: [String] { get }
-	func fetchPhoneContacts(onCompletion: @escaping ([ContactProtocol]) -> ())
+	func fetchPhoneContacts(onCompletion: @escaping ([Contact]) -> ())
 }
 
 protocol MamoContactsFetchable: ContactFetchable {
-	func fetchSearchMamoContacts(emails: [String], orPhones: [String], onCompletion: @escaping (ContactResult) -> ())
-	func fetchFrequentMamoContacts(onCompletion: @escaping (ContactResult) -> ())
+	func fetchSearchMamoContacts(emails: [String], orPhones: [String], onCompletion: @escaping ([MamoAccount]) -> ())
+	func fetchFrequentMamoContacts(onCompletion: @escaping ([Frequent]) -> ())
 }
 
 

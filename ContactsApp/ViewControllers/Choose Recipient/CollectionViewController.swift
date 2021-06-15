@@ -75,14 +75,8 @@ extension CollectionViewController {
 					return cell
 				}
 				
-			case .mamoContacts:
-				
-				if let cell = otherContactCell(collectionView, forIndexPath: indexPath) {
-					cell.configure(withContact: contact)
-					return cell
-				}
-				
-			case .phoneContacts:
+			case .mamoContacts, .phoneContacts:
+
 				if let cell = otherContactCell(collectionView, forIndexPath: indexPath) {
 					cell.configure(withContact: contact)
 					return cell

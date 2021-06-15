@@ -26,3 +26,4 @@ We have chosen MVVM architecture along with Protocol Oriented programming to avo
 ## WIP
 
 - Contact Selection Handling [API stopped working]
+- Contact Details Screen is implemented with random contact info

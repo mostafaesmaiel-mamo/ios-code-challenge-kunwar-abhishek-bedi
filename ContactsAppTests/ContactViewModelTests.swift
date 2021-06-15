@@ -23,13 +23,23 @@ class ContactViewModelTests: XCTestCase {
 		let model = try JSONDecoder().decode(MamoAccounts.self, from: data)
 
 		let mamoAccounts = try XCTUnwrap(model.mamoAccounts)
-		let phoneContact = Contact(id: "1", firstName: "Clara", lastName: "J.")
+		let phoneContactMatchingMamo = Contact(id: "1", firstName: "Clara", lastName: "J.", emails: ["Clara.J.Hamel@yahoo.com"])
+		let phoneContact = Contact(id: "2", firstName: "Phone", lastName: "Contact")
 
 		var contactViewModel = ContactViewModel()
-		contactViewModel.configure(withPhoneContacts: [phoneContact], mamoContacts: mamoAccounts, frequentContacts: [])
-		
-		XCTAssertEqual(contactViewModel.numberOfItems(inSection: Section.phoneContacts.rawValue), 0)
-		XCTAssertEqual(contactViewModel.numberOfItems(inSection: Section.mamoContacts.rawValue), 1)
+		contactViewModel.configure(withPhoneContacts: [phoneContactMatchingMamo,phoneContact], mamoContacts: mamoAccounts, frequentContacts: [])
 		XCTAssertEqual(contactViewModel.numberOfItems(inSection: Section.frequentContacts.rawValue), 0)
+		XCTAssertEqual(contactViewModel.numberOfItems(inSection: Section.mamoContacts.rawValue), 1)
+		XCTAssertEqual(contactViewModel.numberOfItems(inSection: Section.phoneContacts.rawValue), 1)
+		
+		let item1 = try XCTUnwrap(contactViewModel.contact(atIndexPath: IndexPath(item: 0, section: 1)))
+		let item2 = try XCTUnwrap(contactViewModel.contact(atIndexPath: IndexPath(item: 0, section: 2)))
+		
+		XCTAssertEqual(item1.isMamoContact, true)
+		XCTAssertEqual(item2.isMamoContact, false)
+
+		
+
+
 	}
 }

@@ -35,6 +35,7 @@
 		3B1ADCCD2677E9070013F6D1 /* ContactFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1ADCCC2677E9070013F6D1 /* ContactFetchable.swift */; };
 		3B1ADCCF2677ECD00013F6D1 /* ContactPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1ADCCE2677ECD00013F6D1 /* ContactPresentable.swift */; };
 		3B1ADCD526782D6F0013F6D1 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B1ADCD726782D6F0013F6D1 /* Localization.strings */; };
+		3B1ADCDC267832580013F6D1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B1ADCDB267832580013F6D1 /* README.md */; };
 		3B4AD89C2670203500493D47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89B2670203500493D47 /* AppDelegate.swift */; };
 		3B4AD89E2670203500493D47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89D2670203500493D47 /* SceneDelegate.swift */; };
 		3B4AD8A02670203500493D47 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89F2670203500493D47 /* CollectionViewController.swift */; };
@@ -119,6 +120,7 @@
 		3B1ADCD826782DA90013F6D1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		3B1ADCD926782DA90013F6D1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		3B1ADCDA26782DA90013F6D1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localization.strings; sourceTree = "<group>"; };
+		3B1ADCDB267832580013F6D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3B4AD8982670203500493D47 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4AD89B2670203500493D47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B4AD89D2670203500493D47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 		3B4AD88F2670203500493D47 = {
 			isa = PBXGroup;
 			children = (
+				3B1ADCDB267832580013F6D1 /* README.md */,
 				3B4AD89A2670203500493D47 /* ContactsApp */,
 				3B4AD8B12670203800493D47 /* ContactsAppTests */,
 				3B4AD8BC2670203800493D47 /* ContactsAppUITests */,
@@ -570,6 +573,7 @@
 				3B4AD8A52670203700493D47 /* Assets.xcassets in Resources */,
 				3B131DC62670D1940080F4D6 /* FrequentContactCell.xib in Resources */,
 				3B1ADCD526782D6F0013F6D1 /* Localization.strings in Resources */,
+				3B1ADCDC267832580013F6D1 /* README.md in Resources */,
 				3B4AD8A32670203500493D47 /* Main.storyboard in Resources */,
 				3B131DBA2670B5440080F4D6 /* HeaderView.xib in Resources */,
 			);

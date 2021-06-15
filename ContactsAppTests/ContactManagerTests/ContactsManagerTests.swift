@@ -35,7 +35,7 @@ class ContactsManagerTests: XCTestCase {
 
 		mockContactManager.fetchFrequentMamoContacts(onCompletion: { response in
 			
-			XCTAssertEqual(response.count, 7)
+			XCTAssertEqual(response.count, 5)
 			
 			let firstAccount = try? XCTUnwrap(response.first)
 			XCTAssertEqual(firstAccount?.publicName, "Clara J.")

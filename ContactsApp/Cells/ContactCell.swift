@@ -17,6 +17,7 @@ final class ContactCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+		contentView.layer.cornerRadius = 20
         reset()
     }
     

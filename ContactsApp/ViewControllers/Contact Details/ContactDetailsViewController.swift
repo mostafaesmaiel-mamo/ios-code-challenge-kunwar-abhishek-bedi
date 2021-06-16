@@ -10,11 +10,11 @@ import UIKit
 class ContactDetailsViewController: UIViewController {
 
 	//MARK: - IBOutlets
-	@IBOutlet weak var imageView: RoundedImageView!
-	@IBOutlet weak var logoView: UIView!
-	@IBOutlet weak var firstNameLabel: UILabel!
-	@IBOutlet weak var lastNameLabel: UILabel!
-	@IBOutlet weak var textView: UITextView!
+	@IBOutlet private weak var imageView: RoundedImageView!
+	@IBOutlet private weak var logoView: UIView!
+	@IBOutlet private weak var firstNameLabel: UILabel!
+	@IBOutlet private weak var lastNameLabel: UILabel!
+	@IBOutlet private weak var textView: UITextView!
 	
 	private var contact: ContactProtocol!
 	
@@ -52,15 +52,4 @@ class ContactDetailsViewController: UIViewController {
 		textView.text = description(for: contact)
 		imageView.setup(withContact: contact)
 	}
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

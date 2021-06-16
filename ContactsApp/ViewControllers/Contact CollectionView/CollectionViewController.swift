@@ -33,15 +33,14 @@ class CollectionViewController: UICollectionViewController {
 
 //MARK:- UICollectionViewCallbacks
 extension CollectionViewController {
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    
+	override func numberOfSections(in collectionView: UICollectionView) -> Int {
         sections.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		viewModel.numberOfItems(inSection: section)
     }
-    
-    
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 

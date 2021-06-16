@@ -37,9 +37,5 @@ class ContactViewModelTests: XCTestCase {
 		
 		XCTAssertEqual(item1.isMamoContact, true)
 		XCTAssertEqual(item2.isMamoContact, false)
-
-		
-
-
 	}
 }

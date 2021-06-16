@@ -10,8 +10,7 @@ fileprivate let sectionContentInsets = NSDirectionalEdgeInsets(top: 0, leading: 
 
 extension CollectionViewController {
 
-	func frequentContactsSection(contentInset: NSDirectionalEdgeInsets,
-								 headerId: String) -> NSCollectionLayoutSection? {
+	func frequentContactsSection(headerId: String) -> NSCollectionLayoutSection? {
 		//TODO: - Centralize dimensions
 		let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(70 * 2), heightDimension: .absolute(107 * 2)))
 		item.contentInsets.trailing = 16
@@ -19,7 +18,7 @@ extension CollectionViewController {
 		
 		let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200)), subitems: [item])
 		let section = NSCollectionLayoutSection(group: group)
-		section.contentInsets = contentInset
+		section.contentInsets = sectionContentInsets
 		
 		section.orthogonalScrollingBehavior = .continuous
 		
@@ -27,9 +26,8 @@ extension CollectionViewController {
 		
 		return section
 	}
-	//TODO: - Remove contentinset
-	func otherContactsSection(contentInset: NSDirectionalEdgeInsets,
-							  headerId: String) -> NSCollectionLayoutSection? {
+
+	func otherContactsSection(headerId: String) -> NSCollectionLayoutSection? {
 		let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(80)))
 		item.contentInsets.bottom = 16
 		
@@ -53,10 +51,10 @@ extension CollectionViewController {
 			
 			switch contactSection {
 				case .frequentContacts:
-					return self.frequentContactsSection(contentInset: sectionContentInsets, headerId: HeaderView.name)
+					return self.frequentContactsSection(headerId: HeaderView.name)
 					
 				case .mamoContacts, .phoneContacts:
-					return self.otherContactsSection(contentInset: sectionContentInsets, headerId: HeaderView.name)
+					return self.otherContactsSection(headerId: HeaderView.name)
 			}
 		}
 	}

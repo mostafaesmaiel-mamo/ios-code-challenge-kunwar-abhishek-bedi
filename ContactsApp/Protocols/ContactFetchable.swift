@@ -19,9 +19,7 @@ protocol PhoneContactsFetchable: ContactFetchable {
 
 protocol MamoContactsFetchable: ContactFetchable {
 	
-	func fetchSearchMamoContacts(emails: [String],
-								 orPhones: [String],
-								 onCompletion: @escaping ([MamoAccount]) -> ())
+	func fetchSearchMamoContacts(emails: [String], orPhones: [String], onCompletion: @escaping ([MamoAccount]) -> ())
 	
 	func fetchFrequentMamoContacts(onCompletion: @escaping ([Frequent]) -> ())
 }

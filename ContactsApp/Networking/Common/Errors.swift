@@ -11,7 +11,7 @@ fileprivate extension String {
 	static let invalidURL = "URL is not valid"
 	static let unableToDecode = "We could not decode the response."
 	static let dataUnavailable = "Response returned with no data to decode."
-	static let noNetwork = "an_error_occured_while_getting_los_network"
+	static let noNetwork = "No Network"
 }
 
 

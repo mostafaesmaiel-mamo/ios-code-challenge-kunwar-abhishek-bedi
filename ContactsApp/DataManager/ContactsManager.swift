@@ -6,7 +6,7 @@
 //
 import ContactsUI
 
-class ContactsManager {
+final class ContactsManager {
 	
     let networkAdaptor: NetworkAdaptor
 	
@@ -20,7 +20,7 @@ extension ContactsManager: PhoneContactsFetchable {
 	var store: CNContactStore { CNContactStore() }
 	
 	var keys: [String] {
-		[CNContactGivenNameKey,
+                         [CNContactGivenNameKey,
 						  CNContactFamilyNameKey,
 						  CNContactImageDataKey,
 						  CNContactThumbnailImageDataKey,
@@ -35,7 +35,7 @@ extension ContactsManager: PhoneContactsFetchable {
         var fetchedContacts: [Contact] = []
 		let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
 		do {
-			try store.enumerateContacts(with: request, usingBlock: {(contact, stopPointer)
+			try store.enumerateContacts(with: request, usingBlock: {(contact, _)
 				in
 				fetchedContacts.append(contact.transform())
 			})
@@ -61,7 +61,8 @@ extension ContactsManager: MamoContactsFetchable {
 						onCompletion(accounts)
 					}
 					
-				case .failure:
+				case .failure(let error):
+                    print(error.localizedDescription)
 					onCompletion([])
 			}
 		}
@@ -72,15 +73,15 @@ extension ContactsManager: MamoContactsFetchable {
 		
         let service = ContactsService.searchAccounts(emails: emails, orPhones: orPhones)
 		networkAdaptor.process(service, type: MamoAccounts.self) { result in
-			
-			
-			switch result {
+
+            switch result {
 				case .success(let response):
 					if let accounts = response.mamoAccounts, !accounts.isEmpty {
 						onCompletion(accounts)
 					}
 					
-				case .failure:
+                case .failure(let error):
+                    print(error.localizedDescription)
 					onCompletion([])
 			}
 		}

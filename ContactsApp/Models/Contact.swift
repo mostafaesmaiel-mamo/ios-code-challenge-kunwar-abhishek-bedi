@@ -6,7 +6,7 @@
 //
 import Foundation
 
-class Contact: ContactProtocol, Hashable {
+final class Contact: ContactProtocol, Hashable {
 	
     var id: String = ""
 	var firstName: String = ""
@@ -62,7 +62,7 @@ extension Contact {
 extension Array where Self.Element: Contact {
 	
     func contact(matchingEmail email: String) -> Contact? {
-		let matchingContact = self.first(where: { contact in
+		let matchingContact = first(where: { contact in
 			if let emails = contact.emails {
 				return emails.contains(email)
 			}
@@ -73,7 +73,7 @@ extension Array where Self.Element: Contact {
 	}
 	
 	func contact(matchingPhone phoneNumber: String) -> Contact? {
-		let matchingContact = self.first(where: { contact in
+		let matchingContact = first(where: { contact in
 			if let phoneNumbers = contact.phoneNumbers {
 				return phoneNumbers.contains(phoneNumber)
 			}

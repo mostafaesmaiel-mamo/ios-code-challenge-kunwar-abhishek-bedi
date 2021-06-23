@@ -38,7 +38,6 @@
 		3B1ADCE4267841830013F6D1 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1ADCE3267841830013F6D1 /* UIImageView+Extension.swift */; };
 		3B1ADCE626784CF70013F6D1 /* ContactViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1ADCE526784CF70013F6D1 /* ContactViewModelTests.swift */; };
 		3B4AD89C2670203500493D47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89B2670203500493D47 /* AppDelegate.swift */; };
-		3B4AD89E2670203500493D47 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89D2670203500493D47 /* SceneDelegate.swift */; };
 		3B4AD8A02670203500493D47 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AD89F2670203500493D47 /* CollectionViewController.swift */; };
 		3B4AD8A32670203500493D47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B4AD8A12670203500493D47 /* Main.storyboard */; };
 		3B4AD8A52670203700493D47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B4AD8A42670203700493D47 /* Assets.xcassets */; };
@@ -127,7 +126,6 @@
 		3B1ADCE526784CF70013F6D1 /* ContactViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModelTests.swift; sourceTree = "<group>"; };
 		3B4AD8982670203500493D47 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4AD89B2670203500493D47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3B4AD89D2670203500493D47 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3B4AD89F2670203500493D47 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		3B4AD8A22670203500493D47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B4AD8A42670203700493D47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -329,7 +327,6 @@
 			isa = PBXGroup;
 			children = (
 				3B4AD89B2670203500493D47 /* AppDelegate.swift */,
-				3B4AD89D2670203500493D47 /* SceneDelegate.swift */,
 				3B1ADCDD267835140013F6D1 /* DataManager */,
 				3BB4561B2675F4E00065DB6E /* Models */,
 				3B60DD632673FD5E003E4D7A /* Networking */,
@@ -791,7 +788,6 @@
 				3BE02C7826793F0E00C9717E /* CollectionViewController+Layout.swift in Sources */,
 				3B60DD73267409B6003E4D7A /* Engine.swift in Sources */,
 				3B131DD92671351D0080F4D6 /* RoundedImageView.swift in Sources */,
-				3B4AD89E2670203500493D47 /* SceneDelegate.swift in Sources */,
 				3B89FB3F26721F3A0002BDA6 /* UserDefaultsUtility.swift in Sources */,
 				3B89FB39267206A30002BDA6 /* WelcomeViewController.swift in Sources */,
 				3BB4561F2675F5640065DB6E /* ContactViewModel.swift in Sources */,

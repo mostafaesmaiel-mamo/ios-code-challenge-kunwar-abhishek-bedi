@@ -7,5 +7,5 @@
 
 /// To present the contact on UI
 protocol ContactPresentable {
-	func configure(withContact contact: ContactProtocol)
+	func configure(with contact: ContactProtocol)
 }

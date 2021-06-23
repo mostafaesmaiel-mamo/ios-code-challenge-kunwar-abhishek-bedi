@@ -11,7 +11,7 @@ final class HeaderView: UICollectionReusableView {
     
      @IBOutlet private weak var titleLabel: UILabel!
     
-    func configure(withTitle title: String) {
+    func configure(with title: String) {
         titleLabel.text = title
     }
 }

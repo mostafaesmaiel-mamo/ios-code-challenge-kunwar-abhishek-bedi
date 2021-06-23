@@ -36,7 +36,7 @@ final class ContactCell: UICollectionViewCell {
 
 extension ContactCell: ContactPresentable, BorderPresentable {
 	
-	func configure(withContact contact: ContactProtocol) {
+	func configure(with contact: ContactProtocol) {
 		firstNameLabel.text = contact.firstName
 		lastNameLabel.text = contact.lastName
 		logoView.isHidden = !(contact.isMamoContact || contact.isFrequentContact)

@@ -53,14 +53,14 @@ extension CollectionViewController {
 		switch section {
 			case .frequentContacts:
 				if let cell = frequentContactCell(collectionView, forIndexPath: indexPath) {
-					cell.configure(withContact: contact)
+					cell.configure(with: contact)
 					return cell
 				}
 				
 			case .mamoContacts, .phoneContacts:
 
 				if let cell = otherContactCell(collectionView, forIndexPath: indexPath) {
-					cell.configure(withContact: contact)
+					cell.configure(with: contact)
 					return cell
 				}
 		}
@@ -79,7 +79,7 @@ extension CollectionViewController {
 	override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 		if let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.name, for: indexPath) as? HeaderView {
 			let title = sections[indexPath.section].headerTitle
-			header.configure(withTitle: title)
+			header.configure(with: title)
 			return header
 		}
 		

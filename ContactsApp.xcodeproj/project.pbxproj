@@ -57,10 +57,7 @@
 		3B60DD7E26741755003E4D7A /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B60DD7D26741755003E4D7A /* AppConstants.swift */; };
 		3B89FB39267206A30002BDA6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FB38267206A30002BDA6 /* WelcomeViewController.swift */; };
 		3B89FB3D26720C810002BDA6 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FB3C26720C810002BDA6 /* UIView+Extension.swift */; };
-		3B89FB3F26721F3A0002BDA6 /* UserDefaultsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FB3E26721F3A0002BDA6 /* UserDefaultsUtility.swift */; };
 		3B89FB41267226930002BDA6 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FB40267226930002BDA6 /* WelcomeViewModel.swift */; };
-		3B89FB44267226F20002BDA6 /* WelcomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FB43267226F20002BDA6 /* WelcomeViewModelTests.swift */; };
-		3B89FB4626735CC80002BDA6 /* MamoDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FB4526735CC80002BDA6 /* MamoDefaults.swift */; };
 		3B89FB48267376E20002BDA6 /* WelcomeViewController+ContactAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FB47267376E20002BDA6 /* WelcomeViewController+ContactAccess.swift */; };
 		3B89FB4A2673B8FB0002BDA6 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FB492673B8FB0002BDA6 /* LoaderView.swift */; };
 		3BB4561D2675F51A0065DB6E /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4561C2675F51A0065DB6E /* Contact.swift */; };
@@ -150,10 +147,7 @@
 		3B60DD7D26741755003E4D7A /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		3B89FB38267206A30002BDA6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		3B89FB3C26720C810002BDA6 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		3B89FB3E26721F3A0002BDA6 /* UserDefaultsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtility.swift; sourceTree = "<group>"; };
 		3B89FB40267226930002BDA6 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
-		3B89FB43267226F20002BDA6 /* WelcomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModelTests.swift; sourceTree = "<group>"; };
-		3B89FB4526735CC80002BDA6 /* MamoDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MamoDefaults.swift; sourceTree = "<group>"; };
 		3B89FB47267376E20002BDA6 /* WelcomeViewController+ContactAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeViewController+ContactAccess.swift"; sourceTree = "<group>"; };
 		3B89FB492673B8FB0002BDA6 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		3BB4561C2675F51A0065DB6E /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
@@ -246,8 +240,6 @@
 				3B89FB3C26720C810002BDA6 /* UIView+Extension.swift */,
 				3B131DCB2670DB570080F4D6 /* NSObject+Extension.swift */,
 				3B131DD6267107A20080F4D6 /* MamoColor.swift */,
-				3B89FB3E26721F3A0002BDA6 /* UserDefaultsUtility.swift */,
-				3B89FB4526735CC80002BDA6 /* MamoDefaults.swift */,
 				3B1ADCE3267841830013F6D1 /* UIImageView+Extension.swift */,
 			);
 			path = Utils;
@@ -353,7 +345,6 @@
 				3B4AD8B22670203800493D47 /* ContactsServiceTests.swift */,
 				3B1ADCE526784CF70013F6D1 /* ContactViewModelTests.swift */,
 				3B1ADCC426777EF80013F6D1 /* Utils */,
-				3B89FB43267226F20002BDA6 /* WelcomeViewModelTests.swift */,
 				3B4AD8B42670203800493D47 /* Info.plist */,
 			);
 			path = ContactsAppTests;
@@ -788,7 +779,6 @@
 				3BE02C7826793F0E00C9717E /* CollectionViewController+Layout.swift in Sources */,
 				3B60DD73267409B6003E4D7A /* Engine.swift in Sources */,
 				3B131DD92671351D0080F4D6 /* RoundedImageView.swift in Sources */,
-				3B89FB3F26721F3A0002BDA6 /* UserDefaultsUtility.swift in Sources */,
 				3B89FB39267206A30002BDA6 /* WelcomeViewController.swift in Sources */,
 				3BB4561F2675F5640065DB6E /* ContactViewModel.swift in Sources */,
 				3B60DD7E26741755003E4D7A /* AppConstants.swift in Sources */,
@@ -802,7 +792,6 @@
 				3B131DB82670B1550080F4D6 /* HeaderView.swift in Sources */,
 				3B60DD7C2674164B003E4D7A /* ContactsService.swift in Sources */,
 				3B60DD75267409F2003E4D7A /* Resultable.swift in Sources */,
-				3B89FB4626735CC80002BDA6 /* MamoDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,7 +801,6 @@
 			files = (
 				3B4AD8B32670203800493D47 /* ContactsServiceTests.swift in Sources */,
 				3B0FD69326767972007802FE /* JsonUtility.swift in Sources */,
-				3B89FB44267226F20002BDA6 /* WelcomeViewModelTests.swift in Sources */,
 				3B1ADCE626784CF70013F6D1 /* ContactViewModelTests.swift in Sources */,
 				3B0FD69126767924007802FE /* MockResponseNetworkAdaptor.swift in Sources */,
 				3B0FD68F26767823007802FE /* ContactsManagerTests.swift in Sources */,

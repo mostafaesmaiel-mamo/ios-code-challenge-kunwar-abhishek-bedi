@@ -8,12 +8,12 @@
 import UIKit
 import Contacts
 
-class ChooseRecipientViewController: UIViewController {
+final class ChooseRecipientViewController: UIViewController {
     
 	//MARK: - IBOutlets
-	@IBOutlet weak var containerView: UIView!
-	@IBOutlet weak var footerView: UIView!
-	@IBOutlet weak var nextButton: UIButton!
+	@IBOutlet private weak var containerView: UIView!
+	@IBOutlet private weak var footerView: UIView!
+	@IBOutlet private weak var nextButton: UIButton!
 	
 	//MARK: - Dependencies
 	private(set) var phoneContactManager: PhoneContactsFetchable!

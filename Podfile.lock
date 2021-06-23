@@ -8,14 +8,12 @@ PODS:
   - iOS-Utils/Designable (1.6.2)
   - iOS-Utils/Keyboard (1.6.2)
   - SwiftyJSON (5.0.1)
-  - SwiftyUserDefaults (5.3.0)
   - UIImageView-Letters (1.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
   - iOS-Utils (~> 1.6)
   - SwiftyJSON (~> 5.0)
-  - SwiftyUserDefaults (~> 5.3)
   - UIImageView-Letters (~> 1.1)
 
 SPEC REPOS:
@@ -23,16 +21,14 @@ SPEC REPOS:
     - Alamofire
     - iOS-Utils
     - SwiftyJSON
-    - SwiftyUserDefaults
     - UIImageView-Letters
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   iOS-Utils: 967a5bd519f2b4e9353837bef30bacad78cb4063
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
-  SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   UIImageView-Letters: f62db28076797adf3560ab7410647dc6899b9eef
 
-PODFILE CHECKSUM: 35419209fbcacb8bcab9750886c16f67ac4d243a
+PODFILE CHECKSUM: 75378f8414e3dd976a248a6ca0689fae23a11e80
 
 COCOAPODS: 1.10.1

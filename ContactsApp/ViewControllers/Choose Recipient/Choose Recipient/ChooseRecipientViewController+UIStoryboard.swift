@@ -23,7 +23,6 @@ extension ChooseRecipientViewController {
 				contactDetailsViewController.configure(with: contact)
 			}
 		}
-		
 	}
 }
 

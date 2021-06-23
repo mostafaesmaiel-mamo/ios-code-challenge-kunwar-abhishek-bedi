@@ -8,6 +8,7 @@ import Foundation
 
 /// Errors
 fileprivate extension String {
+    
 	static let invalidURL = "URL is not valid"
 	static let unableToDecode = "We could not decode the response."
 	static let dataUnavailable = "Response returned with no data to decode."
@@ -16,6 +17,7 @@ fileprivate extension String {
 
 
 fileprivate extension Int {
+    
 	static let dataUnavailable = 8910
 	static let noNetwork = 8911
 	static let unableToDecode = 8912
@@ -25,6 +27,7 @@ fileprivate extension Int {
 
 /// Network error networking
 enum NetworkError: Error {
+    
 	case noData
 	case noNetwork
 	case unableToDecode

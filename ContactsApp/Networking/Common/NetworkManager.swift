@@ -20,13 +20,15 @@ struct NetworkManager: NetworkAdaptor {
 	}
 	
 	func process<T: Resultable>(_ buildable: Buildable, type: T.Type, completion: @escaping (ServiceResult<T>) -> Void) {
-		DispatchQueue.global(qos: .userInteractive).async {
+		
+        DispatchQueue.global(qos: .userInteractive).async {
 			self.fetch(buildable: buildable, type: type, completion: completion)
 		}
 	}
 	
 	private func fetch<T: Resultable>(buildable: Buildable, type: T.Type, completion: @escaping (ServiceResult<T>) -> Void) {
-		engine.request(buildable: buildable, type: T.self) { (result) in
+		
+        engine.request(buildable: buildable, type: T.self) { (result) in
 			DispatchQueue.main.async {
 				completion(result)
 			}

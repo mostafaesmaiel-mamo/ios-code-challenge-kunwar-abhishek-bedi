@@ -15,6 +15,7 @@ protocol PhoneContactsFetchable: ContactFetchable {
 	var store: CNContactStore { get }
 	var keys: [String] { get }
 	func fetchPhoneContacts(onCompletion: @escaping ([Contact]) -> ())
+    
 }
 
 protocol MamoContactsFetchable: ContactFetchable {

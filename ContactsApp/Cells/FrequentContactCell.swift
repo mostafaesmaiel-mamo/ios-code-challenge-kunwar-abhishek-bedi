@@ -33,6 +33,7 @@ final class FrequentContactCell: UICollectionViewCell {
 }
 
 extension FrequentContactCell: ContactPresentable, BorderPresentable {
+    
 	func configure(with contact: ContactProtocol) {
 		firstNameLabel.text = contact.firstName
 		lastNameLabel.text = contact.lastName

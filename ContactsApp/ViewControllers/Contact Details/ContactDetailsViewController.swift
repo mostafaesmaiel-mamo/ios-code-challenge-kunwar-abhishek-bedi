@@ -23,20 +23,21 @@ class ContactDetailsViewController: UIViewController {
 	}
 	
 	private func description(for contact: ContactProtocol) -> String {
-		var strings: [String] = []
+		
+        var strings: [String] = []
 		strings.append("Contact: \(contact.publicName)")
 		strings.append("Id: \(contact.id)")
 		strings.append("Phone Number/Email: \(contact.phoneNumbers?.first ?? contact.emails?.first ?? "")")
 		strings.append("Mamo: \(contact.isMamoContact)")
 		strings.append("Frequent: \(contact.isFrequentContact)")
 		
-		
 		return strings.joined(separator: "\n")
 	}
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		navigationItem.title = "Selected Contact Info"
+		
+        navigationItem.title = "Selected Contact Info"
 		guard contact != nil else {
 			fatalError("Conact should be initialized. Use configure func")
 		}

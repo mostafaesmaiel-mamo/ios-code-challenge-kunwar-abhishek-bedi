@@ -7,7 +7,8 @@
 import ContactsUI
 
 class ContactsManager {
-	let networkAdaptor: NetworkAdaptor
+	
+    let networkAdaptor: NetworkAdaptor
 	
 	init(networkAdaptor: NetworkAdaptor = NetworkManager()) {
 		self.networkAdaptor = networkAdaptor
@@ -30,7 +31,8 @@ extension ContactsManager: PhoneContactsFetchable {
 	}
 	
 	func fetchPhoneContacts(onCompletion: @escaping ([Contact]) -> ()) {
-		var fetchedContacts: [Contact] = []
+		
+        var fetchedContacts: [Contact] = []
 		let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
 		do {
 			try store.enumerateContacts(with: request, usingBlock: {(contact, stopPointer)
@@ -48,7 +50,8 @@ extension ContactsManager: PhoneContactsFetchable {
 
 //MARK: - Mamo Contacts API
 extension ContactsManager: MamoContactsFetchable {
-	func fetchFrequentMamoContacts(onCompletion: @escaping ([Frequent]) -> ()) {
+	
+    func fetchFrequentMamoContacts(onCompletion: @escaping ([Frequent]) -> ()) {
 		let service = ContactsService.frequentAccounts
 		networkAdaptor.process(service, type: FrequentContact.self) { result in
 			
@@ -66,7 +69,8 @@ extension ContactsManager: MamoContactsFetchable {
 	
 	
 	func fetchSearchMamoContacts(emails: [String], orPhones: [String], onCompletion: @escaping ([MamoAccount]) -> ()) {
-		let service = ContactsService.searchAccounts(emails: emails, orPhones: orPhones)
+		
+        let service = ContactsService.searchAccounts(emails: emails, orPhones: orPhones)
 		networkAdaptor.process(service, type: MamoAccounts.self) { result in
 			
 			
@@ -93,7 +97,8 @@ fileprivate extension CNContact {
 }
 
 fileprivate struct ContactBridge {
-	static func transform(type: CNContact) -> Contact {
+	
+    static func transform(type: CNContact) -> Contact {
 		
 		return Contact(id: type.identifier,
 							  firstName: type.givenName,

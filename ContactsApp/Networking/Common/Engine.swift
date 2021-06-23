@@ -16,6 +16,7 @@ struct NetworkEngine: Fetchable {
 	}
 	
 	func request<T: Resultable>(buildable: Buildable, type: T.Type, completion: @escaping (ServiceResult<T>) -> Void) {
+        
 		do {
 			let request = try buildable.asURLRequest()
 			print(request.cURL)
@@ -27,6 +28,7 @@ struct NetworkEngine: Fetchable {
 }
 
 fileprivate extension NetworkEngine {
+    
 	func fetch<T: Resultable>(_ request: URLRequest, completion: @escaping (ServiceResult<T>) -> Void) {
 		
 		let dataRequest = manager.request(request).validate()

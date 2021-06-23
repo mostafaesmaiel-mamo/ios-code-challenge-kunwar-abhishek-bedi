@@ -7,7 +7,8 @@
 import Foundation
 
 class Contact: ContactProtocol, Hashable {
-	var id: String = ""
+	
+    var id: String = ""
 	var firstName: String = ""
 	var lastName: String = ""
 	var phoneNumbers: [String]?
@@ -30,7 +31,8 @@ class Contact: ContactProtocol, Hashable {
 }
 
 extension Contact {
-	convenience init(id: String,
+	
+    convenience init(id: String,
 		 firstName: String,
 		 lastName: String,
 		 phoneNumbers: [String] = [],
@@ -51,13 +53,15 @@ extension Contact {
 }
 
 extension Contact {
+    
 	func toggleSelection() {
 		isSelected = !isSelected
 	}
 }
 
 extension Array where Self.Element: Contact {
-	func contact(matchingEmail email: String) -> Contact? {
+	
+    func contact(matchingEmail email: String) -> Contact? {
 		let matchingContact = self.first(where: { contact in
 			if let emails = contact.emails {
 				return emails.contains(email)

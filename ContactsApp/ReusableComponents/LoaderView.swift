@@ -7,7 +7,8 @@
 import UIKit
 
 class LoaderView: UIActivityIndicatorView {
-	override init(style: UIActivityIndicatorView.Style = .large) {
+	
+    override init(style: UIActivityIndicatorView.Style = .large) {
 		super.init(style: style)
 		self.style = style
 		self.translatesAutoresizingMaskIntoConstraints = false

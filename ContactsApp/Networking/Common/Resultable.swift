@@ -17,12 +17,14 @@ enum ServiceResult<T: Codable> {
 }
 
 protocol Resultable: Codable {
-	func result() -> ServiceResult<Self>
+	
+    func result() -> ServiceResult<Self>
 	static func result<T: Resultable>(responseData: Data, response: HTTPURLResponse?) -> ServiceResult<T>
 }
 
 extension Resultable {
-	func result() -> ServiceResult<Self> {
+	
+    func result() -> ServiceResult<Self> {
 		return .success(self)
 	}
 	
@@ -40,7 +42,8 @@ extension Resultable {
 
 
 struct ServiceError: Error {
-	let error: String
+	
+    let error: String
 	
 	init(error: String?) {
 		self.error = error ?? .unknown

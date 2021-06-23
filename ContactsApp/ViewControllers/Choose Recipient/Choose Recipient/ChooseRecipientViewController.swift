@@ -127,7 +127,8 @@ fileprivate extension ChooseRecipientViewController {
 }
 
 extension Sequence where Self.Element == Contact {
-	var allEmails: [String] {
+	
+    var allEmails: [String] {
 		
 		var allEmails:[String] = []
 		self.forEach { contact in

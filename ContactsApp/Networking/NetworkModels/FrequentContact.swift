@@ -14,7 +14,8 @@ struct FrequentContact: Resultable {
 
 // MARK: - Frequent
 struct Frequent: Codable {
-	let mamoId, frequentPublicName: String?
+	
+    let mamoId, frequentPublicName: String?
 	
 	enum CodingKeys: String, CodingKey {
 		case mamoId = "id"

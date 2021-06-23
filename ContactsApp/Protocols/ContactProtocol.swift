@@ -8,7 +8,8 @@
 import Foundation
 
 protocol ContactProtocol {
-	var id: String {get}
+	
+    var id: String {get}
 	var firstName: String {get}
 	var lastName: String {get}
 	var phoneNumbers: [String]? {get}

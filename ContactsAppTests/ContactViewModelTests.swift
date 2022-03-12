@@ -38,4 +38,15 @@ class ContactViewModelTests: XCTestCase {
 		XCTAssertEqual(item1.isMamoContact, true)
 		XCTAssertEqual(item2.isMamoContact, false)
 	}
+    
+    func testPerformance() {
+        let phoneContact = Contact(id: "2", firstName: "Phone", lastName: "Contact")
+        
+        var contactViewModel = ContactViewModel()
+        contactViewModel.configure(withPhoneContacts: [phoneContact], mamoContacts: [], frequentContacts: [])
+
+        measure {
+            contactViewModel.contacts.allEmails        
+        }
+    }
 }

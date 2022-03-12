@@ -7,45 +7,45 @@
 import ContactsUI
 
 final class ContactsManager {
-	
+    
     let networkAdaptor: NetworkAdaptor
-	
-	init(networkAdaptor: NetworkAdaptor = NetworkManager()) {
-		self.networkAdaptor = networkAdaptor
-	}
+    
+    init(networkAdaptor: NetworkAdaptor = NetworkManager()) {
+        self.networkAdaptor = networkAdaptor
+    }
 }
 
 extension ContactsManager: PhoneContactsFetchable {
-	
-	var store: CNContactStore { CNContactStore() }
-	
-	var keys: [String] {
-                         [CNContactGivenNameKey,
-						  CNContactFamilyNameKey,
-						  CNContactImageDataKey,
-						  CNContactThumbnailImageDataKey,
-						  CNContactImageDataKey,
-						  CNContactImageDataAvailableKey,
-						  CNContactPhoneNumbersKey,
-						  CNContactEmailAddressesKey]
-	}
-	
-	func fetchPhoneContacts(onCompletion: @escaping ([Contact]) -> ()) {
-		
+    
+    var store: CNContactStore { CNContactStore() }
+    
+    var keys: [String] {
+        [CNContactGivenNameKey,
+         CNContactFamilyNameKey,
+         CNContactImageDataKey,
+         CNContactThumbnailImageDataKey,
+         CNContactImageDataKey,
+         CNContactImageDataAvailableKey,
+         CNContactPhoneNumbersKey,
+         CNContactEmailAddressesKey]
+    }
+    
+    func fetchPhoneContacts(onCompletion: @escaping ([Contact]) -> ()) {
+        
         var fetchedContacts: [Contact] = []
-		let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
-		do {
-			try store.enumerateContacts(with: request, usingBlock: {(contact, _)
-				in
-				fetchedContacts.append(contact.transform())
-			})
-		} catch let error {
-			print("Failed to enumerate contact", error)
-			onCompletion([])
-		}
-		onCompletion(fetchedContacts)
-
-	}
+        let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
+        do {
+            try store.enumerateContacts(with: request, usingBlock: {(contact, _)
+                in
+                fetchedContacts.append(contact.transform())
+            })
+        } catch let error {
+            print("Failed to enumerate contact", error)
+            onCompletion([])
+        }
+        onCompletion(fetchedContacts)
+        
+    }
 }
 
 //MARK: - Mamo Contacts API

@@ -7,7 +7,6 @@
 
 import XCTest
 @testable import ContactsApp
-import SwiftyJSON
 
 class ContactsManagerTests: XCTestCase {
 	

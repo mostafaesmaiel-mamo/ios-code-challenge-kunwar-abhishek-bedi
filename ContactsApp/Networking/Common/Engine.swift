@@ -5,13 +5,20 @@
 //  Created by kbedi on 12/06/2021.
 //
 
-import Alamofire
+import Foundation
 
 struct NetworkEngine: Fetchable {
     
-    fileprivate let manager: Session    
+    func fetch(_ dataRequest: URLRequest, completion: @escaping NetworkCompletion) {
+        
+        manager.dataTask(with: dataRequest) { data, response, error in
+            completion(data, response as? HTTPURLResponse, error)
+        }.resume()
+    }
     
-    init(manager: Session) {
+    fileprivate let manager: URLSession
+
+    init(manager: URLSession = URLSession.shared) {
         self.manager = manager
     }
     
@@ -30,9 +37,8 @@ struct NetworkEngine: Fetchable {
 fileprivate extension NetworkEngine {
     
     func fetch<T: Resultable>(_ request: URLRequest, completion: @escaping (ServiceResult<T>) -> Void) {
-        
-        let dataRequest = manager.request(request).validate()
-        fetch(dataRequest) { (data, response, error) in
+
+        fetch(request) { (data, response, error) in
             guard let responseData = data, response != nil else {
                 completion(.failure(ServiceError(error: NetworkError.noData.value)))
                 return

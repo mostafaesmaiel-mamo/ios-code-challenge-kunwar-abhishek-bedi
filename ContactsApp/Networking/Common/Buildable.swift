@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Alamofire
 
 typealias Params = [String: Any]
 typealias Headers = [String: String]
@@ -37,14 +36,14 @@ extension Buildable {
 		return method
 	}
 		
-	private var parameterEncoding: ParameterEncoding {
-		switch encoding {
-			case .json:
-				return JSONEncoding.default
-			case .url:
-				return URLEncoding.default
-		}
-	}
+//	private var parameterEncoding: ParameterEncoding {
+//		switch encoding {
+//			case .json:
+//				return JSONEncoding.default
+//			case .url:
+//				return URLEncoding.default
+//		}
+//	}
 	
 	var encoding: Encoding {
 		return .url
@@ -66,14 +65,15 @@ extension Buildable {
 		guard let formedURL = url else {
 			throw URLError.urlMalformatted
 		}
-		
+
 		var request = URLRequest(url: formedURL)
 		request.httpMethod = httpMethod.rawValue
 		request.allHTTPHeaderFields = headers
-		do {
-			return try parameterEncoding.encode(request, with: params)
-		} catch {
-			throw URLRequestError.encodingFailed
-		}
+    return request
+//		do {
+//			return try parameterEncoding.encode(request, with: params)
+//		} catch {
+//			throw URLRequestError.encodingFailed
+//		}
 	}
 }

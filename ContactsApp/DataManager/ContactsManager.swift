@@ -55,16 +55,16 @@ extension ContactsManager: MamoContactsFetchable {
 		let service = ContactsService.frequentAccounts
 		networkAdaptor.process(service, type: FrequentContact.self) { result in
 			
-			switch result {
-				case .success(let response):
-					if let accounts = response.frequents, !accounts.isEmpty {
-						onCompletion(accounts)
-					}
-					
-				case .failure(let error):
-                    print(error.localizedDescription)
-					onCompletion([])
-			}
+        switch result {
+            case .success(let response):
+                if let accounts = response.frequents, !accounts.isEmpty {
+                    onCompletion(accounts)
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+                onCompletion([])
+        }
 		}
 	}
 	

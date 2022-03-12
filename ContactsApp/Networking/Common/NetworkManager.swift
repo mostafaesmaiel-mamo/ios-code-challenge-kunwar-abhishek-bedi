@@ -14,9 +14,9 @@ protocol NetworkAdaptor {
 struct NetworkManager: NetworkAdaptor {
     
     let engine: NetworkEngine
-    
-    init(type: SessionManagerType = .default) {
-        engine = NetworkEngine(manager: type.sessionManager)
+        
+    init(type: URLSession = URLSession.shared) {
+        engine = NetworkEngine.init(manager: type)
     }
     
     func process<T: Resultable>(_ buildable: Buildable, type: T.Type, completion: @escaping (ServiceResult<T>) -> Void) {
